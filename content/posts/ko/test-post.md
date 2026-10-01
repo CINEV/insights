@@ -8,6 +8,8 @@ tags: []
 author: "user"
 excerpt: ""
 draft: false
+image: "/insights/images/cinamon-logo.png"
+imageAlt: "시나몬 로고"
 ---
 
 ## 시작하기
