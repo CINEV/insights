@@ -1,0 +1,56 @@
+/* Preserve the imported theme and block styles. These small overrides replace
+   behavior previously supplied by WordPress runtime scripts. */
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+.cinev-static-blog #masthead { position: sticky; top: 0; z-index: 100; }
+.cinev-static-blog [data-aos], .cinev-static-blog .ast-fade-up { opacity: 1; transform: none; }
+.cinev-static-blog .cinev-pagination { display: block !important; }
+.cinev-static-blog.cinev-infinite-ready .cinev-pagination { display: none !important; }
+.cinev-static-blog .menu-item-has-children:focus-within > .sub-menu,
+.cinev-static-blog .menu-item-has-children.cinev-menu-open > .sub-menu { opacity: 1; visibility: visible; display: block; }
+.cinev-static-blog .uagb-faq-content[hidden] { display: none !important; }
+.cinev-static-blog .uagb-faq-item-active .uagb-faq-content { display: block; }
+.cinev-static-blog .uagb-faq-item:not(.uagb-faq-item-active) .uagb-icon-active { display: none; }
+.cinev-static-blog .uagb-faq-item.uagb-faq-item-active .uagb-icon { display: none; }
+.cinev-static-blog .uagb-faq-item.uagb-faq-item-active .uagb-icon-active { display: inline-flex; }
+.cinev-static-blog #ast-scroll-top { cursor: pointer; }
+.cinev-markdown-post .entry-content { max-width: 820px; margin-inline: auto; }
+.cinev-markdown-post .entry-content > h2,
+.cinev-markdown-post .entry-content > h3 { margin-top: 1.6em; }
+.cinev-markdown-post .entry-content pre { padding: 1.2em; overflow-x: auto; border-radius: 8px; }
+.cinev-markdown-post .entry-content img,
+.cinev-markdown-cover { max-width: 100%; height: auto; border-radius: 8px; }
+.cinev-markdown-post .entry-content table { display: block; overflow-x: auto; }
+.cinev-empty-archive, .cinev-not-found { padding: 60px 20px; }
+.cinev-search-results { padding: 0; list-style: none; }
+.cinev-search-results li { margin: 1.5em 0; }
+.cinev-static-blog .cinev-slider-ready .swiper-wrapper { display: flex; width: 100%; transition: transform 740ms ease; }
+.cinev-static-blog .cinev-slider-ready .swiper-slide { display: block; width: 100%; flex: 0 0 100%; }
+.cinev-static-blog .cinev-slider-ready .swiper-button-prev,
+.cinev-static-blog .cinev-slider-ready .swiper-button-next { cursor: pointer; }
+.cinev-static-blog .cinev-slider-ready .swiper-pagination-bullet { cursor: pointer; padding: 0; border: 0; }
+.cinev-static-blog .wp-block-uagb-image-gallery.cinev-gallery-ready { visibility: visible; }
+.cinev-static-blog .uagb-slick-carousel.cinev-gallery-ready { display: block; overflow: visible; --cinev-logo-columns: 5; }
+.cinev-static-blog .cinev-logo-viewport { position: relative; overflow: hidden; padding: 0; }
+.cinev-static-blog .cinev-logo-track { display: flex; align-items: center; width: 100%; }
+.cinev-static-blog .cinev-logo-track > .spectra-image-gallery__media-wrapper { min-width: 0; flex: 0 0 calc(100% / var(--cinev-logo-columns)); }
+.cinev-static-blog .uagb-position__sticky--stuck.uagb-block-ip-header { position: fixed; margin: 0 !important; }
+.cinev-static-blog .cinev-sticky-placeholder[hidden] { display: none !important; }
+@media (max-width: 766px) {
+  .cinev-static-blog .uagb-slick-carousel.cinev-gallery-ready { --cinev-logo-columns: 2; }
+}
+@media (max-width: 921px) {
+  .cinev-static-blog #masthead { position: sticky; }
+  .cinev-static-blog.cinev-mobile-menu-open { overflow: hidden; }
+  .cinev-static-blog #ast-mobile-popup[aria-hidden="true"] { visibility: hidden; }
+  .cinev-static-blog #ast-mobile-popup.active { visibility: visible; opacity: 1; }
+  .cinev-static-blog #ast-mobile-popup.active .ast-mobile-popup-inner { transform: translateX(0); }
+  .cinev-static-blog #ast-mobile-popup.active .ast-mobile-popup-overlay { opacity: 1; visibility: visible; }
+  .cinev-static-blog #ast-mobile-popup .ast-desktop-popup-content { display: none; }
+  .cinev-static-blog #ast-mobile-popup .ast-mobile-popup-content { display: block; }
+  .cinev-static-blog #ast-mobile-popup .sub-menu { display: none; }
+  .cinev-static-blog #ast-mobile-popup .cinev-menu-open > .sub-menu { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cinev-static-blog .cinev-slider-ready .swiper-wrapper { transition: none; }
+}

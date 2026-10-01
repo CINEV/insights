@@ -1,0 +1,3473 @@
+[
+  {
+    "id": 1288,
+    "date": "2026-09-09T17:52:58",
+    "date_gmt": "2026-09-09T08:52:58",
+    "guid": {
+      "rendered": "https://blog.cinev.com/wp-content/uploads/2026/09/01-overview.webp"
+    },
+    "modified": "2026-09-09T18:03:23",
+    "modified_gmt": "2026-09-09T09:03:23",
+    "slug": "01-overview",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/getting-started-with-cinev/01-overview/",
+    "title": {
+      "rendered": "01-overview"
+    },
+    "author": 6,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1288",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/09/01-overview.webp'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"147\" src=\"https://cinev.com/insights/wp-content/uploads/2026/09/01-overview-300x147.webp\" class=\"attachment-medium size-medium\" alt=\"\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/09/01-overview-300x147.webp 300w, https://cinev.com/insights/wp-content/uploads/2026/09/01-overview-1024x500.webp 1024w, https://cinev.com/insights/wp-content/uploads/2026/09/01-overview-768x375.webp 768w, https://cinev.com/insights/wp-content/uploads/2026/09/01-overview-1536x750.webp 1536w, https://cinev.com/insights/wp-content/uploads/2026/09/01-overview.webp 1800w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "",
+    "media_type": "image",
+    "mime_type": "image/webp",
+    "media_details": {
+      "width": 1800,
+      "height": 879,
+      "file": "2026/09/01-overview.webp",
+      "filesize": 175362,
+      "sizes": {
+        "medium": {
+          "file": "01-overview-300x147.webp",
+          "width": 300,
+          "height": 147,
+          "filesize": 6714,
+          "mime_type": "image/webp",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/01-overview-300x147.webp"
+        },
+        "large": {
+          "file": "01-overview-1024x500.webp",
+          "width": 1024,
+          "height": 500,
+          "filesize": 35594,
+          "mime_type": "image/webp",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/01-overview-1024x500.webp"
+        },
+        "thumbnail": {
+          "file": "01-overview-150x150.webp",
+          "width": 150,
+          "height": 150,
+          "filesize": 4254,
+          "mime_type": "image/webp",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/01-overview-150x150.webp"
+        },
+        "medium_large": {
+          "file": "01-overview-768x375.webp",
+          "width": 768,
+          "height": 375,
+          "filesize": 24300,
+          "mime_type": "image/webp",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/01-overview-768x375.webp"
+        },
+        "1536x1536": {
+          "file": "01-overview-1536x750.webp",
+          "width": 1536,
+          "height": 750,
+          "filesize": 60488,
+          "mime_type": "image/webp",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/01-overview-1536x750.webp"
+        },
+        "full": {
+          "file": "01-overview.webp",
+          "width": 1800,
+          "height": 879,
+          "mime_type": "image/webp",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/01-overview.webp"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": [],
+        "alt": ""
+      }
+    },
+    "post": 1302,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/01-overview.webp",
+    "filename": "01-overview.webp",
+    "filesize": 175362,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1288",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/6"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1288"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 1302,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/1302"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1285,
+    "date": "2026-09-07T12:25:21",
+    "date_gmt": "2026-09-07T03:25:21",
+    "guid": {
+      "rendered": "https://blog.cinev.com/wp-content/uploads/2026/09/videoframe_57272.png"
+    },
+    "modified": "2026-09-07T12:25:21",
+    "modified_gmt": "2026-09-07T03:25:21",
+    "slug": "videoframe_57272",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/ko/animation-adaptation-webtoon-webnovel/videoframe_57272/",
+    "title": {
+      "rendered": "videoframe_57272"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1285",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/09/videoframe_57272.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://cinev.com/insights/wp-content/uploads/2026/09/videoframe_57272-300x169.png\" class=\"attachment-medium size-medium\" alt=\"\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/09/videoframe_57272-300x169.png 300w, https://cinev.com/insights/wp-content/uploads/2026/09/videoframe_57272-1024x576.png 1024w, https://cinev.com/insights/wp-content/uploads/2026/09/videoframe_57272-768x432.png 768w, https://cinev.com/insights/wp-content/uploads/2026/09/videoframe_57272.png 1280w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1280,
+      "height": 720,
+      "file": "2026/09/videoframe_57272.png",
+      "filesize": 857400,
+      "sizes": {
+        "medium": {
+          "file": "videoframe_57272-300x169.png",
+          "width": 300,
+          "height": 169,
+          "filesize": 60089,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/videoframe_57272-300x169.png"
+        },
+        "large": {
+          "file": "videoframe_57272-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "filesize": 431835,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/videoframe_57272-1024x576.png"
+        },
+        "thumbnail": {
+          "file": "videoframe_57272-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 32100,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/videoframe_57272-150x150.png"
+        },
+        "medium_large": {
+          "file": "videoframe_57272-768x432.png",
+          "width": 768,
+          "height": 432,
+          "filesize": 272398,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/videoframe_57272-768x432.png"
+        },
+        "full": {
+          "file": "videoframe_57272.png",
+          "width": 1280,
+          "height": 720,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/videoframe_57272.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": [],
+        "alt": ""
+      }
+    },
+    "post": 1276,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/videoframe_57272.png",
+    "filename": "videoframe_57272.png",
+    "filesize": 857400,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1285",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1285"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 1276,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/1276"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1273,
+    "date": "2026-09-04T16:33:14",
+    "date_gmt": "2026-09-04T07:33:14",
+    "guid": {
+      "rendered": "https://blog.cinev.com/wp-content/uploads/2026/09/cinev-webtoon-animation-cover.png"
+    },
+    "modified": "2026-09-04T16:34:24",
+    "modified_gmt": "2026-09-04T07:34:24",
+    "slug": "cinev-webtoon-animation-cover",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/cinev-webtoon-animation-cover/",
+    "title": {
+      "rendered": "CineV webtoon animation cover"
+    },
+    "author": 6,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1273",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/09/cinev-webtoon-animation-cover.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://cinev.com/insights/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-300x169.png\" class=\"attachment-medium size-medium\" alt=\"웹툰 원작이 애니메이션 본편으로 바뀌는 제작 흐름을 보여주는 커버 이미지\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-300x169.png 300w, https://cinev.com/insights/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-1024x576.png 1024w, https://cinev.com/insights/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-768x432.png 768w, https://cinev.com/insights/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-1536x864.png 1536w, https://cinev.com/insights/wp-content/uploads/2026/09/cinev-webtoon-animation-cover.png 1672w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": "<p>웹툰·웹소설 IP를 본편으로 옮길 때의 제작 흐름</p>\n"
+    },
+    "alt_text": "웹툰 원작이 애니메이션 본편으로 바뀌는 제작 흐름을 보여주는 커버 이미지",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1672,
+      "height": 941,
+      "file": "2026/09/cinev-webtoon-animation-cover.png",
+      "filesize": 2217639,
+      "sizes": {
+        "medium": {
+          "file": "cinev-webtoon-animation-cover-300x169.png",
+          "width": 300,
+          "height": 169,
+          "filesize": 83291,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-300x169.png"
+        },
+        "large": {
+          "file": "cinev-webtoon-animation-cover-1024x576.png",
+          "width": 1024,
+          "height": 576,
+          "filesize": 757805,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-1024x576.png"
+        },
+        "thumbnail": {
+          "file": "cinev-webtoon-animation-cover-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 37317,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-150x150.png"
+        },
+        "medium_large": {
+          "file": "cinev-webtoon-animation-cover-768x432.png",
+          "width": 768,
+          "height": 432,
+          "filesize": 450218,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-768x432.png"
+        },
+        "1536x1536": {
+          "file": "cinev-webtoon-animation-cover-1536x864.png",
+          "width": 1536,
+          "height": 864,
+          "filesize": 1603874,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-1536x864.png"
+        },
+        "full": {
+          "file": "cinev-webtoon-animation-cover.png",
+          "width": 1672,
+          "height": 941,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/cinev-webtoon-animation-cover.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": [],
+        "alt": ""
+      }
+    },
+    "post": null,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/09/cinev-webtoon-animation-cover.png",
+    "filename": "cinev-webtoon-animation-cover.png",
+    "filesize": 2217639,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1273",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/6"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1273"
+        }
+      ]
+    }
+  },
+  {
+    "id": 1222,
+    "date": "2026-08-11T23:23:58",
+    "date_gmt": "2026-08-11T14:23:58",
+    "guid": {
+      "rendered": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev.png"
+    },
+    "modified": "2026-08-11T23:23:58",
+    "modified_gmt": "2026-08-11T14:23:58",
+    "slug": "seedance2-5-on-cinev",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/ko/seedance-2-5-%ea%b0%80%ec%9e%a5-%ec%9e%98-%ec%93%b0%eb%8a%94-%eb%b2%95-%ea%b3%b5%ec%8b%9d-%ea%b0%80%ec%9d%b4%eb%93%9c-4%ec%a2%85%ec%9c%bc%eb%a1%9c-%ea%b2%80%ec%a6%9d%ed%95%9c-%ed%94%84%eb%a1%ac/seedance2-5-on-cinev/",
+    "title": {
+      "rendered": "seedance2.5-on-cinev"
+    },
+    "author": 4,
+    "featured_media": 0,
+    "comment_status": "",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1222",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-scaled.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://cinev.com/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-300x169.png\" class=\"attachment-medium size-medium\" alt=\"\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-300x169.png 300w, https://cinev.com/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png 1024w, https://cinev.com/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-768x433.png 768w, https://cinev.com/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-1536x867.png 1536w, https://cinev.com/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-2048x1156.png 2048w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 2560,
+      "height": 1445,
+      "file": "2026/08/seedance2.5-on-cinev-scaled.png",
+      "filesize": 961598,
+      "sizes": {
+        "medium": {
+          "file": "seedance2.5-on-cinev-300x169.png",
+          "width": 300,
+          "height": 169,
+          "filesize": 46473,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev-300x169.png"
+        },
+        "large": {
+          "file": "seedance2.5-on-cinev-1024x578.png",
+          "width": 1024,
+          "height": 578,
+          "filesize": 286822,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png"
+        },
+        "thumbnail": {
+          "file": "seedance2.5-on-cinev-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 28183,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev-150x150.png"
+        },
+        "medium_large": {
+          "file": "seedance2.5-on-cinev-768x433.png",
+          "width": 768,
+          "height": 433,
+          "filesize": 190386,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev-768x433.png"
+        },
+        "1536x1536": {
+          "file": "seedance2.5-on-cinev-1536x867.png",
+          "width": 1536,
+          "height": 867,
+          "filesize": 498373,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev-1536x867.png"
+        },
+        "2048x2048": {
+          "file": "seedance2.5-on-cinev-2048x1156.png",
+          "width": 2048,
+          "height": 1156,
+          "filesize": 725569,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev-2048x1156.png"
+        },
+        "full": {
+          "file": "seedance2.5-on-cinev-scaled.png",
+          "width": 2560,
+          "height": 1445,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev-scaled.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": [],
+        "alt": ""
+      },
+      "original_image": "seedance2.5-on-cinev.png"
+    },
+    "post": 1218,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/08/seedance2.5-on-cinev-scaled.png",
+    "filename": "seedance2.5-on-cinev.png",
+    "filesize": 961598,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1222",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/4"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1222"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 1218,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/1218"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1200,
+    "date": "2026-06-22T17:35:02",
+    "date_gmt": "2026-06-22T08:35:02",
+    "guid": {
+      "rendered": "https://blog.cinev.com/wp-content/uploads/2026/06/image.png"
+    },
+    "modified": "2026-06-22T17:36:18",
+    "modified_gmt": "2026-06-22T08:36:18",
+    "slug": "image-3",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/ja/corporate-ip-ai-anime-workflow/image-3/",
+    "title": {
+      "rendered": "IP to AI animation Workflow"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1200",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/06/image.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"165\" src=\"https://cinev.com/insights/wp-content/uploads/2026/06/image-300x165.png\" class=\"attachment-medium size-medium\" alt=\"IP to AI animation Workflow\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/06/image-300x165.png 300w, https://cinev.com/insights/wp-content/uploads/2026/06/image-1024x562.png 1024w, https://cinev.com/insights/wp-content/uploads/2026/06/image-768x421.png 768w, https://cinev.com/insights/wp-content/uploads/2026/06/image-1536x843.png 1536w, https://cinev.com/insights/wp-content/uploads/2026/06/image.png 1693w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n<p>キャラクター設定からパイロット映像までのAIアニメ制作ワークフロー</p>\n"
+    },
+    "caption": {
+      "rendered": "<p>キャラクター設定からパイロット映像までのAIアニメ制作ワークフロー</p>\n"
+    },
+    "alt_text": "IP to AI animation Workflow",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1693,
+      "height": 929,
+      "file": "2026/06/image.png",
+      "filesize": 2453060,
+      "sizes": {
+        "medium": {
+          "file": "image-300x165.png",
+          "width": 300,
+          "height": 165,
+          "filesize": 83696,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/06/image-300x165.png"
+        },
+        "large": {
+          "file": "image-1024x562.png",
+          "width": 1024,
+          "height": 562,
+          "filesize": 768348,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/06/image-1024x562.png"
+        },
+        "thumbnail": {
+          "file": "image-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 39401,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/06/image-150x150.png"
+        },
+        "medium_large": {
+          "file": "image-768x421.png",
+          "width": 768,
+          "height": 421,
+          "filesize": 454809,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/06/image-768x421.png"
+        },
+        "1536x1536": {
+          "file": "image-1536x843.png",
+          "width": 1536,
+          "height": 843,
+          "filesize": 1627511,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/06/image-1536x843.png"
+        },
+        "full": {
+          "file": "image.png",
+          "width": 1693,
+          "height": 929,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/06/image.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": [],
+        "alt": ""
+      }
+    },
+    "post": 1197,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/06/image.png",
+    "filename": "image.png",
+    "filesize": 2453060,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1200",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1200"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 1197,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/1197"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1137,
+    "date": "2026-04-14T13:38:25",
+    "date_gmt": "2026-04-14T04:38:25",
+    "guid": {
+      "rendered": "http://blog.cinev.com/wp-content/uploads/2026/04/animaj_pocoyo.jpeg"
+    },
+    "modified": "2026-04-14T13:38:29",
+    "modified_gmt": "2026-04-14T04:38:29",
+    "slug": "animaj_pocoyo",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/2026-ai-ip-renewal-animation-trends/animaj_pocoyo/",
+    "title": {
+      "rendered": "animaj_pocoyo"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1137",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/04/animaj_pocoyo.jpeg'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://cinev.com/insights/wp-content/uploads/2026/04/animaj_pocoyo-300x169.jpeg\" class=\"attachment-medium size-medium\" alt=\"Pocoyo Season 5 new episode still from Animaj AI-assisted animation production 2024\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/04/animaj_pocoyo-300x169.jpeg 300w, https://cinev.com/insights/wp-content/uploads/2026/04/animaj_pocoyo-1024x576.jpeg 1024w, https://cinev.com/insights/wp-content/uploads/2026/04/animaj_pocoyo-768x432.jpeg 768w, https://cinev.com/insights/wp-content/uploads/2026/04/animaj_pocoyo-1536x864.jpeg 1536w, https://cinev.com/insights/wp-content/uploads/2026/04/animaj_pocoyo.jpeg 1920w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "Pocoyo Season 5 new episode still from Animaj AI-assisted animation production 2024",
+    "media_type": "image",
+    "mime_type": "image/jpeg",
+    "media_details": {
+      "width": 1920,
+      "height": 1080,
+      "file": "2026/04/animaj_pocoyo.jpeg",
+      "filesize": 187124,
+      "sizes": {
+        "medium": {
+          "file": "animaj_pocoyo-300x169.jpeg",
+          "width": 300,
+          "height": 169,
+          "filesize": 15989,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/animaj_pocoyo-300x169.jpeg"
+        },
+        "large": {
+          "file": "animaj_pocoyo-1024x576.jpeg",
+          "width": 1024,
+          "height": 576,
+          "filesize": 80988,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/animaj_pocoyo-1024x576.jpeg"
+        },
+        "thumbnail": {
+          "file": "animaj_pocoyo-150x150.jpeg",
+          "width": 150,
+          "height": 150,
+          "filesize": 10364,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/animaj_pocoyo-150x150.jpeg"
+        },
+        "medium_large": {
+          "file": "animaj_pocoyo-768x432.jpeg",
+          "width": 768,
+          "height": 432,
+          "filesize": 55748,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/animaj_pocoyo-768x432.jpeg"
+        },
+        "1536x1536": {
+          "file": "animaj_pocoyo-1536x864.jpeg",
+          "width": 1536,
+          "height": 864,
+          "filesize": 133263,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/animaj_pocoyo-1536x864.jpeg"
+        },
+        "full": {
+          "file": "animaj_pocoyo.jpeg",
+          "width": 1920,
+          "height": 1080,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/animaj_pocoyo.jpeg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 1134,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/animaj_pocoyo.jpeg",
+    "filename": "animaj_pocoyo.jpeg",
+    "filesize": 187124,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1137",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1137"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 1134,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/1134"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1125,
+    "date": "2026-04-13T11:51:46",
+    "date_gmt": "2026-04-13T02:51:46",
+    "guid": {
+      "rendered": "http://blog.cinev.com/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png"
+    },
+    "modified": "2026-04-13T11:52:22",
+    "modified_gmt": "2026-04-13T02:52:22",
+    "slug": "ai-animation-for-ip-holder-osmu-mixmedia",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/how-to-create-ai-animation-series-ip-holders/ai-animation-for-ip-holder-osmu-mixmedia/",
+    "title": {
+      "rendered": "ai animation for ip holder- osmu-mixmedia"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1125",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"168\" src=\"https://cinev.com/insights/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-300x168.png\" class=\"attachment-medium size-medium\" alt=\"IP character moving from static illustration to finished AI animation series episode\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-300x168.png 300w, https://cinev.com/insights/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png 1024w, https://cinev.com/insights/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-768x429.png 768w, https://cinev.com/insights/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png 1207w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "IP character moving from static illustration to finished AI animation series episode",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1207,
+      "height": 674,
+      "file": "2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png",
+      "filesize": 1405389,
+      "sizes": {
+        "medium": {
+          "file": "ai-animation-for-ip-holder-osmu-mixmedia-300x168.png",
+          "width": 300,
+          "height": 168,
+          "filesize": 95211,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-300x168.png"
+        },
+        "large": {
+          "file": "ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png",
+          "width": 1024,
+          "height": 572,
+          "filesize": 909069,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png"
+        },
+        "thumbnail": {
+          "file": "ai-animation-for-ip-holder-osmu-mixmedia-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 47685,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-150x150.png"
+        },
+        "medium_large": {
+          "file": "ai-animation-for-ip-holder-osmu-mixmedia-768x429.png",
+          "width": 768,
+          "height": 429,
+          "filesize": 527675,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-768x429.png"
+        },
+        "full": {
+          "file": "ai-animation-for-ip-holder-osmu-mixmedia.png",
+          "width": 1207,
+          "height": 674,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 1121,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png",
+    "filename": "ai-animation-for-ip-holder-osmu-mixmedia.png",
+    "filesize": 1405389,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1125",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1125"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 1121,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/1121"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1051,
+    "date": "2026-04-09T15:20:03",
+    "date_gmt": "2026-04-09T06:20:03",
+    "guid": {
+      "rendered": "http://blog.cinev.com/wp-content/uploads/2026/04/VRM-import-Guide.png"
+    },
+    "modified": "2026-04-09T15:20:20",
+    "modified_gmt": "2026-04-09T06:20:20",
+    "slug": "vrm-import-guide",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/2026-vrm-file-beginners-guide-cinev-tutorial/vrm-import-guide/",
+    "title": {
+      "rendered": "VRM import Guide"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1051",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/04/VRM-import-Guide.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"157\" src=\"https://cinev.com/insights/wp-content/uploads/2026/04/VRM-import-Guide-300x157.png\" class=\"attachment-medium size-medium\" alt=\"Beginner creating an AI animation with a VRM character in CineV\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/04/VRM-import-Guide-300x157.png 300w, https://cinev.com/insights/wp-content/uploads/2026/04/VRM-import-Guide-1024x537.png 1024w, https://cinev.com/insights/wp-content/uploads/2026/04/VRM-import-Guide-768x403.png 768w, https://cinev.com/insights/wp-content/uploads/2026/04/VRM-import-Guide.png 1200w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "Beginner creating an AI animation with a VRM character in CineV",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1200,
+      "height": 629,
+      "file": "2026/04/VRM-import-Guide.png",
+      "filesize": 484841,
+      "sizes": {
+        "medium": {
+          "file": "VRM-import-Guide-300x157.png",
+          "width": 300,
+          "height": 157,
+          "filesize": 46781,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/VRM-import-Guide-300x157.png"
+        },
+        "large": {
+          "file": "VRM-import-Guide-1024x537.png",
+          "width": 1024,
+          "height": 537,
+          "filesize": 353749,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/VRM-import-Guide-1024x537.png"
+        },
+        "thumbnail": {
+          "file": "VRM-import-Guide-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 24393,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/VRM-import-Guide-150x150.png"
+        },
+        "medium_large": {
+          "file": "VRM-import-Guide-768x403.png",
+          "width": 768,
+          "height": 403,
+          "filesize": 220645,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/VRM-import-Guide-768x403.png"
+        },
+        "full": {
+          "file": "VRM-import-Guide.png",
+          "width": 1200,
+          "height": 629,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/VRM-import-Guide.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 1048,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/VRM-import-Guide.png",
+    "filename": "VRM-import-Guide.png",
+    "filesize": 484841,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1051",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1051"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 1048,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/1048"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1037,
+    "date": "2026-04-08T18:58:33",
+    "date_gmt": "2026-04-08T09:58:33",
+    "guid": {
+      "rendered": "http://blog.cinev.com/wp-content/uploads/2026/04/storyboard-beta.png"
+    },
+    "modified": "2026-04-08T19:00:29",
+    "modified_gmt": "2026-04-08T10:00:29",
+    "slug": "storyboard-beta",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/how-to-animate-character-ai/storyboard-beta/",
+    "title": {
+      "rendered": "storyboard-beta"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-1037",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/04/storyboard-beta.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"191\" src=\"https://cinev.com/insights/wp-content/uploads/2026/04/storyboard-beta-300x191.png\" class=\"attachment-medium size-medium\" alt=\"CineV storyboard canvas showing four auto-generated scene cards for a school drama, with character reference and prompt panel open on the left.\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/04/storyboard-beta-300x191.png 300w, https://cinev.com/insights/wp-content/uploads/2026/04/storyboard-beta-768x489.png 768w, https://cinev.com/insights/wp-content/uploads/2026/04/storyboard-beta.png 1024w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "CineV storyboard canvas showing four auto-generated scene cards for a school drama, with character reference and prompt panel open on the left.",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1024,
+      "height": 652,
+      "file": "2026/04/storyboard-beta.png",
+      "filesize": 375410,
+      "sizes": {
+        "medium": {
+          "file": "storyboard-beta-300x191.png",
+          "width": 300,
+          "height": 191,
+          "filesize": 49277,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/storyboard-beta-300x191.png"
+        },
+        "thumbnail": {
+          "file": "storyboard-beta-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 24125,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/storyboard-beta-150x150.png"
+        },
+        "medium_large": {
+          "file": "storyboard-beta-768x489.png",
+          "width": 768,
+          "height": 489,
+          "filesize": 232366,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/storyboard-beta-768x489.png"
+        },
+        "full": {
+          "file": "storyboard-beta.png",
+          "width": 1024,
+          "height": 652,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/storyboard-beta.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 1026,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/storyboard-beta.png",
+    "filename": "storyboard-beta.png",
+    "filesize": 375410,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/1037",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=1037"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 1026,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/1026"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 990,
+    "date": "2026-04-06T11:23:59",
+    "date_gmt": "2026-04-06T02:23:59",
+    "guid": {
+      "rendered": "http://blog.cinev.com/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling.png"
+    },
+    "modified": "2026-04-06T11:25:03",
+    "modified_gmt": "2026-04-06T02:25:03",
+    "slug": "cinev-showcase-directed-ai-storytelling",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/cherryblossom-railway-anime/cinev-showcase-directed-ai-storytelling/",
+    "title": {
+      "rendered": "Cinev Showcase-Directed AI Storytelling"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-990",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"158\" src=\"https://cinev.com/insights/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-300x158.png\" class=\"attachment-medium size-medium\" alt=\"Cinev animation showcase featuring two anime-style school characters on a railway under cherry blossoms\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-300x158.png 300w, https://cinev.com/insights/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-1024x538.png 1024w, https://cinev.com/insights/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-768x403.png 768w, https://cinev.com/insights/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling.png 1200w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "Cinev animation showcase featuring two anime-style school characters on a railway under cherry blossoms",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1200,
+      "height": 630,
+      "file": "2026/04/Cinev-Showcase-Directed-AI-Storytelling.png",
+      "filesize": 716050,
+      "sizes": {
+        "medium": {
+          "file": "Cinev-Showcase-Directed-AI-Storytelling-300x158.png",
+          "width": 300,
+          "height": 158,
+          "filesize": 73243,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-300x158.png"
+        },
+        "large": {
+          "file": "Cinev-Showcase-Directed-AI-Storytelling-1024x538.png",
+          "width": 1024,
+          "height": 538,
+          "filesize": 506407,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-1024x538.png"
+        },
+        "thumbnail": {
+          "file": "Cinev-Showcase-Directed-AI-Storytelling-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 33164,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-150x150.png"
+        },
+        "medium_large": {
+          "file": "Cinev-Showcase-Directed-AI-Storytelling-768x403.png",
+          "width": 768,
+          "height": 403,
+          "filesize": 324660,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-768x403.png"
+        },
+        "full": {
+          "file": "Cinev-Showcase-Directed-AI-Storytelling.png",
+          "width": 1200,
+          "height": 630,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 987,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling.png",
+    "filename": "Cinev-Showcase-Directed-AI-Storytelling.png",
+    "filesize": 716050,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/990",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=990"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 987,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/987"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 899,
+    "date": "2026-04-02T12:25:17",
+    "date_gmt": "2026-04-02T03:25:17",
+    "guid": {
+      "rendered": "http://blog.cinev.com/wp-content/uploads/2026/04/image.png"
+    },
+    "modified": "2026-04-02T12:25:17",
+    "modified_gmt": "2026-04-02T03:25:17",
+    "slug": "image-2",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/2025-chosunilbo-ai-animation-industry/image-2/",
+    "title": {
+      "rendered": "image"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-899",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/04/image.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"191\" src=\"https://cinev.com/insights/wp-content/uploads/2026/04/image-300x191.png\" class=\"attachment-medium size-medium\" alt=\"\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/04/image-300x191.png 300w, https://cinev.com/insights/wp-content/uploads/2026/04/image-768x489.png 768w, https://cinev.com/insights/wp-content/uploads/2026/04/image.png 1024w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1024,
+      "height": 652,
+      "file": "2026/04/image.png",
+      "filesize": 962044,
+      "sizes": {
+        "medium": {
+          "file": "image-300x191.png",
+          "width": 300,
+          "height": 191,
+          "filesize": 89346,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/image-300x191.png"
+        },
+        "thumbnail": {
+          "file": "image-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 37507,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/image-150x150.png"
+        },
+        "medium_large": {
+          "file": "image-768x489.png",
+          "width": 768,
+          "height": 489,
+          "filesize": 448879,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/image-768x489.png"
+        },
+        "full": {
+          "file": "image.png",
+          "width": 1024,
+          "height": 652,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/image.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 897,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/image.png",
+    "filename": "image.png",
+    "filesize": 962044,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/899",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=899"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 897,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/897"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 865,
+    "date": "2026-04-01T20:09:19",
+    "date_gmt": "2026-04-01T11:09:19",
+    "guid": {
+      "rendered": "http://blog.cinev.com/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg"
+    },
+    "modified": "2026-04-01T20:10:41",
+    "modified_gmt": "2026-04-01T11:10:41",
+    "slug": "nisi20260326_0002094895_web_20260326171151_20260328130026984",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/2026-newsis-cinev-ai-animation-cinamon/nisi20260326_0002094895_web_20260326171151_20260328130026984/",
+    "title": {
+      "rendered": "NISI20260326_0002094895_web_20260326171151_20260328130026984"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-865",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"168\" src=\"https://cinev.com/insights/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984-300x168.jpg\" class=\"attachment-medium size-medium\" alt=\"CineV AI 3D animation sample - anime characters with dynamic lighting\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984-300x168.jpg 300w, https://cinev.com/insights/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg 720w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "CineV AI 3D animation sample - anime characters with dynamic lighting",
+    "media_type": "image",
+    "mime_type": "image/jpeg",
+    "media_details": {
+      "width": 720,
+      "height": 404,
+      "file": "2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg",
+      "filesize": 42267,
+      "sizes": {
+        "medium": {
+          "file": "NISI20260326_0002094895_web_20260326171151_20260328130026984-300x168.jpg",
+          "width": 300,
+          "height": 168,
+          "filesize": 9881,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984-300x168.jpg"
+        },
+        "thumbnail": {
+          "file": "NISI20260326_0002094895_web_20260326171151_20260328130026984-150x150.jpg",
+          "width": 150,
+          "height": 150,
+          "filesize": 5471,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984-150x150.jpg"
+        },
+        "full": {
+          "file": "NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg",
+          "width": 720,
+          "height": 404,
+          "mime_type": "image/jpeg",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 835,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg",
+    "filename": "NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg",
+    "filesize": 42267,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/865",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=865"
+        }
+      ],
+      "wp:attached-to": [
+        {
+          "embeddable": true,
+          "post_type": "post",
+          "id": 835,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/posts/835"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 180,
+    "date": "2026-03-20T17:37:26",
+    "date_gmt": "2026-03-20T08:37:26",
+    "guid": {
+      "rendered": "http://blog.cinev.com/wp-content/uploads/2026/03/og-cinev-서비스-소개.png"
+    },
+    "modified": "2026-03-20T17:38:55",
+    "modified_gmt": "2026-03-20T08:38:55",
+    "slug": "og-cinev-%ec%84%9c%eb%b9%84%ec%8a%a4-%ec%86%8c%ea%b0%9c",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://cinev.com/insights/og-cinev-%ec%84%9c%eb%b9%84%ec%8a%a4-%ec%86%8c%ea%b0%9c/",
+    "title": {
+      "rendered": "CineV studio, your character&#8217;s Online filming location"
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "_uag_custom_page_level_css": "",
+      "site-sidebar-layout": "default",
+      "site-content-layout": "",
+      "ast-site-content-layout": "default",
+      "site-content-style": "default",
+      "site-sidebar-style": "default",
+      "ast-global-header-display": "",
+      "ast-banner-title-visibility": "",
+      "ast-main-header-display": "",
+      "ast-hfb-above-header-display": "",
+      "ast-hfb-below-header-display": "",
+      "ast-hfb-mobile-header-display": "",
+      "site-post-title": "",
+      "ast-breadcrumbs-content": "",
+      "ast-featured-img": "",
+      "footer-sml-layout": "",
+      "ast-disable-related-posts": "",
+      "theme-transparent-header-meta": "",
+      "adv-header-id-meta": "",
+      "stick-header-meta": "",
+      "header-above-stick-meta": "",
+      "header-main-stick-meta": "",
+      "header-below-stick-meta": "",
+      "astra-migrate-meta-layouts": "default",
+      "ast-page-background-enabled": "default",
+      "ast-page-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-5)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      },
+      "ast-content-background-meta": {
+        "desktop": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "tablet": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        },
+        "mobile": {
+          "background-color": "var(--ast-global-color-4)",
+          "background-image": "",
+          "background-repeat": "repeat",
+          "background-position": "center center",
+          "background-size": "auto",
+          "background-attachment": "scroll",
+          "background-type": "",
+          "background-media": "",
+          "overlay-type": "",
+          "overlay-color": "",
+          "overlay-opacity": "",
+          "overlay-gradient": ""
+        }
+      }
+    },
+    "class_list": [
+      "post-180",
+      "attachment",
+      "type-attachment",
+      "status-inherit",
+      "hentry"
+    ],
+    "description": {
+      "rendered": "<p class=\"attachment\"><a href='https://cinev.com/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개.png'><img loading=\"lazy\" decoding=\"async\" width=\"300\" height=\"169\" src=\"https://cinev.com/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개-300x169.png\" class=\"attachment-medium size-medium\" alt=\"CineV studio, your character&#039;s Online filming location\" srcset=\"https://cinev.com/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개-300x169.png 300w, https://cinev.com/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개-1024x577.png 1024w, https://cinev.com/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개-768x432.png 768w, https://cinev.com/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개-1536x865.png 1536w, https://cinev.com/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개.png 1600w\" sizes=\"auto, (max-width: 300px) 100vw, 300px\" /></a></p>\n"
+    },
+    "caption": {
+      "rendered": ""
+    },
+    "alt_text": "CineV studio, your character's Online filming location",
+    "media_type": "image",
+    "mime_type": "image/png",
+    "media_details": {
+      "width": 1600,
+      "height": 901,
+      "file": "2026/03/og-cinev-서비스-소개.png",
+      "filesize": 1062811,
+      "sizes": {
+        "medium": {
+          "file": "og-cinev-서비스-소개-300x169.png",
+          "width": 300,
+          "height": 169,
+          "filesize": 62033,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/03/og-cinev-서비스-소개-300x169.png"
+        },
+        "large": {
+          "file": "og-cinev-서비스-소개-1024x577.png",
+          "width": 1024,
+          "height": 577,
+          "filesize": 470050,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/03/og-cinev-서비스-소개-1024x577.png"
+        },
+        "thumbnail": {
+          "file": "og-cinev-서비스-소개-150x150.png",
+          "width": 150,
+          "height": 150,
+          "filesize": 29615,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/03/og-cinev-서비스-소개-150x150.png"
+        },
+        "medium_large": {
+          "file": "og-cinev-서비스-소개-768x432.png",
+          "width": 768,
+          "height": 432,
+          "filesize": 293909,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/03/og-cinev-서비스-소개-768x432.png"
+        },
+        "1536x1536": {
+          "file": "og-cinev-서비스-소개-1536x865.png",
+          "width": 1536,
+          "height": 865,
+          "filesize": 897944,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/03/og-cinev-서비스-소개-1536x865.png"
+        },
+        "full": {
+          "file": "og-cinev-서비스-소개.png",
+          "width": 1600,
+          "height": 901,
+          "mime_type": "image/png",
+          "source_url": "https://blog.cinev.com/wp-content/uploads/2026/03/og-cinev-서비스-소개.png"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": null,
+    "source_url": "https://blog.cinev.com/wp-content/uploads/2026/03/og-cinev-서비스-소개.png",
+    "filename": "og-cinev-서비스-소개.png",
+    "filesize": 1062811,
+    "_links": {
+      "self": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media/180",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://cinev.com/insights/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://cinev.com/insights/wp-json/wp/v2/comments?post=180"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,23 @@
+---
+import { blogRoutes, originPath, renderTemplate, type Route } from '../lib/blog';
+
+export async function getStaticPaths() {
+  return (await blogRoutes()).map(route => ({
+    params: { path: originPath(route.path) },
+    props: { route },
+  }));
+}
+
+interface Props { route: Route }
+const { route } = Astro.props;
+const template = renderTemplate(route);
+---
+<!doctype html>
+<html lang={template.lang}>
+  <head><Fragment set:html={template.head} /></head>
+  <body class={template.bodyClass}>
+    <Fragment set:html={template.before} />
+    <Fragment set:html={template.contentHtml} />
+    <Fragment set:html={template.after} />
+  </body>
+</html>
