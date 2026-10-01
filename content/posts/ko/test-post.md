@@ -7,7 +7,7 @@ categories: []
 tags: []
 author: "user"
 excerpt: ""
-draft: true
+draft: false
 ---
 
 ## 시작하기
