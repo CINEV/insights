@@ -41,9 +41,20 @@ npm run preview
 
 ## 콘텐츠 관리
 
-### 글 작성
+### 글 작성과 초안 미리보기
 
-`content/posts/`에 `.md` 파일을 추가합니다. `path`를 명시하면 파일 이름과 공개 주소를 별도로 관리할 수 있습니다. 기존 글이나 분류 페이지와 주소가 겹치지 않게 지정합니다.
+새 글은 명령으로 만듭니다. 제목, 날짜, 언어, URL, 작성자, 분류가 채워진 Markdown 초안을 생성합니다.
+
+```sh
+npm run post:new -- new-tutorial --title "새로운 CineV 튜토리얼" --lang ko --category tutorials-ko
+npm run dev
+```
+
+생성 파일은 `content/posts/ko/new-tutorial.md`입니다. 브라우저에서 [http://localhost:4321/insights/ko/new-tutorial/](http://localhost:4321/insights/ko/new-tutorial/)을 열고 본문을 작성합니다. 개발 서버는 초안도 보여주며 화면에 **Draft · 초안** 표시를 붙입니다. `npm run build`와 운영 배포는 초안을 제외하므로, `npm run preview`에서는 초안이 보이지 않습니다. 초안은 RSS·검색·사이트맵에도 포함되지 않습니다.
+
+`npm run post:new -- --help`에서 옵션과 카테고리를 확인합니다. 같은 URL이나 파일이 이미 있으면 덮어쓰지 않습니다. 영어는 `--lang en`, 일본어는 `--lang ja`로 만들며 각 언어의 카테고리를 선택합니다. 기본 작성자는 CineV(`user`)이며 `--author jay`로 Jay를 선택할 수 있습니다.
+
+생성한 파일의 본문은 일반 Markdown입니다. 대표 이미지를 쓰려면 `public/images/`에 파일을 추가하고 `image`, `imageAlt`를 작성합니다. 본문 제목은 `##`부터 쓰며, 페이지 제목은 `title`에서 자동으로 표시합니다.
 
 ```md
 ---
@@ -56,7 +67,7 @@ tags: []
 excerpt: "튜토리얼의 짧은 설명입니다."
 image: "/insights/images/tutorial-cover.webp"
 imageAlt: "튜토리얼 화면"
-draft: false
+draft: true
 ---
 
 ## 시작하기
@@ -74,10 +85,25 @@ Markdown으로 본문을 작성합니다.
 | `lang`, `path` | 영어 `/insights/slug/`, 한국어 `/insights/ko/slug/`, 일본어 `/insights/ja/slug/` |
 | `excerpt` | 글 목록·검색·RSS에 쓰는 요약문 |
 | `categories`, `tags` | 기존 분류의 ID 또는 slug. 기존 분류는 `migration/catalog.json` 참조 |
-| `draft` | `true`인 콘텐츠는 공개 글·검색·RSS·사이트맵에서 제외 |
+| `draft` | `true`인 콘텐츠는 로컬 개발 서버에서만 미리보기 가능하며 배포·검색·RSS·사이트맵에서 제외 |
 | `modified` | 수정 시각을 따로 기록할 때 지정 |
 
-`lang`의 기본값은 `en`입니다. `path`를 생략하면 언어와 콘텐츠 파일 ID를 기준으로 주소를 생성합니다. 날짜는 한국 시간으로 표시하며, 시간대 없는 날짜도 한국 시간으로 해석합니다.
+`lang`의 스키마 기본값은 `en`이며, 글 생성 명령의 기본값은 `ko`입니다. `path`를 생략하면 언어와 콘텐츠 파일 ID를 기준으로 주소를 생성합니다. 날짜는 한국 시간으로 표시하며, 시간대 없는 날짜도 한국 시간으로 해석합니다.
+
+### 발행 전 확인
+
+본문, 요약(`excerpt`), 대표 이미지와 대체 텍스트를 확인한 뒤 `draft: false`로 바꿉니다.
+
+```sh
+npm run check
+npm run preview
+```
+
+`check`는 Python 3.9 이상을 사용해 운영 빌드와 글·이미지·링크·RSS·사이트맵 검증을 실행합니다. URL 중복·예약 경로·언어에 맞지 않는 분류·없는 작성자는 빌드를 실패시킵니다. 요약이 비어 있으면 본문에서 목록·검색·RSS 요약을 생성합니다. 새 글은 기존 글의 본문 템플릿을 상속하지 않고 제목·분류·작성자·대표 이미지로 전용 Markdown 화면을 구성합니다.
+
+기본 분류는 `--help`에 표시되는 카테고리 ID 또는 slug를 사용합니다. 새 태그는 frontmatter의 `tags`에 추가하면 목록이 생성됩니다. 새 작성자나 카테고리를 운영에 추가하려면 `migration/catalog.json`의 해당 항목과 메뉴 구성을 함께 관리합니다.
+
+직접 `main`에 push하면 자동 배포됩니다. 리뷰를 거칠 때는 작업 브랜치에서 PR을 만들면 같은 빌드·검증이 실행되며, `main`에 반영된 뒤 배포됩니다. **PR 검증은 배포하지 않습니다.** CI는 `npm run test:publishing`으로 임시 글을 생성해 3개 언어의 새 글 반영과 초안 제외도 검증합니다. 임시 글은 운영 콘텐츠에 추가되지 않습니다.
 
 ### 기존 콘텐츠 수정
 

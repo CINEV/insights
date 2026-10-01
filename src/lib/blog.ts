@@ -19,6 +19,7 @@ export type Route = {
   label?: string;
   snapshotFile?: string;
   lang: string;
+  categoryCounts?: Record<string, number>;
 };
 
 const root = process.cwd();
@@ -39,7 +40,7 @@ export function language(value: string = 'en') {
 export function publicPath(path: string): string {
   const raw = path.startsWith('http') ? new URL(path).pathname : path;
   const decoded = decodeURI(raw).replace(/\/+$/, '');
-  return `${decoded.startsWith('/insights') ? decoded : `/insights${decoded.startsWith('/') ? '' : '/'}${decoded}`}/`;
+  return `${(decoded === '/insights' || decoded.startsWith('/insights/')) ? decoded : `/insights${decoded.startsWith('/') ? '' : '/'}${decoded}`}/`;
 }
 
 export function originPath(path: string): string | undefined {
@@ -108,12 +109,55 @@ export function localize(html: string): string {
       `${prefix}${sourceFor(path) ? publicPath(path) : path}`);
 }
 
-export async function publishedEntries() {
+function validateContent(entries: Entry[]) {
+  const paths = new Map<string, string>();
+  for (const entry of entries) {
+    const raw = entry.data.path;
+    if (raw && (!raw.startsWith('/') || /\/\/|[\s?#\\]/.test(raw) || /(?:^|\/)\.{1,2}(?:\/|$)/.test(decodeURIComponent(raw)) || /%2f|%5c/i.test(raw))) {
+      throw new Error(`${entry.id}: path must be an absolute local path without query, fragment, or traversal`);
+    }
+    const path = entryPath(entry);
+    const lang = language(entry.data.lang);
+    const prefix = lang === 'en' ? '/insights/' : `/insights/${lang}/`;
+    if (!path.startsWith(prefix) || (lang === 'en' && /^\/insights\/(?:ko|ja)\//.test(path))) {
+      throw new Error(`${entry.id}: path does not match lang ${lang}`);
+    }
+    if (/^\/insights\/(?:feed(?:\.xml)?|sitemap(?:_index)?\.xml|search-index\.json|site\.(?:js|css)|404(?:\.html)?)(?:\/|$)/.test(path) || /^\/insights\/(?:wp-content|wp-includes|images|_astro)(?:\/|$)/.test(path)) {
+      throw new Error(`${entry.id}: reserved path ${path}`);
+    }
+    if (paths.has(path)) throw new Error(`Duplicate content path ${path}: ${paths.get(path)} and ${entry.id}`);
+    paths.set(path, entry.id);
+    for (const value of entry.data.categories) {
+      const term = catalog.categories.find(term => String(term.id) === String(value) || term.slug === value);
+      if (!term || language(term.lang || 'en') !== lang) throw new Error(`${entry.id}: unknown category or category language mismatch: ${value}`);
+    }
+    for (const value of entry.data.tags) {
+      const term = catalog.tags.find(term => String(term.id) === String(value) || term.slug === value);
+      if (term ? language(term.lang || 'en') !== lang : !/^[\p{L}\p{N}][\p{L}\p{N}_-]*$/u.test(String(value))) {
+        throw new Error(`${entry.id}: tag must match the post language or be a new simple slug: ${value}`);
+      }
+    }
+    if (!catalog.authors.some(author => String(author.id) === String(entry.data.author) || author.slug === entry.data.author)) {
+      throw new Error(`${entry.id}: unknown author ${entry.data.author}; use an ID or slug from migration/catalog.json`);
+    }
+  }
+}
+
+async function contentEntries(includeDrafts = false) {
   const [posts, pages] = await Promise.all([getCollection('posts'), getCollection('pages')]);
+  validateContent([...posts, ...pages]);
   return {
-    posts: posts.filter(post => !post.data.draft).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
-    pages: pages.filter(page => !page.data.draft),
+    posts: posts.filter(post => includeDrafts || !post.data.draft).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    pages: pages.filter(page => includeDrafts || !page.data.draft),
   };
+}
+
+export async function publishedEntries() {
+  return contentEntries();
+}
+
+export function summary(entry: Entry): string {
+  return plainText(entry.data.excerpt || entryBody(entry)).slice(0, 190);
 }
 
 export function termsFor(entry: Entry, kind: 'categories' | 'tags'): Term[] {
@@ -126,10 +170,17 @@ function matchesTerm(entry: Entry, term: Term, kind: 'categories' | 'tags' | 'au
   return entry.data[kind].some(value => String(value) === String(term.id) || value === term.slug);
 }
 
-export async function blogRoutes(): Promise<Route[]> {
-  const { posts, pages } = await publishedEntries();
+export async function blogRoutes(includeDrafts = import.meta.env.DEV): Promise<Route[]> {
+  // Drafts are visible in the local development server only. Production builds,
+  // RSS, search, and sitemap always use published content.
+  const { posts, pages } = await contentEntries(includeDrafts);
   const routes = new Map<string, Route>();
-  const add = (route: Route) => routes.set(publicPath(route.path), { ...route, path: publicPath(route.path) });
+  const add = (route: Route) => {
+    const path = publicPath(route.path);
+    const previous = routes.get(path);
+    if (previous && (previous.entry || route.entry)) throw new Error(`Content path collides with another page or archive: ${path}`);
+    routes.set(path, { ...route, path });
+  };
   const addArchive = (path: string, entries: Entry[], lang: string, label?: string, template?: string) => {
     const totalPages = Math.max(1, Math.ceil(entries.length / PAGE_SIZE));
     for (let page = 1; page <= totalPages; page++) {
@@ -167,7 +218,8 @@ export async function blogRoutes(): Promise<Route[]> {
     if (entry.collection === 'pages' && load(sourceSnapshot(entry) || '')('body').hasClass('blog')) continue;
     add({ path: entryPath(entry), kind: 'entry', entry, lang: language(entry.data.lang), snapshotFile: entry.data.snapshotFile || entrySource(entry)?.snapshotFile || sourceFor(entryPath(entry))?.snapshotFile });
   }
-  return [...routes.values()];
+  const categoryCounts = Object.fromEntries(catalog.categories.map(term => [publicPath(term.path), posts.filter(post => matchesTerm(post, term, 'categories')).length]));
+  return [...routes.values()].map(route => ({ ...route, categoryCounts }));
 }
 
 export function readingMinutes(entry: Entry): number {
@@ -197,7 +249,7 @@ function cardHtml(entry: Entry, archivePath: string): string {
   return `<article class="post type-post status-publish format-standard ${image ? 'has-post-thumbnail' : ''} hentry ast-grid-common-col ast-full-width ast-article-post ast-width-md-4 ast-archive-post ast-separate-posts" id="post-${escapeHtml(entry.data.wordpressId || entry.id)}" itemtype="https://schema.org/CreativeWork" itemscope>
     <div class="ast-post-format- blog-layout-4 ast-article-inner ast-no-date-box"><div class="post-content ast-grid-common-col">
       ${imageMarkup}<span class="ast-blog-single-element ast-taxonomy-container cat-links default">${categoryMarkup}</span>
-      <h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="${escapeHtml(entryPath(entry))}" rel="bookmark">${escapeHtml(entry.data.title)}</a></h2>
+      ${entry.data.draft ? '<span class="cinev-draft-label">Draft · 초안</span>' : ''}<h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="${escapeHtml(entryPath(entry))}" rel="bookmark">${escapeHtml(entry.data.title)}</a></h2>
       <div class="ast-excerpt-container ast-blog-single-element"><p>${escapeHtml(cardExcerpt(entry, archivePath))}</p></div>
       <header class="entry-header ast-blog-single-element ast-blog-meta-container"><div class="entry-meta"><span class="ast-reading-time">${readingMinutes(entry)} ${readingMinutes(entry) === 1 ? 'minute' : 'minutes'} of reading</span> • <span class="posted-on"><span class="published" itemprop="datePublished"> ${dateLabel(entry)} </span></span></div></header>
       <div class="entry-content clear" itemprop="text"></div>
@@ -232,16 +284,39 @@ function cleanup($: CheerioAPI) {
   });
 }
 
+function markdownArticle(entry: Entry, token: string) {
+  const categories = termsFor(entry, 'categories');
+  const firstCategory = categories[0];
+  const lang = language(entry.data.lang);
+  const home = lang === 'en' ? '/insights/' : `/insights/${lang}/`;
+  const author = catalog.authors.find(item => String(item.id) === String(entry.data.author) || item.slug === entry.data.author)!;
+  const url = `${SITE_URL}${entryPath(entry)}`;
+  const share = `<div class="ast-post-social-sharing cinev-post-share"><span>Share</span><a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}" rel="noopener noreferrer" target="_blank">Facebook</a><a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&amp;text=${encodeURIComponent(entry.data.title)}" rel="noopener noreferrer" target="_blank">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" rel="noopener noreferrer" target="_blank">LinkedIn</a></div>`;
+  return `<article class="post type-post ast-article-single cinev-native-post">
+    ${entry.data.draft ? '<aside class="cinev-draft-banner">Draft · 초안 미리보기 — 배포 빌드에는 포함되지 않습니다.</aside>' : ''}
+    <nav class="cinev-post-breadcrumb" aria-label="Breadcrumb"><a href="${home}">Blog</a>${firstCategory ? ` / <a href="${escapeHtml(publicPath(firstCategory.path))}">${escapeHtml(plainText(firstCategory.name))}</a>` : ''} / <span class="breadcrumb_last">${escapeHtml(entry.data.title)}</span></nav>
+    <header class="entry-header"><span class="cat-links">${categories.map(term => `<a href="${escapeHtml(publicPath(term.path))}">${escapeHtml(plainText(term.name))}</a>`).join(', ')}</span><h1 class="entry-title">${escapeHtml(entry.data.title)}</h1>
+      <div class="entry-meta"><a rel="author" href="${escapeHtml(publicPath(author.path))}"><span class="author-name">${escapeHtml(author.name)}</span></a> · <time class="published" datetime="${entry.data.date.toISOString()}">${dateLabel(entry)}</time> · <span class="ast-reading-time">${readingMinutes(entry)} minutes</span></div>
+    </header>
+    <div class="entry-content">${token}</div>${share}
+  </article>`;
+}
+
 export function renderTemplate(route: Route) {
+  const native = !!route.entry && !sourceSnapshot(route.entry);
   let template = snapshot(route.snapshotFile);
-  if (!template && route.entry) {
-    const candidate = catalog.posts.find(post => language(String(post.lang || 'en')) === route.lang) || catalog.posts[0];
-    template = snapshot(candidate?.snapshotFile || sourceFor(candidate?.path || '')?.snapshotFile);
-  }
+  if (native) template = snapshot(sourceFor(route.lang === 'en' ? '/insights/' : `/insights/${route.lang}/`)?.snapshotFile);
   template ||= snapshot(sourceFor('/insights/')?.snapshotFile || catalog.routes.find(item => /(?:home|archive|index|blog)/.test(item.kind))?.snapshotFile);
   if (!template) throw new Error(`No preserved template available for ${route.path}`);
   const $ = load(template);
   cleanup($);
+  $('.uagb-tax-link-wrap').each((_, element) => {
+    const wrap = $(element), link = wrap.find('a.uagb-tax-link').first();
+    const href = link.attr('href');
+    if (!href) return;
+    const count = route.categoryCounts?.[publicPath(href)];
+    if (count !== undefined) wrap.html(`${$.html(link)}  (${count}) `);
+  });
   const slotToken = 'CINEV_ASTRO_CONTENT_SLOT_8FB203D';
   let contentHtml = '';
   let title = $('title').text();
@@ -249,6 +324,15 @@ export function renderTemplate(route: Route) {
 
   if (route.entry) {
     const entry = route.entry;
+    if (native) {
+      $('#main').html(markdownArticle(entry, slotToken));
+      $('#secondary, #primary > .ast-pagination, #primary > .ast-ajax-pagination-wrapper').remove();
+      $('body').removeClass('blog archive ast-blog-grid-3 ast-blog-layout-4 ast-blog-pagination-type-infinite ast-right-sidebar').addClass('single single-post ast-no-sidebar cinev-markdown-post');
+      $('meta[property^="article:"], meta[name^="twitter:data"], meta[name^="twitter:label"], meta[property^="og:image"], meta[name="twitter:image"]').remove();
+      $('meta[property="og:type"]').attr('content', entry.collection === 'posts' ? 'article' : 'website');
+      $('head').append(`<meta property="article:published_time" content="${entry.data.date.toISOString()}"><meta property="article:modified_time" content="${(entry.data.modified || entry.data.date).toISOString()}">`);
+      $('head').append(`<meta name="author" content="${escapeHtml(catalog.authors.find(author => String(author.id) === String(entry.data.author) || author.slug === entry.data.author)?.name || 'CineV')}">`);
+    }
     title = `${entry.data.title} - CineV`;
     description = plainText(entry.data.description || entry.data.excerpt || entryBody(entry)).slice(0, 160);
     const article = $('#main > article, #primary article').first();
@@ -269,6 +353,7 @@ export function renderTemplate(route: Route) {
     $('meta[name="twitter:data2"]').attr('content', `${readingMinutes(entry)} minutes`);
     const image = entry.data.image;
     if (image) {
+      if (native) $('head').append(`<meta property="og:image" content="${escapeHtml(absoluteUrl(image))}">`);
       $('.ast-single-post-featured-section img').first().attr('src', image).removeAttr('srcset').attr('alt', entry.data.imageAlt);
       $('meta[property="og:image"]').attr('content', absoluteUrl(image));
       $('meta[property="og:image:width"], meta[property="og:image:height"], meta[property="og:image:type"]').remove();
@@ -331,14 +416,16 @@ export function renderTemplate(route: Route) {
   $('link[rel="canonical"]').attr('href', canonical);
   if (!$('link[rel="canonical"]').length) $('head').append(`<link rel="canonical" href="${escapeHtml(canonical)}">`);
   $('meta[property="og:url"]').attr('content', canonical);
-  $('meta[property="og:title"]').attr('content', title);
-  $('meta[property="og:description"], meta[name="description"]').attr('content', description);
+  $('meta[property="og:title"], meta[name="twitter:title"]').attr('content', title);
+  $('meta[property="og:description"], meta[name="description"], meta[name="twitter:description"]').attr('content', description);
+  if (route.entry?.data.draft) $('meta[name="robots"]').attr('content', 'noindex, nofollow');
   $('meta[property="og:locale"]').attr('content', route.lang === 'en' ? 'en_US' : route.lang === 'ko' ? 'ko_KR' : 'ja_JP');
   $('link[rel="next"], link[rel="prev"]').remove();
   if (route.kind === 'archive' && route.page && route.totalPages && route.page < route.totalPages) $('head').append(`<link rel="next" href="${SITE_URL}${route.archivePath}page/${route.page + 1}/">`);
   $('link[type="application/rss+xml"]').attr('href', '/insights/feed.xml');
   const schema = route.entry ? {
     '@context': 'https://schema.org', '@type': route.entry.collection === 'posts' ? 'BlogPosting' : 'WebPage', headline: route.entry.data.title, url: canonical,
+    author: { '@type': 'Person', name: catalog.authors.find(author => String(author.id) === String(route.entry!.data.author) || author.slug === route.entry!.data.author)?.name || 'CineV' },
     datePublished: route.entry.data.date.toISOString(), dateModified: (route.entry.data.modified || route.entry.data.date).toISOString(), inLanguage: route.lang,
     description, ...(route.entry.data.image ? { image: absoluteUrl(route.entry.data.image) } : {}),
     publisher: { '@type': 'Organization', name: 'Cinamon Inc', url: SITE_URL },

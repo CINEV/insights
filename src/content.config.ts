@@ -12,16 +12,16 @@ const publicationDate = z.preprocess(value => {
 }, z.coerce.date());
 
 const schema = z.object({
-  title: z.string(),
+  title: z.string().trim().min(1),
   path: z.string().optional(),
   date: publicationDate,
   modified: publicationDate.optional(),
-  lang: z.string().default('en'),
+  lang: z.enum(['en', 'ko', 'ja']).default('en'),
   excerpt: z.string().default(''),
   description: z.string().optional(),
   categories: z.array(z.union([z.number(), z.string()])).default([]),
   tags: z.array(z.union([z.number(), z.string()])).default([]),
-  author: z.union([z.number(), z.string()]).optional(),
+  author: z.union([z.number(), z.string()]).default('user'),
   image: z.string().optional(),
   imageAlt: z.string().default(''),
   readingMinutes: z.number().optional(),

@@ -54,3 +54,21 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
   html { scroll-behavior: auto; }
   .cinev-static-blog .cinev-slider-ready .swiper-wrapper { transition: none; }
 }
+
+/* New Markdown posts keep the theme shell and render their own article. */
+.cinev-native-post { max-width: 920px; margin: 0 auto; padding: 48px; background: #fff; }
+.cinev-native-post .entry-title { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin: 16px 0 24px; }
+.cinev-native-post .entry-content { font-size: 18px; line-height: 1.8; margin-top: 32px; overflow-wrap: anywhere; }
+.cinev-native-post .entry-content p { margin-bottom: 1.2em; }
+.cinev-native-post .entry-content blockquote { border-left: 4px solid #ccc; padding-left: 24px; margin-inline: 0; }
+.cinev-native-post .entry-content ul, .cinev-native-post .entry-content ol { padding-left: 1.5em; margin-left: 0; }
+.cinev-native-post .cinev-markdown-cover { display: block; margin: 24px auto; }
+.cinev-post-breadcrumb { font-size: 14px; margin-bottom: 24px; overflow-wrap: anywhere; }
+.cinev-post-share { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; padding-top: 24px; border-top: 1px solid #eee; }
+.cinev-draft-banner, .cinev-draft-label { background: #fff1c7; color: #5b4400; padding: 8px 12px; border-radius: 6px; }
+.cinev-draft-banner { margin-bottom: 24px; }
+.cinev-draft-label { display: inline-block; margin: 8px 0; font-size: 13px; }
+@media (max-width: 600px) {
+  .cinev-native-post { padding: 24px 18px; }
+  .cinev-native-post .entry-content { font-size: 17px; }
+}

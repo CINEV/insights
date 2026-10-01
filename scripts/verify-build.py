@@ -5,6 +5,7 @@ import concurrent.futures
 import json
 import re
 import sys
+import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote, unquote, urlsplit
@@ -97,6 +98,23 @@ def main():
     for path in ("feed/index.html", "insights/feed/index.html", "insights/feed.xml", "insights/index.html", ".nojekyll"):
         if not (DIST / path).is_file():
             errors.append(f"Missing Pages compatibility path: {path}")
+    # Check every current published entry, including new Markdown posts. The
+    # import catalog alone cannot verify ongoing publication.
+    try:
+        entries = json.loads((DIST / "search-index.json").read_text())
+        feed_links = {item.findtext("link") for item in ET.parse(DIST / "feed.xml").findall("./channel/item")}
+        sitemap_links = {node.text for node in ET.parse(DIST / "sitemap.xml").findall("{*}url/{*}loc")}
+        for entry in entries:
+            path = entry["path"]
+            if not local_file(path).is_file():
+                errors.append(f"Published content has no generated page: {path}")
+            canonical_path = re.sub(r"/blog/$", "/", path)
+            if "https://cinev.com" + canonical_path not in sitemap_links:
+                errors.append(f"Published content missing from sitemap: {path}")
+            if entry.get("collection") == "posts" and "https://cinev.com" + path not in feed_links:
+                errors.append(f"Published post missing from RSS: {path}")
+    except (OSError, ValueError, ET.ParseError) as exc:
+        errors.append(f"Cannot validate publication indexes: {exc}")
     http_checked = 0
     if options.base_url:
         base = urlsplit(options.base_url)
@@ -131,6 +149,7 @@ def main():
         http_checked = len(http_urls)
     summary = {"posts": len(catalog["posts"]), "pages": len(catalog["pages"]),
                "expectedRoutes": len(expected), "builtHtmlPages": checked,
+               "publishedEntries": len(entries) if 'entries' in locals() else 0,
                "assets": len(catalog.get("assets", [])), "httpChecked": http_checked, "errors": errors}
     print(json.dumps(summary, indent=2, ensure_ascii=False))
     if errors:
