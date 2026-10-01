@@ -45,6 +45,8 @@ npm run preview
 
 새 글은 명령으로 만듭니다. 제목, 날짜, 언어, URL, 작성자, 분류가 채워진 Markdown 초안을 생성합니다.
 
+Codex에서는 `$cinev-new-post` [스킬](.agents/skills/cinev-new-post/SKILL.md)로 기본 양식만 만들 수 있습니다. 스킬은 초안 파일 생성까지만 수행하며 본문은 직접 작성합니다.
+
 ```sh
 npm run post:new -- new-tutorial --title "새로운 CineV 튜토리얼" --lang ko --category tutorials-ko
 npm run dev
