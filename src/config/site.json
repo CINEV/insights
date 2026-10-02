@@ -1,0 +1,33 @@
+{
+  "origin": "https://cinev.com",
+  "base": "/insights",
+  "name": "CineV",
+  "blogName": "CineV Blog",
+  "description": "CineV Blog : Tips & Guides for AI Animation",
+  "defaultImage": "/insights/wp-content/uploads/2026/03/videoframe_29767.png",
+  "twitter": "@studiocinev",
+  "organization": {
+    "name": "Cinamon Inc",
+    "alternateName": "Cinamon",
+    "logo": "/insights/wp-content/uploads/2026/03/cinev-bi-black.png",
+    "sameAs": [
+      "https://instagram.com/studiocinev",
+      "https://x.com/studiocinev",
+      "https://www.youtube.com/@studiocinev",
+      "https://cinev.com"
+    ]
+  },
+  "googleVerification": [
+    "O33xQsUYIMMagdyLzUw5lFnq_fvkYldbOBY8P9STdag",
+    "P6bOi8HkjxQ8sLqGM5YuIs6XI_1YbgGeZgNO82QpvHk",
+    "sXGJaWokgnGqWvbZ7P9-GfA4McNF-RO9Sn3o3ktamfk"
+  ],
+  "analytics": {
+    "googleTagId": "GT-TB7PRSX5",
+    "measurementId": "G-TSDWLF9GH0"
+  },
+  "indexing": {
+    "tags": false,
+    "authors": false
+  }
+}

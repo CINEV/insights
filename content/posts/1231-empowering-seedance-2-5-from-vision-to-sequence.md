@@ -16,6 +16,11 @@ wordpressId: 1231
 snapshotFile: "migration/snapshots/bcdb31b1df1e.html"
 image: "/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png"
 readingMinutes: 28
+seoTitle: "Empowering Seedance 2.5: From Vision to Sequence : CineV"
+socialImage: "/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-scaled.png"
+rssGuid: "https://cinev.com/insights/?p=1231"
+rssEnclosure: {"url": "/insights/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4", "length": 33272361, "type": "video/mp4"}
+translationKey: "wordpress-1218"
 ---
 
 <p class="wp-block-paragraph"><em>A prompt guide built from ByteDance&#8217;s four official Seedance guides.</em></p>

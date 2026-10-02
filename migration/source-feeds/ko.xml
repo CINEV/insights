@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>CineV</title>
+	<atom:link href="https://cinev.com/ko/feed/" rel="self" type="application/rss+xml" />
+	<link>https://cinev.com/insights/</link>
+	<description>CineV Blog : Tips &#38; Guides for AI Animation</description>
+	<lastBuildDate>Wed, 09 Sep 2026 09:52:14 +0000</lastBuildDate>
+	<language>en-us</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.6</generator>
+
+<image>
+	<url>https://blog.cinev.com/wp-content/uploads/2026/03/cropped-favicon100x100-32x32.png</url>
+	<title>CineV</title>
+	<link>https://cinev.com/insights/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>애니메이션 각색에서 중요한 것: 3분 내외 시리즈로 바꿀 때 보는 단계</title>
+		<link>https://cinev.com/insights/ko/animation-adaptation-webtoon-webnovel/</link>
+		
+		<dc:creator><![CDATA[CineV]]></dc:creator>
+		<pubDate>Mon, 07 Sep 2026 03:25:37 +0000</pubDate>
+				<category><![CDATA[튜토리얼]]></category>
+		<category><![CDATA[애니메이션제작]]></category>
+		<category><![CDATA[원작각색]]></category>
+		<category><![CDATA[웹소설IP]]></category>
+		<category><![CDATA[웹툰IP]]></category>
+		<category><![CDATA[콘텐츠기획]]></category>
+		<guid isPermaLink="false">https://cinev.com/insights/?p=1276</guid>
+
+					<description><![CDATA[<p>웹툰·웹소설 IP를 3분 내외 시리즈 애니메이션으로 각색할 때 무엇을 봐야 할까요? 한 화의 길이, 끊는 지점, 클리프행어, 압축과 재배치 기준을 단계별로 설명합니다.</p>
+<p>The post <a href="https://cinev.com/insights/ko/animation-adaptation-webtoon-webnovel/">애니메이션 각색에서 중요한 것: 3분 내외 시리즈로 바꿀 때 보는 단계</a> appeared first on <a href="https://cinev.com/insights">CineV</a>.</p>
+]]></description>
+		
+		
+		<enclosure url="https://cinev-strorge.cinev.com/oss/cinev/cut-mix/origin/6a76f2d8eff37a4ccf23c5de.mp4" length="26977378" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>웹툰·웹소설 IP를 애니메이션으로 만들기 전에 먼저 확인할 것들</title>
+		<link>https://cinev.com/insights/ko/webtoon-webnovel-ip-animation/</link>
+		
+		<dc:creator><![CDATA[CineV]]></dc:creator>
+		<pubDate>Fri, 04 Sep 2026 09:04:21 +0000</pubDate>
+				<category><![CDATA[튜토리얼]]></category>
+		<category><![CDATA[본편제작]]></category>
+		<category><![CDATA[애니메이션제작]]></category>
+		<category><![CDATA[원작각색]]></category>
+		<category><![CDATA[웹소설IP]]></category>
+		<category><![CDATA[웹툰IP]]></category>
+		<category><![CDATA[콘텐츠기획]]></category>
+		<category><![CDATA[트레일러]]></category>
+		<category><![CDATA[파일럿]]></category>
+		<guid isPermaLink="false">https://cinev.com/insights/?p=1269</guid>
+
+					<description><![CDATA[<p>웹툰·웹소설 IP를 애니메이션 본편으로 만들기 전에 무엇을 봐야 할까요? IP 체크 포인트, 본편과 트레일러의 차이, 원작 압축과 각색, 제작 전 준비사항을 정리했습니다.</p>
+<p>The post <a href="https://cinev.com/insights/ko/webtoon-webnovel-ip-animation/">웹툰·웹소설 IP를 애니메이션으로 만들기 전에 먼저 확인할 것들</a> appeared first on <a href="https://cinev.com/insights">CineV</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>Seedance 2.5 프롬프트 작성법: 2.0과 달라진 핵심과 구조화 방법</title>
+		<link>https://cinev.com/insights/ko/seedance-2-5-%ea%b0%80%ec%9e%a5-%ec%9e%98-%ec%93%b0%eb%8a%94-%eb%b2%95-%ea%b3%b5%ec%8b%9d-%ea%b0%80%ec%9d%b4%eb%93%9c-4%ec%a2%85%ec%9c%bc%eb%a1%9c-%ea%b2%80%ec%a6%9d%ed%95%9c-%ed%94%84%eb%a1%ac/</link>
+		
+		<dc:creator><![CDATA[Jay]]></dc:creator>
+		<pubDate>Tue, 11 Aug 2026 14:42:55 +0000</pubDate>
+				<category><![CDATA[Trends]]></category>
+		<guid isPermaLink="false">https://cinev.com/insights/?p=1218</guid>
+
+					<description><![CDATA[<p>TL;DR CineV는 왜 Seedance를 이야기하는가 CineV는 애니메이션을 가장 잘 만드는 생성 AI 플랫폼을 지향한다. 이 문장을 조금 틀어서 읽으면 다른 [&#8230;]</p>
+<p>The post <a href="https://cinev.com/insights/ko/seedance-2-5-%ea%b0%80%ec%9e%a5-%ec%9e%98-%ec%93%b0%eb%8a%94-%eb%b2%95-%ea%b3%b5%ec%8b%9d-%ea%b0%80%ec%9d%b4%eb%93%9c-4%ec%a2%85%ec%9c%bc%eb%a1%9c-%ea%b2%80%ec%a6%9d%ed%95%9c-%ed%94%84%eb%a1%ac/">Seedance 2.5 프롬프트 작성법: 2.0과 달라진 핵심과 구조화 방법</a> appeared first on <a href="https://cinev.com/insights">CineV</a>.</p>
+]]></description>
+		
+		
+		<enclosure url="https://blog.cinev.com/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4" length="33272361" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>CineV 시작하기</title>
+		<link>https://cinev.com/insights/ko/getting-started-with-cinev-ko/</link>
+		
+		<dc:creator><![CDATA[CineV]]></dc:creator>
+		<pubDate>Tue, 13 Jan 2026 15:00:00 +0000</pubDate>
+				<category><![CDATA[튜토리얼]]></category>
+		<guid isPermaLink="false">https://cinev.com/insights/?p=1306</guid>
+
+					<description><![CDATA[<p>CineV는 명확한 단계별 워크플로로 애니메이션 영상을 만들 수 있도록 도와줍니다.</p>
+<p>The post <a href="https://cinev.com/insights/ko/getting-started-with-cinev-ko/">CineV 시작하기</a> appeared first on <a href="https://cinev.com/insights">CineV</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

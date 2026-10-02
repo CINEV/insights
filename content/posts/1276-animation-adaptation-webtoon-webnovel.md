@@ -16,6 +16,11 @@ wordpressId: 1276
 snapshotFile: "migration/snapshots/36850caafc36.html"
 image: "/wp-content/uploads/2026/09/videoframe_57272-1024x576.png"
 readingMinutes: 6
+seoTitle: "애니메이션 각색에서 중요한 것 | 3분 내외 시리즈형 원작 각색"
+description: "웹툰·웹소설 IP를 3분 내외 시리즈 애니메이션으로 각색할 때 무엇을 봐야 할까요? 한 화의 길이, 끊는 지점, 클리프행어, 압축과 재배치 기준을 단계별로 설명합니다."
+socialImage: "/insights/wp-content/uploads/2026/09/videoframe_57272.png"
+rssGuid: "https://cinev.com/insights/?p=1276"
+rssEnclosure: {"url": "/insights/wp-content/migration-external/e62712da84e1f1d2c61e.mp4", "length": 26977378, "type": "video/mp4"}
 ---
 
 <p>애니메이션 각색은 단순 축약이 아니라, 시리즈형 구조에 맞게 다시 설계하는 일입니다.</p>

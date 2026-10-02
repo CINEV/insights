@@ -1,0 +1,66 @@
+[
+  {
+    "source": "/wp-content/migration-external/28879f5d3c945de5bf88.ttf",
+    "target": "/wp-content/migration-fonts/28879f5d3c945de5bf88.woff2",
+    "sourceSha256": "55ebddc0f968968851a4fd781512592c10f5ea248b77b1497f7b4de9a33fc469",
+    "sha256": "ee128549a7293772d0f96dbad86b98ba1c8796e4f37b0044b5a380290fad528d",
+    "sourceBytes": 5320828,
+    "bytes": 2186736
+  },
+  {
+    "source": "/wp-content/migration-external/4a2be2bc2243d807b3da.ttf",
+    "target": "/wp-content/migration-fonts/4a2be2bc2243d807b3da.woff2",
+    "sourceSha256": "4593dfcdc70ee68852606c90d75dfc6e022feda12780a55615239c53c54ef086",
+    "sha256": "0455dacdf0daddfbc97be82f07bfa826636dc14c9817e627b13028212af4d844",
+    "sourceBytes": 5324144,
+    "bytes": 2161396
+  },
+  {
+    "source": "/wp-content/migration-external/6d3b7afc370baf7bef70.ttf",
+    "target": "/wp-content/migration-fonts/6d3b7afc370baf7bef70.woff2",
+    "sourceSha256": "7e79ff3ff0735256d89de9688da2bf3ec5a7d93cafb95059524d4caa5afb99c1",
+    "sha256": "a77c45d20ad7211b04aa414130097cb5e78700cbc47979286505946abdba730c",
+    "sourceBytes": 6159460,
+    "bytes": 2084876
+  },
+  {
+    "source": "/wp-content/migration-external/819a8cac7955b2557641.ttf",
+    "target": "/wp-content/migration-fonts/819a8cac7955b2557641.woff2",
+    "sourceSha256": "6b114c5fa7c3c011794f103180d725eeb6819e5ba7a8aafda65c998b2a9f3cf7",
+    "sha256": "1a8459ff58ca02bec3f22e8dbf07b8961b536bbcf3ffc8fb2121333dc2a3c34e",
+    "sourceBytes": 6160808,
+    "bytes": 2078592
+  },
+  {
+    "source": "/wp-content/migration-external/9462951c13d2dde39d1f.ttf",
+    "target": "/wp-content/migration-fonts/9462951c13d2dde39d1f.woff2",
+    "sourceSha256": "5ebb0def0fe9e7c853253eca8ec9c1066adc479f2e248533b412ed0c6a663abc",
+    "sha256": "eadaced61c8201c532543e35e181a0f8ed1607946e0e889e6b351b011d41ee71",
+    "sourceBytes": 6159248,
+    "bytes": 2097140
+  },
+  {
+    "source": "/wp-content/migration-external/d0d8ba0faa04d071cfa3.ttf",
+    "target": "/wp-content/migration-fonts/d0d8ba0faa04d071cfa3.woff2",
+    "sourceSha256": "2c7c3e9c133e288e4c46573f139ac49eb93de013c3bfa70bd44873c69ec22685",
+    "sha256": "6d2f5d422af4b8ff64a0bf3f68683d83b1196d777f3b7382b943282203642f69",
+    "sourceBytes": 5318344,
+    "bytes": 2193496
+  },
+  {
+    "source": "/wp-content/migration-external/d95f1d2677a1cd27febf.ttf",
+    "target": "/wp-content/migration-fonts/d95f1d2677a1cd27febf.woff2",
+    "sourceSha256": "a3910e15eea0451ffbea62e894e951ea9f7c812c8b4b5e947593b6ecc2d4b057",
+    "sha256": "d398c8941fc96547cc082edac10095c2659f0831a42c75415c5d708b41a808ef",
+    "sourceBytes": 5319680,
+    "bytes": 2208972
+  },
+  {
+    "source": "/wp-content/migration-external/e223aaf1c6d9ebcef7cd.ttf",
+    "target": "/wp-content/migration-fonts/e223aaf1c6d9ebcef7cd.woff2",
+    "sourceSha256": "c733940a7dc687142848b30a491e97138ed58dc58c4cae33c44e3ee52da411cb",
+    "sha256": "41b659489e19d81f0b5c356fd5c5cfa1b71b09c90091674af3b0be057adbacad",
+    "sourceBytes": 6163256,
+    "bytes": 2050324
+  }
+]

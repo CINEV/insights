@@ -16,6 +16,10 @@ wordpressId: 1306
 snapshotFile: "migration/snapshots/395a4c481757.html"
 image: "/wp-content/uploads/2026/09/01-overview-1024x500.webp"
 readingMinutes: 2
+seoTitle: "CineV 시작하기"
+description: "CineV의 기본 사용법을 스토리보드 만들기부터 이미지 편집, 애니메이션 제작, Cut & Mix, 내보내기까지 단계별로 안내합니다."
+socialImage: "/insights/wp-content/uploads/2026/09/01-overview.webp"
+rssGuid: "https://cinev.com/insights/?p=1306"
 ---
 
 <p class="wp-block-paragraph">CineV는 명확한 단계별 워크플로로 애니메이션 영상을 만들 수 있도록 도와줍니다.</p>

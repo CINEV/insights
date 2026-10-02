@@ -16,6 +16,10 @@ wordpressId: 1307
 snapshotFile: "migration/snapshots/c326c0f90734.html"
 image: "/wp-content/uploads/2026/09/01-overview-1024x500.webp"
 readingMinutes: 1
+seoTitle: "CineVの始め方"
+description: "CineVの基本的な使い方を、ストーリーボードの作成から画像編集、アニメーション化、Cut & Mix、エクスポートまで順を追って紹介します。"
+socialImage: "/insights/wp-content/uploads/2026/09/01-overview.webp"
+rssGuid: "https://cinev.com/insights/?p=1307"
 ---
 
 <p class="wp-block-paragraph">CineVなら、明確なステップに沿ってアニメーション動画を制作できます。</p>

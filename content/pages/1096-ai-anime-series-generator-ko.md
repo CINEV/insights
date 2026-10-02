@@ -15,6 +15,11 @@ format: "wordpress-html"
 wordpressId: 1096
 snapshotFile: "migration/snapshots/45785613b340.html"
 image: "/wp-content/uploads/2026/03/og-cinev-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%86%8C%EA%B0%9C-1024x577.png"
+seoTitle: "Animate Your IP Characters, Launch Your Own Anime Series : CineV"
+description: "Register your IP character once and direct your own anime series. no studio, no animation skills needed. CineV gives creators a virtual 3D studio."
+socialImage: "/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개.png"
+pageType: "AboutPage"
+translationKey: "wordpress-414"
 ---
 
 <section class="wp-block-uagb-container uagb-layout-flex uagb-block-ip-hero-wrap alignfull uagb-is-root-container uagb-block-b2575748 alignfull uagb-is-root-container"><div class="uagb-container__video-wrap"><video autoplay loop muted playsinline><source src="/wp-content/uploads/2026/03/showcase_video1.mp4" type="video/mp4"/></video></div>

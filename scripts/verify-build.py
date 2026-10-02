@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Check migrated route coverage and local links against a real Astro build."""
+"""Check current publication and local links against a real Astro build."""
 import argparse
 import concurrent.futures
 import json
+import hashlib
 import re
 import sys
 import xml.etree.ElementTree as ET
@@ -36,9 +37,15 @@ class Links(HTMLParser):
         self.remote_wordpress = []
         self.titles = 0
         self.h1 = 0
+        self.noindex = False
+        self.canonical = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "meta" and attrs.get("name") == "robots":
+            self.noindex = "noindex" in attrs.get("content", "")
+        if tag == "link" and attrs.get("rel") == "canonical":
+            self.canonical = attrs.get("href")
         if tag == "title":
             self.titles += 1
         if tag == "h1":
@@ -59,25 +66,47 @@ class Links(HTMLParser):
 
 def main():
     args = argparse.ArgumentParser(description=__doc__)
+    args.add_argument('--migration-baseline', action='store_true', help='Also require every original WordPress route to remain published')
     args.add_argument('--base-url', help='Also check HTTP responses from a running local preview, e.g. http://localhost:4321')
     options = args.parse_args()
     if not DIST.is_dir():
         sys.exit("Run npm run build first: dist/ is missing")
     catalog = json.loads((ROOT / "migration/catalog.json").read_text())
     errors = []
-    expected = {r["path"] for r in catalog["routes"]}
-    expected |= {r["path"] for r in catalog["posts"] + catalog["pages"]}
+    deployment = json.loads((DIST / "asset-manifest.json").read_text())
+    # Historical content and pagination can disappear when editors unpublish
+    # posts. Current content is checked below; immutable migration coverage is
+    # an explicit audit, never an ongoing publication requirement.
+    expected = {PREFIX + '/' + language_prefix for language_prefix in ('', 'ko/', 'ja/')}
+    expected |= {r["path"] for kind in ('categories', 'tags', 'authors') for r in catalog[kind]}
+    if options.migration_baseline:
+        expected |= {r["path"] for r in catalog["routes"]}
+        expected |= {r["path"] for r in catalog["posts"] + catalog["pages"]}
     for route in sorted(expected):
         file = local_file(route)
         if file is None or not file.is_file():
-            errors.append(f"Missing migrated route: {route}")
+            errors.append(f"Missing required route: {route}")
+    for asset in deployment["assets"]:
+        target = DIST / asset["path"].lstrip("/")
+        if not target.is_file() or target.stat().st_size != asset["bytes"] or hashlib.sha256(target.read_bytes()).hexdigest() != asset["sha256"]:
+            errors.append(f"Missing or changed deployment asset: {asset['path']}")
+        if re.match(r"^/insights/(?:wp-content|wp-includes|images|_astro)/", asset["path"]):
+            if (DIST / asset["path"].removeprefix("/insights/")).is_file():
+                errors.append(f"Duplicated root asset: {asset['path']}")
+    for path in deployment["excluded"]:
+        if (DIST / path.lstrip("/")).is_file() or (DIST / ("insights/" + path.lstrip("/"))).is_file():
+            errors.append(f"Archived-only asset included in deployment: {path}")
+    dist_bytes = sum(file.stat().st_size for file in DIST.rglob("*") if file.is_file())
+    if dist_bytes >= 1_000_000_000:
+        errors.append(f"Pages output must remain below 1 GB: {dist_bytes} bytes")
     checked = 0
     missing = set()
     http_urls = set()
     for file in DIST.rglob("*.html"):
         checked += 1
         if file.name == "index.html" and file.parent.name == "feed":
-            if file.read_bytes() != (DIST / "feed.xml").read_bytes():
+            source = file.parent.parent / "feed.xml"
+            if not source.is_file() or file.read_bytes() != source.read_bytes():
                 errors.append(f"Invalid RSS alias: {file.relative_to(DIST)}")
             continue
         parser = Links()
@@ -92,25 +121,34 @@ def main():
             if target is not None and not target.is_file():
                 missing.add((str(file.relative_to(DIST)), url))
     errors += [f"Broken local link: {source} -> {url}" for source, url in sorted(missing)]
-    for endpoint in ("sitemap_index.xml", "sitemap.xml", "feed.xml"):
+    for endpoint in ("sitemap_index.xml", "sitemap.xml", "feed.xml", "llms.txt", "robots.txt"):
         if not (DIST / endpoint).is_file():
             errors.append(f"Missing compatibility endpoint: {endpoint}")
-    for path in ("feed/index.html", "insights/feed/index.html", "insights/feed.xml", "insights/index.html", ".nojekyll"):
+    compatibility_paths = ["insights/index.html", ".nojekyll"]
+    for language_prefix in ("", "ko/", "ja/", "all/"):
+        for mirror in ("", "insights/"):
+            compatibility_paths.extend([f"{mirror}{language_prefix}feed.xml", f"{mirror}{language_prefix}feed/index.html"])
+    for path in compatibility_paths:
         if not (DIST / path).is_file():
             errors.append(f"Missing Pages compatibility path: {path}")
     # Check every current published entry, including new Markdown posts. The
     # import catalog alone cannot verify ongoing publication.
     try:
         entries = json.loads((DIST / "search-index.json").read_text())
-        feed_links = {item.findtext("link") for item in ET.parse(DIST / "feed.xml").findall("./channel/item")}
+        feed_links = {item.findtext("link") for item in ET.parse(DIST / "all/feed.xml").findall("./channel/item")}
         sitemap_links = {node.text for node in ET.parse(DIST / "sitemap.xml").findall("{*}url/{*}loc")}
         for entry in entries:
             path = entry["path"]
             if not local_file(path).is_file():
                 errors.append(f"Published content has no generated page: {path}")
-            canonical_path = re.sub(r"/blog/$", "/", path)
-            if "https://cinev.com" + canonical_path not in sitemap_links:
-                errors.append(f"Published content missing from sitemap: {path}")
+            metadata = Links()
+            metadata.feed(local_file(path).read_text())
+            if not metadata.canonical:
+                errors.append(f"Published content has no canonical: {path}")
+            elif metadata.noindex and metadata.canonical in sitemap_links:
+                errors.append(f"Noindex content included in sitemap: {path}")
+            elif not metadata.noindex and metadata.canonical not in sitemap_links:
+                errors.append(f"Indexable content missing from sitemap: {path}")
             if entry.get("collection") == "posts" and "https://cinev.com" + path not in feed_links:
                 errors.append(f"Published post missing from RSS: {path}")
     except (OSError, ValueError, ET.ParseError) as exc:
@@ -121,15 +159,14 @@ def main():
         if base.scheme not in ('http', 'https') or base.hostname not in ('localhost', '127.0.0.1', '::1'):
             sys.exit('--base-url must point to a local preview')
         # Also request the assets loaded indirectly by CSS (fonts/backgrounds).
-        for asset in catalog.get('assets', []):
-            path = asset.get('localPath') or asset.get('path')
-            if path:
-                http_urls.add(PREFIX + '/' + str(path).removeprefix('public/').lstrip('/'))
+        for asset in deployment['assets']:
+            http_urls.add(asset['path'])
         for css in DIST.rglob('*.css'):
             for match in re.finditer(r'''url\(\s*["']?([^\s)"']+)''', css.read_text(errors='replace')):
                 if match.group(1).startswith('/'):
                     http_urls.add(match.group(1))
         http_urls |= {PREFIX + '/' + name for name in ('sitemap.xml', 'sitemap_index.xml', 'feed.xml', 'search-index.json', 'site.js', 'site.css')}
+        http_urls |= {PREFIX + '/' + language_prefix + endpoint for language_prefix in ('', 'ko/', 'ja/', 'all/') for endpoint in ('feed.xml', 'feed/')}
 
 
         def check_http(path):
@@ -148,9 +185,9 @@ def main():
             errors += [result for result in pool.map(check_http, sorted(http_urls)) if result]
         http_checked = len(http_urls)
     summary = {"posts": len(catalog["posts"]), "pages": len(catalog["pages"]),
-               "expectedRoutes": len(expected), "builtHtmlPages": checked,
+               "expectedRoutes": len(expected), "migrationBaseline": options.migration_baseline, "builtHtmlPages": checked,
                "publishedEntries": len(entries) if 'entries' in locals() else 0,
-               "assets": len(catalog.get("assets", [])), "httpChecked": http_checked, "errors": errors}
+               "assets": len(deployment["assets"]), "distBytes": dist_bytes, "httpChecked": http_checked, "errors": errors}
     print(json.dumps(summary, indent=2, ensure_ascii=False))
     if errors:
         sys.exit(1)

@@ -72,3 +72,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
   .cinev-native-post { padding: 24px 18px; }
   .cinev-native-post .entry-content { font-size: 17px; }
 }
+
+/* Translation links share the existing article typography. */
+.cinev-translations { display:flex; flex-wrap:wrap; gap:.6em; font-size:.875rem; margin:0 0 1.25rem; }
+.cinev-translations [aria-current="page"] { font-weight:600; }

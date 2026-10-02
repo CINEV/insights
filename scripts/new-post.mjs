@@ -1,6 +1,7 @@
 import { mkdir, readFile, readdir, lstat, writeFile } from 'node:fs/promises';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { randomUUID } from 'node:crypto';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const languages = ['en', 'ko', 'ja'];
@@ -158,6 +159,7 @@ async function reservedPaths(catalog) {
   for (const group of ['routes', 'posts', 'pages', 'categories', 'tags', 'authors']) {
     for (const item of catalog[group] || []) reserve(item.path, `기존 ${group} 주소`);
   }
+  reserve('/insights/insights/', 'Pages 호환 배포 경로');
   for (const lang of languages) {
     reserve(prefix(lang), '언어별 글 목록');
     for (const slug of ['blog', 'tag', 'author', 'page', 'feed', 'wp-content', 'wp-includes', '404']) reserve(`${prefix(lang)}${slug}/`, '블로그의 예약 경로');
@@ -238,6 +240,7 @@ async function main() {
   }
   const data = {
     title: options.title, date: seoulDate(), lang: options.lang, path,
+    rssGuid: `urn:uuid:${randomUUID()}`,
     categories, tags, author: author.slug, excerpt: options.excerpt || '',
     ...(options.image ? { image: options.image, imageAlt: options['image-alt'] || '' } : {}),
     draft: true,

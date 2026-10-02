@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>CineV</title>
+	<atom:link href="https://cinev.com/ja/feed/" rel="self" type="application/rss+xml" />
+	<link>https://cinev.com/insights/</link>
+	<description>CineV Blog : Tips &#38; Guides for AI Animation</description>
+	<lastBuildDate>Wed, 09 Sep 2026 09:53:01 +0000</lastBuildDate>
+	<language>en-us</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.6</generator>
+
+<image>
+	<url>https://blog.cinev.com/wp-content/uploads/2026/03/cropped-favicon100x100-32x32.png</url>
+	<title>CineV</title>
+	<link>https://cinev.com/insights/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Seedance 2.5を最大限に使いこなす</title>
+		<link>https://cinev.com/insights/ja/seedance-2-5%e3%82%92%e6%9c%80%e5%a4%a7%e9%99%90%e3%81%ab%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99/</link>
+		
+		<dc:creator><![CDATA[Jay]]></dc:creator>
+		<pubDate>Tue, 11 Aug 2026 15:17:49 +0000</pubDate>
+				<category><![CDATA[トレンド]]></category>
+		<guid isPermaLink="false">https://cinev.com/insights/?p=1235</guid>
+
+					<description><![CDATA[<p>この記事は Seedance 2.5 専用である。2.0 向けの記述とどこが違うかは「Seedance 2.5で実際に何が変わったのか」の章にまとめた。 CineVがSeedanceを語る理由 CineVは、アニメーションを最もうまく作れる生成AIプラットフォームを目指している。この一文を少しひねって読むと、別の意味がひとつ立ち上がる。 Seedanceの公式ドキュメントには次の警告がある。Dreamina Seedance 2.5 and Dreamina Seedance 2.0 series models do not support [&#8230;]</p>
+<p>The post <a href="https://cinev.com/insights/ja/seedance-2-5%e3%82%92%e6%9c%80%e5%a4%a7%e9%99%90%e3%81%ab%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99/">Seedance 2.5を最大限に使いこなす</a> appeared first on <a href="https://cinev.com/insights">CineV</a>.</p>
+]]></description>
+		
+		
+		<enclosure url="https://blog.cinev.com/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4" length="33272361" type="video/mp4" />
+
+			</item>
+		<item>
+		<title>企業IPをAIでアニメ化するには？制作前に確認すべきワークフロー</title>
+		<link>https://cinev.com/insights/ja/corporate-ip-ai-anime-workflow/</link>
+		
+		<dc:creator><![CDATA[CineV]]></dc:creator>
+		<pubDate>Mon, 22 Jun 2026 08:54:28 +0000</pubDate>
+				<category><![CDATA[トレンド]]></category>
+		<guid isPermaLink="false">https://cinev.com/insights/?p=1197</guid>
+
+					<description><![CDATA[<p>企業IPのAIアニメ化とは、キャラクター設定やブランドの世界観をもとに、短いアニメーション映像やパイロット映像へ展開する制作プロセスです。 単に画像を生成するだけではありません。キャラクターの一貫性、シーンの流れ、利用目的、権利範囲を整理しながら、企画段階で映像化の可能性を検証することが重要です。 企業IPをアニメ化する前に決めるべきこと AIで企業IPをアニメ化する前に、まず次の5つを整理します。 たとえば、日本市場を意識する場合は、アニメ調のキャラクター表現、短尺動画で伝わるシーン構成、SNSや提案資料で使いやすいフォーマットを先に決めておくと、制作判断がしやすくなります。 AIアニメ制作の基本ワークフロー 企業IPをAIでアニメ化する場合、制作は次の流れで進めると整理しやすくなります。 1. IPとキャラクター情報を整理する キャラクターの性格、外見、関係性、作品の背景をまとめます。ここが曖昧なままだと、シーンごとに表情や雰囲気が変わりやすくなります。 2. シーン案を作る 次に、キャラクターが登場する短いシーン案を作ります。広告用、作品紹介用、企業提案用など、利用目的によって必要なシーンは変わります。 3. キャラクターの一貫性を確認する AIアニメ制作では、キャラクターがシーンごとに別人のように見えないかを確認する必要があります。表情、服装、髪型、色、印象が保たれているかを見比べながら進めます。 4. 短いパイロット映像を作る 最初から長い映像を作るのではなく、短いパイロット映像で検証します。パイロット映像があると、社内確認、提案、広告テスト、パートナーとの協議に使いやすくなります。 5. [&#8230;]</p>
+<p>The post <a href="https://cinev.com/insights/ja/corporate-ip-ai-anime-workflow/">企業IPをAIでアニメ化するには？制作前に確認すべきワークフロー</a> appeared first on <a href="https://cinev.com/insights">CineV</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>VRMファイルとは？無料でAIアニメを作る初心者ガイド</title>
+		<link>https://cinev.com/insights/ja/vrm%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a8%e3%81%af%ef%bc%9f%e7%84%a1%e6%96%99%e3%81%a7ai%e3%82%a2%e3%83%8b%e3%83%a1%e3%82%92%e4%bd%9c%e3%82%8b%e5%88%9d%e5%bf%83%e8%80%85%e3%82%ac%e3%82%a4/</link>
+		
+		<dc:creator><![CDATA[CineV]]></dc:creator>
+		<pubDate>Thu, 09 Apr 2026 06:50:24 +0000</pubDate>
+				<category><![CDATA[トレンド]]></category>
+		<guid isPermaLink="false">https://cinev.com/insights/?p=1066</guid>
+
+					<description><![CDATA[<p>VRMファイルをどこかで見つけた、あるいは「VRMを使えばいい」と言われた。でも、それが何なのかわからないし、アニメーションを作ったこともない。 大丈夫です。このガイドはゼロから始めます。 VRMファイルとは？ VRMファイルは3Dキャラクターファイルです。キャラクターの外見、体のプロポーション、動作の設定をひとつにまとめたコンテナだと考えてください。 このフォーマットはもともとバーチャルアバター（VTuber、VRChat、バーチャル会議）向けに作られましたが、アニメーション制作の出発点としても広く使われるようになりました。.vrmファイルがあれば、すぐに動かせるキャラクターが手元にある状態です。 VRMファイルはどこで入手できますか？ 自分のキャラクターがあるかどうかによって、2つの方法があります。 Option A: VRoid Studioで作る（無料） VRoid StudioはPixivが提供する無料のキャラクター制作アプリです。スライダーで顔・髪・服装・体型を選ぶだけで、絵を描くスキルは不要です。完成したら.vrmファイルとして書き出せます。 VRoid Studioのダウンロード: vroid.com/en/studio 書き出しは2クリックほどで完了します。Camera/Exporterを開き、Exportを選択して、デスクトップに保存してください。 Option B: 無料のVRMモデルをダウンロードする [&#8230;]</p>
+<p>The post <a href="https://cinev.com/insights/ja/vrm%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a8%e3%81%af%ef%bc%9f%e7%84%a1%e6%96%99%e3%81%a7ai%e3%82%a2%e3%83%8b%e3%83%a1%e3%82%92%e4%bd%9c%e3%82%8b%e5%88%9d%e5%bf%83%e8%80%85%e3%82%ac%e3%82%a4/">VRMファイルとは？無料でAIアニメを作る初心者ガイド</a> appeared first on <a href="https://cinev.com/insights">CineV</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+		<item>
+		<title>CineVの始め方</title>
+		<link>https://cinev.com/insights/ja/getting-started-with-cinev-ja/</link>
+		
+		<dc:creator><![CDATA[CineV]]></dc:creator>
+		<pubDate>Tue, 13 Jan 2026 15:00:00 +0000</pubDate>
+				<category><![CDATA[ガイド]]></category>
+		<guid isPermaLink="false">https://cinev.com/insights/?p=1307</guid>
+
+					<description><![CDATA[<p>CineVなら、明確なステップに沿ってアニメーション動画を制作できます。</p>
+<p>The post <a href="https://cinev.com/insights/ja/getting-started-with-cinev-ja/">CineVの始め方</a> appeared first on <a href="https://cinev.com/insights">CineV</a>.</p>
+]]></description>
+		
+		
+		
+			</item>
+	</channel>
+</rss>

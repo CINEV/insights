@@ -15,6 +15,10 @@ format: "wordpress-html"
 wordpressId: 195
 snapshotFile: "migration/snapshots/9ff514927c9b.html"
 image: ""
+seoTitle: "Blog : CineV"
+description: "Discover animation tips, AI filmmaking guides, and creator stories on the CineV Blog. Learn how to bring your IP characters to life with a virtual 3D studio, no skills needed."
+socialImage: "/insights/wp-content/uploads/2026/03/videoframe_29767.png"
+pageType: "AboutPage"
 ---
 
 <div class="wp-block-uagb-container uagb-block-a5ad9865 alignfull uagb-is-root-container"><div class="uagb-container__shape uagb-container__shape-top"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path class="uagb-container__shape-fill" d="M738,99l262-93V0H0v5.6L738,99z"></path></svg></div><div class="uagb-container-inner-blocks-wrap">

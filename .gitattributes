@@ -1,0 +1,2 @@
+# Preserve the exported WordPress RSS snapshots, including their original spacing.
+migration/source-feeds/*.xml -whitespace

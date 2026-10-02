@@ -1,17 +1,13 @@
-import { cp, mkdir, readdir, writeFile, readFile, rm } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { prepareAssets } from './lib/deployment-assets.mjs';
 
-// GitHub Pages has no rewrite rules. Preserve root paths for the existing
-// frontend proxy and publish the same files under /insights for direct visits.
 const dist = resolve('dist');
-const prefix = resolve(dist, 'insights');
-await rm(prefix, { recursive: true, force: true });
-await mkdir(resolve(dist, 'feed'), { recursive: true });
-await writeFile(resolve(dist, 'feed/index.html'), await readFile(resolve(dist, 'feed.xml')));
-await writeFile(resolve(dist, '.nojekyll'), '');
-const entries = await readdir(dist);
-await mkdir(prefix);
-for (const entry of entries) {
-  if (entry !== 'insights') await cp(resolve(dist, entry), resolve(prefix, entry), { recursive: true });
+for (const language of ['', 'ko', 'ja', 'all']) {
+  await mkdir(resolve(dist, language, 'feed'), { recursive: true });
+  await writeFile(resolve(dist, language, 'feed/index.html'), await readFile(resolve(dist, language, 'feed.xml')));
 }
-console.log('Prepared GitHub Pages paths at / and /insights/');
+const aliases = JSON.parse(await readFile(resolve('migration/asset-aliases.json'), 'utf8'));
+const fontConversions = JSON.parse(await readFile(resolve('migration/font-conversions.json'), 'utf8'));
+const report = await prepareAssets({ dist, publicDir: resolve('public'), aliases, fontConversions });
+console.log(`Prepared Pages: ${report.assets.length} assets in one shared directory, ${report.excluded.length} archived files excluded; ${(report.assetBytes / 1048576).toFixed(1)} MiB of assets.`);

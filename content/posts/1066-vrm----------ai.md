@@ -16,6 +16,11 @@ wordpressId: 1066
 snapshotFile: "migration/snapshots/edf3ebb8f9f1.html"
 image: "/wp-content/uploads/2026/04/VRM-import-Guide-1024x537.png"
 readingMinutes: 1
+seoTitle: "VRMファイルとは？無料でAIアニメを作る初心者ガイド : CineV"
+description: "VRMファイルを知らなくても大丈夫。このガイドではVRMの入手方法から、CineVで無料アニメーションを作るまでをゼロから解説します。"
+socialImage: "/insights/wp-content/uploads/2026/04/VRM-import-Guide.png"
+rssGuid: "https://cinev.com/insights/?p=1066"
+translationKey: "wordpress-1048"
 ---
 
 <p class="wp-block-paragraph">VRMファイルをどこかで見つけた、あるいは「VRMを使えばいい」と言われた。でも、それが何なのかわからないし、アニメーションを作ったこともない。</p>

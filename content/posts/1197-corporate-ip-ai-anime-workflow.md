@@ -16,6 +16,10 @@ wordpressId: 1197
 snapshotFile: "migration/snapshots/fcdf8f4dadc2.html"
 image: "/wp-content/uploads/2026/06/image-1024x562.png"
 readingMinutes: 1
+seoTitle: "企業IPをAIでアニメ化するには？制作前に確認すべきワークフロー : CineV"
+description: "企業IPをAIでアニメ化する前に、企画整理、キャラクター設定、制作範囲、確認体制をどう設計するか。制作判断に必要な流れを解説します。"
+socialImage: "/insights/wp-content/uploads/2026/06/image-1024x562.png"
+rssGuid: "https://cinev.com/insights/?p=1197"
 ---
 
 <p class="wp-block-paragraph">企業IPのAIアニメ化とは、キャラクター設定やブランドの世界観をもとに、短いアニメーション映像やパイロット映像へ展開する制作プロセスです。</p>

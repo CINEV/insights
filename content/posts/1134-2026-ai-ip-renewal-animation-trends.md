@@ -16,6 +16,10 @@ wordpressId: 1134
 snapshotFile: "migration/snapshots/a3201a31abba.html"
 image: "/wp-content/uploads/2026/04/animaj_pocoyo-1024x576.jpeg"
 readingMinutes: 7
+seoTitle: "How AI is giving IP a second life : CineV"
+description: "Pocoyo nearly disappeared when its studio went bankrupt. Solo Leveling needed Sony and a year per episode. Here is what AI animation means for IP holders who have neither."
+socialImage: "/insights/wp-content/uploads/2026/04/animaj_pocoyo.jpeg"
+rssGuid: "https://cinev.com/insights/?p=1134"
 ---
 
 <p class="wp-block-paragraph">Pocoyo almost didn&#8217;t make it.</p>

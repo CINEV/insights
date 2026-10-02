@@ -16,6 +16,10 @@ wordpressId: 1302
 snapshotFile: "migration/snapshots/a814ba580dcb.html"
 image: "/wp-content/uploads/2026/09/01-overview-1024x500.webp"
 readingMinutes: 2
+seoTitle: "Getting Started with CineV"
+description: "CineV helps you create animated videos with a clear, step-by-step workflow."
+socialImage: "/insights/wp-content/uploads/2026/09/01-overview.webp"
+rssGuid: "https://cinev.com/insights/?p=1302"
 ---
 
 <p class="wp-block-paragraph">CineV helps you create animated videos with a clear, step-by-step workflow.</p>

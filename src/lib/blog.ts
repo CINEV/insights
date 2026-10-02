@@ -2,6 +2,9 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { load, type CheerioAPI } from 'cheerio';
+import site from '../config/site.json';
+import importedTranslations from '../../migration/translations.json';
+import { seoHead } from './seo';
 
 export type Entry = CollectionEntry<'posts'> | CollectionEntry<'pages'>;
 export type Term = { id: number | string; slug: string; name: string; path: string; lang?: string; [key: string]: unknown };
@@ -20,6 +23,10 @@ export type Route = {
   snapshotFile?: string;
   lang: string;
   categoryCounts?: Record<string, number>;
+  publishedWordpressPaths?: Record<string, string>;
+  noindex?: boolean;
+  redirectTo?: string;
+  translations?: { lang: string; path: string }[];
 };
 
 const root = process.cwd();
@@ -27,7 +34,7 @@ const catalogFile = resolve(root, 'migration/catalog.json');
 export const catalog: Catalog = JSON.parse(readFileSync(catalogFile, 'utf8'));
 const snapshotCache = new Map<string, string>();
 const PAGE_SIZE = 6;
-export const SITE_URL = 'https://cinev.com';
+export const SITE_URL = site.origin;
 
 export function absoluteUrl(value: string): string {
   return new URL(value, SITE_URL).toString();
@@ -98,6 +105,10 @@ export function cleanFragment(html: string): string {
 
 export function localize(html: string): string {
   return html
+    .replace(/(href=["'])(?:https?:\/\/(?:blog\.)?cinev\.com)?\/insights\/\?(?:p|page_id)=(\d+)(["'])/g, (match, prefix, id, quote) => {
+      const entry = [...catalog.posts, ...catalog.pages].find(entry => String(entry.id) === id);
+      return entry ? `${prefix}${publicPath(entry.path)}${quote}` : match;
+    })
     .replace(/https?:\/\/blog\.cinev\.com(?=\/wp-(?:content|includes)\/)/g, '')
     .replace(/https?:\/\/43\.200\.218\.52(?::80)?(?=\/wp-(?:content|includes)\/)/g, '')
     .replace(/([("'=,\s])\/(wp-(?:content|includes)\/)/g, '$1/insights/$2')
@@ -111,7 +122,18 @@ export function localize(html: string): string {
 
 function validateContent(entries: Entry[]) {
   const paths = new Map<string, string>();
+  const translations = new Map<string, string>();
+  const guids = new Set<string>();
   for (const entry of entries) {
+    if (entry.data.translationKey) {
+      const key = `${entry.data.translationKey}:${entry.data.lang}`;
+      if (translations.has(key)) throw new Error(`Duplicate translation language ${key}: ${translations.get(key)} and ${entry.id}`);
+      translations.set(key, entry.id);
+    }
+    if (entry.collection === 'posts' && entry.data.rssGuid) {
+      if (guids.has(entry.data.rssGuid)) throw new Error(`Duplicate RSS GUID: ${entry.data.rssGuid}`);
+      guids.add(entry.data.rssGuid);
+    }
     const raw = entry.data.path;
     if (raw && (!raw.startsWith('/') || /\/\/|[\s?#\\]/.test(raw) || /(?:^|\/)\.{1,2}(?:\/|$)/.test(decodeURIComponent(raw)) || /%2f|%5c/i.test(raw))) {
       throw new Error(`${entry.id}: path must be an absolute local path without query, fragment, or traversal`);
@@ -122,7 +144,7 @@ function validateContent(entries: Entry[]) {
     if (!path.startsWith(prefix) || (lang === 'en' && /^\/insights\/(?:ko|ja)\//.test(path))) {
       throw new Error(`${entry.id}: path does not match lang ${lang}`);
     }
-    if (/^\/insights\/(?:feed(?:\.xml)?|sitemap(?:_index)?\.xml|search-index\.json|site\.(?:js|css)|404(?:\.html)?)(?:\/|$)/.test(path) || /^\/insights\/(?:wp-content|wp-includes|images|_astro)(?:\/|$)/.test(path)) {
+    if (/^\/insights\/(?:feed(?:\.xml)?|sitemap(?:_index)?\.xml|search-index\.json|llms\.txt|robots\.txt|analytics\.js|legacy-links\.js|site\.(?:js|css)|404(?:\.html)?)(?:\/|$)/.test(path) || /^\/insights\/(?:ko|ja|all)\/feed(?:\.xml)?(?:\/|$)/.test(path) || /^\/insights\/(?:insights|wp-content|wp-includes|images|_astro)(?:\/|$)/.test(path)) {
       throw new Error(`${entry.id}: reserved path ${path}`);
     }
     if (paths.has(path)) throw new Error(`Duplicate content path ${path}: ${paths.get(path)} and ${entry.id}`);
@@ -181,11 +203,11 @@ export async function blogRoutes(includeDrafts = import.meta.env.DEV): Promise<R
     if (previous && (previous.entry || route.entry)) throw new Error(`Content path collides with another page or archive: ${path}`);
     routes.set(path, { ...route, path });
   };
-  const addArchive = (path: string, entries: Entry[], lang: string, label?: string, template?: string) => {
+  const addArchive = (path: string, entries: Entry[], lang: string, label?: string, template?: string, noindex = false, redirectTo?: string) => {
     const totalPages = Math.max(1, Math.ceil(entries.length / PAGE_SIZE));
     for (let page = 1; page <= totalPages; page++) {
       const pagePath = page === 1 ? path : `${publicPath(path)}page/${page}/`;
-      add({ path: pagePath, kind: 'archive', lang, label, entries: entries.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE), page, totalPages, archivePath: publicPath(path), snapshotFile: sourceFor(pagePath)?.snapshotFile || template });
+      add({ path: pagePath, kind: 'archive', lang, label, noindex, redirectTo, entries: entries.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE), page, totalPages, archivePath: publicPath(path), snapshotFile: sourceFor(pagePath)?.snapshotFile || template });
     }
   };
 
@@ -208,7 +230,9 @@ export async function blogRoutes(includeDrafts = import.meta.env.DEV): Promise<R
     for (const term of terms) {
       const filtered = posts.filter(post => matchesTerm(post, term, kind));
       const lang = language(term.lang || (publicPath(term.path).startsWith('/insights/ko/') ? 'ko' : publicPath(term.path).startsWith('/insights/ja/') ? 'ja' : 'en'));
-      addArchive(term.path, filtered, lang, plainText(term.name), sourceFor(term.path)?.snapshotFile);
+      addArchive(term.path, filtered, lang, plainText(term.name), sourceFor(term.path)?.snapshotFile,
+        kind === 'tags' ? !site.indexing.tags : kind === 'authors' && !site.indexing.authors,
+        kind === 'authors' && !site.indexing.authors ? '/insights/' : undefined);
     }
   }
   // Content pages override archive aliases with the same public URL.
@@ -219,7 +243,26 @@ export async function blogRoutes(includeDrafts = import.meta.env.DEV): Promise<R
     add({ path: entryPath(entry), kind: 'entry', entry, lang: language(entry.data.lang), snapshotFile: entry.data.snapshotFile || entrySource(entry)?.snapshotFile || sourceFor(entryPath(entry))?.snapshotFile });
   }
   const categoryCounts = Object.fromEntries(catalog.categories.map(term => [publicPath(term.path), posts.filter(post => matchesTerm(post, term, 'categories')).length]));
-  return [...routes.values()].map(route => ({ ...route, categoryCounts }));
+  const publishedWordpressPaths = Object.fromEntries(posts.filter(post => !post.data.draft && post.data.wordpressId !== undefined)
+    .map(post => [String(post.data.wordpressId), entryPath(post)]));
+  const published = [...posts, ...pages].filter(entry => !entry.data.draft && !entry.data.noindex);
+  return [...routes.values()].map(route => {
+    let translations: { lang: string; path: string }[] = [];
+    const key = route.entry?.data.translationKey;
+    if (key && !route.entry?.data.draft && !route.entry?.data.noindex) {
+      translations = published.filter(entry => entry.data.translationKey === key)
+        .map(entry => ({ lang: language(entry.data.lang), path: entryPath(entry) }));
+    } else if (route.kind === 'archive' && !route.noindex) {
+      const term = catalog.categories.find(term => publicPath(term.path) === route.archivePath);
+      const group = term && importedTranslations.terms.find(group => Object.values(group).includes(Number(term.id)));
+      if (group) translations = Object.entries(group).flatMap(([lang, id]) => {
+        const translated = catalog.categories.find(term => term.id === id);
+        const path = translated && publicPath(translated.path) + ((route.page || 1) > 1 ? `page/${route.page}/` : '');
+        return path && routes.has(path) ? [{ lang, path }] : [];
+      });
+    }
+    return { ...route, categoryCounts, publishedWordpressPaths, translations: translations.length > 1 ? translations : [] };
+  });
 }
 
 export function readingMinutes(entry: Entry): number {
@@ -302,7 +345,55 @@ function markdownArticle(entry: Entry, token: string) {
   </article>`;
 }
 
+// Reconcile only Astra-generated recommendations. Authored body links remain
+// unchanged and are checked by the build verifier if their target disappears.
+function refreshLegacyRecommendations($: CheerioAPI, publishedPaths: Record<string, string>) {
+  const originalPosts = new Map(catalog.posts.map(post => [publicPath(post.path), String(post.id)]));
+  const originalIds = new Set(catalog.posts.map(post => String(post.id)));
+  const linkedPostId = (href: string) => {
+    try {
+      const url = new URL(href, SITE_URL);
+      if (![new URL(SITE_URL).hostname, 'blog.cinev.com', '43.200.218.52'].includes(url.hostname)) return;
+      const id = url.searchParams.get('p');
+      return id && originalIds.has(id) ? id : originalPosts.get(publicPath(url.pathname));
+    } catch { return; }
+  };
+  $('.ast-single-related-posts-container .ast-related-post').each((_, element) => {
+    const card = $(element);
+    const id = card.attr('class')?.match(/(?:^|\s)post-(\d+)(?:\s|$)/)?.[1]
+      || linkedPostId(card.find('.ast-related-post-title a[href]').first().attr('href') || '');
+    if (!id) return;
+    const path = publishedPaths[id];
+    if (!path) { card.remove(); return; }
+    card.find('a[href]').each((_, anchor) => {
+      const link = $(anchor);
+      if (linkedPostId(link.attr('href') || '') === id) link.attr('href', path);
+    });
+  });
+  $('.post-navigation .nav-previous, .post-navigation .nav-next').each((_, element) => {
+    const item = $(element);
+    item.find('a[href]').each((_, anchor) => {
+      const link = $(anchor), id = linkedPostId(link.attr('href') || '');
+      if (!id) return;
+      const path = publishedPaths[id];
+      if (path) link.attr('href', path);
+      else item.remove();
+    });
+  });
+  $('.ast-single-related-posts-container').each((_, element) => {
+    if (!$(element).find('.ast-related-post').length) $(element).remove();
+  });
+  $('.post-navigation').each((_, element) => {
+    if (!$(element).find('a[href]').length) $(element).remove();
+  });
+}
+
 export function renderTemplate(route: Route) {
+  if (route.redirectTo) {
+    const destination = escapeHtml(route.redirectTo);
+    return { head: `<title>CineV Blog</title><meta name="robots" content="noindex, follow"><link rel="canonical" href="${SITE_URL}${destination}"><meta http-equiv="refresh" content="0; url=${destination}">`,
+      before: `<main><p><a href="${destination}">Continue to CineV Blog</a></p></main>`, after: '', contentHtml: '', bodyClass: '', lang: route.lang };
+  }
   const native = !!route.entry && !sourceSnapshot(route.entry);
   let template = snapshot(route.snapshotFile);
   if (native) template = snapshot(sourceFor(route.lang === 'en' ? '/insights/' : `/insights/${route.lang}/`)?.snapshotFile);
@@ -328,13 +419,8 @@ export function renderTemplate(route: Route) {
       $('#main').html(markdownArticle(entry, slotToken));
       $('#secondary, #primary > .ast-pagination, #primary > .ast-ajax-pagination-wrapper').remove();
       $('body').removeClass('blog archive ast-blog-grid-3 ast-blog-layout-4 ast-blog-pagination-type-infinite ast-right-sidebar').addClass('single single-post ast-no-sidebar cinev-markdown-post');
-      $('meta[property^="article:"], meta[name^="twitter:data"], meta[name^="twitter:label"], meta[property^="og:image"], meta[name="twitter:image"]').remove();
-      $('meta[property="og:type"]').attr('content', entry.collection === 'posts' ? 'article' : 'website');
-      $('head').append(`<meta property="article:published_time" content="${entry.data.date.toISOString()}"><meta property="article:modified_time" content="${(entry.data.modified || entry.data.date).toISOString()}">`);
-      $('head').append(`<meta name="author" content="${escapeHtml(catalog.authors.find(author => String(author.id) === String(entry.data.author) || author.slug === entry.data.author)?.name || 'CineV')}">`);
+
     }
-    title = `${entry.data.title} - CineV`;
-    description = plainText(entry.data.description || entry.data.excerpt || entryBody(entry)).slice(0, 160);
     const article = $('#main > article, #primary article').first();
     if (!article.length) throw new Error(`No entry article found in template for ${route.path}`);
     article.find('.entry-content').first().html(slotToken);
@@ -347,17 +433,10 @@ export function renderTemplate(route: Route) {
     article.find('a[rel="author"]').attr('title', `View all posts by ${authorName}`).attr('href', publicPath(author?.path || '/author/user/'));
     article.find('.ast-reading-time').text(`${readingMinutes(entry)} ${readingMinutes(entry) === 1 ? 'minute' : 'minutes'} of reading`);
     article.find('.cat-links').html(termsFor(entry, 'categories').map(term => `<a href="${escapeHtml(publicPath(term.path))}" rel="category tag">${escapeHtml(plainText(term.name))}</a>`).join(', '));
-    $('meta[property="article:published_time"]').attr('content', entry.data.date.toISOString());
-    $('meta[property="article:modified_time"]').attr('content', (entry.data.modified || entry.data.date).toISOString());
-    $('meta[name="author"], meta[name="twitter:data1"]').attr('content', authorName);
-    $('meta[name="twitter:data2"]').attr('content', `${readingMinutes(entry)} minutes`);
     const image = entry.data.image;
     if (image) {
-      if (native) $('head').append(`<meta property="og:image" content="${escapeHtml(absoluteUrl(image))}">`);
       $('.ast-single-post-featured-section img').first().attr('src', image).removeAttr('srcset').attr('alt', entry.data.imageAlt);
-      $('meta[property="og:image"]').attr('content', absoluteUrl(image));
-      $('meta[property="og:image:width"], meta[property="og:image:height"], meta[property="og:image:type"]').remove();
-    } else if (!sourceSnapshot(entry)) $('meta[property^="og:image"]').remove();
+    }
     article.find('.ast-post-social-sharing a[href]').each((_, element) => {
       const link = $(element);
       try {
@@ -384,6 +463,7 @@ export function renderTemplate(route: Route) {
       if (image) article.find('.entry-header').first().after(`<img class="cinev-markdown-cover" src="${escapeHtml(image)}" alt="${escapeHtml(entry.data.imageAlt)}">`);
       $('.post-navigation, .ast-single-related-posts-container').remove();
     }
+    if (route.publishedWordpressPaths) refreshLegacyRecommendations($, route.publishedWordpressPaths);
     contentHtml = entryBody(entry);
   } else {
     const row = $('#main .ast-row').first();
@@ -401,47 +481,40 @@ export function renderTemplate(route: Route) {
       $('#primary').append(infinite);
     }
     if (route.label) {
-      title = `${route.label}${route.page && route.page > 1 ? ` - Page ${route.page}` : ''} - CineV`;
+      title = `${route.label}${route.page && route.page > 1 ? ` - Page ${route.page}` : ''} : CineV`;
+      description = sourceFor(route.path) ? description : `${route.label} · ${site.description}`;
       const archiveHeading = $('.ast-archive-title').first();
       if (archiveHeading.length) archiveHeading.text(route.label);
       else $('#main').prepend(`<header class="ast-archive-description"><h1 class="page-title ast-archive-title">${escapeHtml(route.label)}</h1></header>`);
     }
+    if (!route.label && route.page && route.page > 1) title = `${site.blogName} - Page ${route.page} : ${site.name}`;
     if (!route.entries?.length) $('#main .ast-row').html('<p class="cinev-empty-archive">No posts yet.</p>');
   }
 
-  const canonicalPath = route.path.replace(/\/blog\/$/, '/').replace(/\/blog\/page\/(\d+)\/$/, '/page/$1/');
-  const canonical = `${SITE_URL}${canonicalPath}`;
+  if (route.translations?.length) {
+    const names: Record<string, string> = { en: 'English', ko: '한국어', ja: '日本語' };
+    const links = route.translations.map(item => item.lang === route.lang
+      ? `<span lang="${item.lang}" aria-current="page">${names[item.lang]}</span>`
+      : `<a lang="${item.lang}" hreflang="${item.lang}" href="${escapeHtml(item.path)}">${names[item.lang]}</a>`).join(' <span aria-hidden="true">/</span> ');
+    const nav = `<nav class="cinev-translations" aria-label="${route.lang === 'ko' ? '다른 언어' : route.lang === 'ja' ? '他の言語' : 'Other languages'}">${links}</nav>`;
+    if (route.entry) $('#main > article, #primary article').first().prepend(nav);
+    else $('#main').prepend(nav);
+  }
   $('html').attr('lang', route.lang);
-  $('title').text(title);
-  $('link[rel="canonical"]').attr('href', canonical);
-  if (!$('link[rel="canonical"]').length) $('head').append(`<link rel="canonical" href="${escapeHtml(canonical)}">`);
-  $('meta[property="og:url"]').attr('content', canonical);
-  $('meta[property="og:title"], meta[name="twitter:title"]').attr('content', title);
-  $('meta[property="og:description"], meta[name="description"], meta[name="twitter:description"]').attr('content', description);
-  if (route.entry?.data.draft) $('meta[name="robots"]').attr('content', 'noindex, nofollow');
-  $('meta[property="og:locale"]').attr('content', route.lang === 'en' ? 'en_US' : route.lang === 'ko' ? 'ko_KR' : 'ja_JP');
-  $('link[rel="next"], link[rel="prev"]').remove();
-  if (route.kind === 'archive' && route.page && route.totalPages && route.page < route.totalPages) $('head').append(`<link rel="next" href="${SITE_URL}${route.archivePath}page/${route.page + 1}/">`);
-  $('link[type="application/rss+xml"]').attr('href', '/insights/feed.xml');
-  const schema = route.entry ? {
-    '@context': 'https://schema.org', '@type': route.entry.collection === 'posts' ? 'BlogPosting' : 'WebPage', headline: route.entry.data.title, url: canonical,
-    author: { '@type': 'Person', name: catalog.authors.find(author => String(author.id) === String(route.entry!.data.author) || author.slug === route.entry!.data.author)?.name || 'CineV' },
-    datePublished: route.entry.data.date.toISOString(), dateModified: (route.entry.data.modified || route.entry.data.date).toISOString(), inLanguage: route.lang,
-    description, ...(route.entry.data.image ? { image: absoluteUrl(route.entry.data.image) } : {}),
-    publisher: { '@type': 'Organization', name: 'Cinamon Inc', url: SITE_URL },
-  } : { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, url: canonical, inLanguage: route.lang, description };
+  $('title, link[rel="canonical"], link[rel="next"], link[rel="prev"], link[hreflang], meta[name="description"], meta[name="robots"], meta[name="author"], meta[property^="og:"], meta[property^="article:"], meta[name^="twitter:"]').remove();
+  $('a[href*="/author/"]').each((_, element) => {
+    if (!site.indexing.authors) $(element).replaceWith($('<span>').addClass('author-name').html($(element).html() || ''));
+  });
+  $('link[type="application/rss+xml"]').remove();
+  $('head').append(`<link rel="alternate" type="application/rss+xml" title="CineV ${route.lang}" href="/insights/${route.lang === 'en' ? '' : route.lang + '/'}feed.xml">`);
   $('head').append('<link rel="stylesheet" href="/insights/site.css">');
   $('body').append('<script src="/insights/site.js" defer></script>');
-  // Navigation and assets use local URLs, while crawlers and social previews
-  // need absolute metadata. Write these after localizing the preserved head.
   const $head = load(localize($('head').html() || ''), null, false);
-  $head('link[rel="canonical"]').attr('href', canonical);
-  $head('meta[property="og:url"]').attr('content', canonical);
-  $head('meta[property="og:image"], meta[name="twitter:image"]').each((_, element) => {
-    const meta = $head(element), image = meta.attr('content');
-    if (image?.startsWith('/')) meta.attr('content', absoluteUrl(image));
-  });
-  $head.root().append(`<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>`);
+  const author = route.entry ? catalog.authors.find(author => String(author.id) === String(route.entry!.data.author) || author.slug === route.entry!.data.author) : undefined;
+  const category = route.entry ? termsFor(route.entry, 'categories')[0] : undefined;
+  $head.root().append('<script src="/insights/legacy-links.js" defer></script>');
+  $head.root().append(seoHead(route, { title, description }, author, category));
+  if (route.kind === 'archive' && route.page && route.totalPages && route.page < route.totalPages) $head.root().append(`<link rel="next" href="${SITE_URL}${route.archivePath}page/${route.page + 1}/">`);
   const body = localize($('body').html() || '');
   const [before, after = ''] = body.split(slotToken);
   return { head: $head.html(), before, after, contentHtml, bodyClass: $('body').attr('class') || '', lang: route.lang };

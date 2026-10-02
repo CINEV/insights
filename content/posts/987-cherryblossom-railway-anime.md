@@ -16,6 +16,10 @@ wordpressId: 987
 snapshotFile: "migration/snapshots/1590294a8d0f.html"
 image: "/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling-1024x538.png"
 readingMinutes: 1
+seoTitle: "A Cherry Blossom Railway Anime Scene Directed in CineV : CineV"
+description: "Explore how this animation was created in Cinev using scene blocking, character motion, directed camera work, and shot-by-shot AI enhancement."
+socialImage: "/insights/wp-content/uploads/2026/04/Cinev-Showcase-Directed-AI-Storytelling.png"
+rssGuid: "https://blog.cinev.com/?p=987"
 ---
 
 <figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">

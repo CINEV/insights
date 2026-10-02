@@ -16,6 +16,10 @@ wordpressId: 897
 snapshotFile: "migration/snapshots/3395e2600dcb.html"
 image: "/wp-content/uploads/2026/04/image.png"
 readingMinutes: 2
+seoTitle: "AI Is Reshaping the Animation Industry -CineV Featured in Chosun Ilbo : CineV"
+description: "AI now handles up to 95% of animation production, cutting costs by 60–70% and production time in half. See why Chosun Ilbo named CineV as a Korean startup leading this shift."
+socialImage: "/insights/wp-content/uploads/2026/04/image.png"
+rssGuid: "https://blog.cinev.com/?p=897"
 ---
 
 <div class="wp-block-uagb-container uagb-block-7a23a879 alignfull uagb-is-root-container">

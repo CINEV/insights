@@ -34,6 +34,40 @@ URL_PATTERN = re.compile(r"(?:https?:)?//[^\s<>\"'()]+")
 CSS_URL_PATTERN = re.compile(r"url\(\s*(['\"]?)(.*?)\1\s*\)", re.I)
 CSS_IMPORT_PATTERN = re.compile(r"@import\s+(?:url\()?['\"]([^'\"]+)['\"]", re.I)
 LOCK = threading.Lock()
+PRESERVED_FRONTMATTER_KEYS = {"rssGuid", "rssEnclosure", "translationKey"}
+
+
+def preserved_frontmatter(source: str) -> dict[str, str]:
+    """Keep selected authored YAML blocks verbatim without a YAML dependency.
+
+    The importer emits JSON-compatible YAML, but editors can use plain YAML
+    scalars, folded strings, comments, or nested enclosure mappings. Retain
+    whole top-level blocks instead of attempting to decode them as JSON.
+    """
+    lines = source.splitlines(keepends=True)
+    if not lines or lines[0].strip() != "---":
+        return {}
+    closing = next((index for index, line in enumerate(lines[1:], 1) if line.strip() == "---" and not line.startswith((" ", "\t"))), None)
+    if closing is None:
+        return {}
+    starts = []
+    for index in range(1, closing):
+        match = re.match(r'''^(?:([A-Za-z_][A-Za-z0-9_-]*)|"([A-Za-z_][A-Za-z0-9_-]*)"|'([A-Za-z_][A-Za-z0-9_-]*)')\s*:''', lines[index])
+        if match:
+            starts.append((index, next(value for value in match.groups() if value is not None)))
+    preserved = {}
+    for offset, (start, key) in enumerate(starts):
+        if key in PRESERVED_FRONTMATTER_KEYS:
+            end = starts[offset + 1][0] if offset + 1 < len(starts) else closing
+            preserved[key] = "".join(lines[start:end]).rstrip("\r\n")
+    return preserved
+
+
+def content_document(frontmatter: dict, content: str, preserved: dict[str, str] | None = None) -> str:
+    preserved = preserved or {}
+    generated = [key + ": " + json.dumps(value, ensure_ascii=False) for key, value in frontmatter.items() if key not in preserved]
+    blocks = generated + list(preserved.values())
+    return "---\n" + "\n".join(blocks) + "\n---\n\n" + content.strip() + "\n"
 
 
 def request(url: str) -> tuple[bytes, dict, str]:
@@ -234,13 +268,8 @@ def main():
         return records
 
     raw = {kind: api(kind) for kind in ("posts", "pages", "categories", "tags", "users")}
-    featured_ids = sorted({item.get("featured_media", 0) for kind in ("posts", "pages") for item in raw[kind]} - {0})
-    raw["media"] = []
-    if featured_ids:
-        media_url = ORIGIN + "/wp-json/wp/v2/media?per_page=100&include=" + ",".join(map(str, featured_ids))
-        media_payload, _, _ = request(media_url)
-        raw["media"] = json.loads(media_payload)
-        (source_root / "api/media.json").write_text(json.dumps(raw["media"], ensure_ascii=False, indent=2))
+    # Keep the complete attachment library, including unreferenced originals.
+    raw["media"] = api("media")
     featured_urls = {item["id"]: item.get("media_details", {}).get("sizes", {}).get("large", {}).get("source_url", item.get("source_url", "")) for item in raw["media"]}
     # Save raw public API alongside source snapshots for a complete recovery path.
     (root / "migration/source-api").mkdir(parents=True, exist_ok=True)
@@ -465,11 +494,30 @@ def main():
             content = normalize_html(item["content"]["rendered"], asset_map)
             frontmatter = {key: record[key] for key in ("id", "title", "slug", "path", "date", "modified", "categories", "tags", "lang", "author", "sourceUrl")}
             frontmatter["excerpt"] = re.sub(r"<[^>]+>", "", html.unescape(record["excerpt"])).strip()
+            seo = item.get("yoast_head_json", {})
+            for source, target in (("title", "seoTitle"), ("description", "description")):
+                if seo.get(source):
+                    frontmatter[target] = seo[source]
+            if seo.get("og_image"):
+                image = normalize_html(seo["og_image"][0]["url"], asset_map)
+                frontmatter["socialImage"] = "/insights" + image if image.startswith("/wp-") else image
+            if any("AboutPage" in node.get("@type", []) for node in seo.get("schema", {}).get("@graph", [])):
+                frontmatter["pageType"] = "AboutPage"
+            if seo.get("robots", {}).get("index") == "noindex":
+                frontmatter["noindex"] = True
             frontmatter["format"] = "wordpress-html"
             frontmatter["wordpressId"] = record["id"]
+            if kind == "posts" and item.get("guid", {}).get("rendered"):
+                frontmatter["rssGuid"] = html.unescape(item["guid"]["rendered"])
+            translations_file = root / "migration/translations.json"
+            if translations_file.exists():
+                for group in json.loads(translations_file.read_text())["posts"]:
+                    if record["id"] in group.values():
+                        frontmatter["translationKey"] = "wordpress-" + str(min(group.values()))
             frontmatter["snapshotFile"] = routes[record["path"]]["snapshotFile"]
             destination = root / record["contentFile"]
             destination.parent.mkdir(parents=True, exist_ok=True)
+            preserved = preserved_frontmatter(destination.read_text()) if destination.exists() else {}
             record["featuredImage"] = normalize_html(featured_urls.get(record["featuredMedia"], ""), asset_map)
             snapshot = snapshots.get(record["path"], "")
             frontmatter["image"] = record["featuredImage"]
@@ -481,8 +529,7 @@ def main():
                 home_path = "/insights/" if record["lang"] == "en" else "/insights/" + record["lang"] + "/"
                 record["displayExcerpt"] = record["displayExcerpts"].get(home_path, next(iter(record["displayExcerpts"].values())))
             if not destination.exists() or args.overwrite_content:
-                block = "---\n" + "\n".join(key + ": " + json.dumps(value, ensure_ascii=False) for key, value in frontmatter.items()) + "\n---\n\n" + content.strip() + "\n"
-                destination.write_text(block)
+                destination.write_text(content_document(frontmatter, content, preserved))
             record["excerpt"] = normalize_html(record["excerpt"], asset_map)
 
     # Guessed pagination and sitemap entries are published only when an actual

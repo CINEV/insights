@@ -16,6 +16,11 @@ wordpressId: 1235
 snapshotFile: "migration/snapshots/239dfa18afc1.html"
 image: "/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png"
 readingMinutes: 9
+seoTitle: "Seedance 2.5を最大限に使いこなす : CineV"
+socialImage: "/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-scaled.png"
+rssGuid: "https://cinev.com/insights/?p=1235"
+rssEnclosure: {"url": "/insights/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4", "length": 33272361, "type": "video/mp4"}
+translationKey: "wordpress-1218"
 ---
 
 <p class="wp-block-paragraph"><em>この記事は Seedance 2.5 専用である。2.0 向けの記述とどこが違うかは「Seedance 2.5で実際に何が変わったのか」の章にまとめた。</em></p>

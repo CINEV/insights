@@ -16,6 +16,11 @@ wordpressId: 1218
 snapshotFile: "migration/snapshots/5ca121782a83.html"
 image: "/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png"
 readingMinutes: 22
+seoTitle: "Seedance 2.5 프롬프트 작성법: 2.0과 달라진 핵심과 구조화 방법 : CineV"
+socialImage: "/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-scaled.png"
+rssGuid: "https://cinev.com/insights/?p=1218"
+rssEnclosure: {"url": "/insights/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4", "length": 33272361, "type": "video/mp4"}
+translationKey: "wordpress-1218"
 ---
 
 <figure class="wp-block-image alignfull size-large"><img loading="lazy" decoding="async" width="1024" height="578" src="/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png" alt="" class="wp-image-1222" srcset="/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png 1024w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-300x169.png 300w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-768x433.png 768w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-1536x867.png 1536w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-2048x1156.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>

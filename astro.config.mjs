@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
+import site from './src/config/site.json' with { type: 'json' };
 import { unified } from '@astrojs/markdown-remark';
 
 // Only this independent blog is rebuilt when Markdown changes. The existing
 // frontend strips /insights while proxying to this origin. The postbuild step
-// also provides /insights paths for direct access on GitHub Pages.
+// provides document aliases and one shared /insights asset library on Pages.
 export default defineConfig({
-  site: 'https://cinev.com',
-  base: '/insights',
+  site: site.origin,
+  base: site.base,
   output: 'static',
   trailingSlash: 'always',
   build: { format: 'directory' },

@@ -16,6 +16,9 @@ wordpressId: 835
 snapshotFile: "migration/snapshots/4e2c1b36fb18.html"
 image: "/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg"
 readingMinutes: 1
+seoTitle: "Cinamon Featured in Newsis: \"Anyone Can Become a 3D Animation Director with AI\" : CineV"
+socialImage: "/insights/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg"
+rssGuid: "https://blog.cinev.com/?p=835"
 ---
 
 <div class="wp-block-uagb-container uagb-block-7a23a879 alignfull uagb-is-root-container">
