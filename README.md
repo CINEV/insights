@@ -97,6 +97,14 @@ Markdown으로 본문을 작성합니다.
 
 `lang`의 스키마 기본값은 `en`이며, 글 생성 명령의 기본값은 `ko`입니다. `path`를 생략하면 언어와 콘텐츠 파일 ID를 기준으로 주소를 생성합니다. 날짜는 한국 시간으로 표시하며, 시간대 없는 날짜도 한국 시간으로 해석합니다.
 
+### 기존 글 번역
+
+Codex의 `$cinev-translate-post` [스킬](.agents/skills/cinev-translate-post/SKILL.md)에 원문 파일·제목·URL과 대상 언어를 지정하면 제목·본문·SEO 문구까지 번역한 Markdown 초안을 만듭니다. 영어·한국어·일본어를 지원합니다.
+
+예: `$cinev-translate-post content/posts/ko/my-post.md를 영어와 일본어로 번역해줘` (원문 경로는 실제 파일로 바꿉니다.)
+
+번역본은 `content/posts/<lang>/<slug>.md`에 `draft: true`로 생성됩니다. 원문과 번역본은 같은 `translationKey`로 연결하고 이미지·영상을 재사용합니다. 같은 언어의 번역이 이미 있으면 새로 만들거나 덮어쓰지 않습니다. 내용을 검토한 뒤 아래 발행 절차를 진행합니다. 공개·색인 가능한 번역본끼리 언어 전환 링크와 `hreflang`이 자동으로 생성됩니다.
+
 ### 발행 전 확인
 
 본문, 요약(`excerpt`), 대표 이미지와 대체 텍스트를 확인한 뒤 `draft: false`로 바꿉니다.

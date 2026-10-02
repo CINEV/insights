@@ -46,7 +46,7 @@ Search Console의 기존 `https://cinev.com/insights/` 속성과 공개 검증 m
 
 메인 프론트가 소유한 `/robots.txt`의 블로그 사이트맵은 `https://cinev.com/insights/sitemap_index.xml`이어야 한다. 블로그 내부의 `robots.txt`만 바꿔서는 메인 도메인 규칙이 바뀌지 않는다. DNS를 바꾸지 않고 이 프록시로 연결할 수 있다. Pages 원본의 루트 `/robots.txt`는 `Disallow: /`로 중복 호스트 수집을 차단하고, HTML canonical은 운영 주소를 가리킨다. GitHub Pages는 호스트별 응답 헤더를 설정할 수 없어 WordPress의 직접 접근 전용 `X-Robots-Tag: noindex`와 완전히 같은 동작은 아니다. robots 차단은 이미 색인된 URL의 삭제를 보장하지 않으므로, Pages 원본이 색인되어 있다면 별도 제거 처리가 필요하다. 운영 HTML에 공통 noindex를 넣으면 프록시된 운영 글까지 제외되므로 넣지 않는다.
 
-전환 후 운영 주소에서 세 언어의 글·목록·이미지·RSS·사이트맵·404 응답을 확인한다. 문제 발생 시 프록시 대상을 기존 WordPress 주소로 되돌릴 수 있도록 전환 검증이 끝날 때까지 원본을 보존한다. 이후 글 발행은 블로그 저장소의 `main` push로 완료하며 메인 앱 재배포는 필요 없다.
+전환 후 운영 주소에서 세 언어의 글·목록·이미지·RSS·사이트맵·404 응답을 확인한 뒤 기존 WordPress 전용 DNS·Lightsail 인스턴스·고정 IP와 인프라 선언을 제거한다. 최종 운영에는 WordPress 서버나 별도 블로그 도메인이 필요 없다. 이관 원본과 RSS GUID의 과거 주소는 기록·식별자로 보존한다. 배포 문제는 마지막 정상 Astro 버전을 Pages에 재배포하고 프론트도 Pages를 가리키는 정상 설정으로 복구한다. 이후 글 발행은 블로그 저장소의 `main` push로 완료하며 메인 앱 재배포는 필요 없다.
 
 ## 검증
 
