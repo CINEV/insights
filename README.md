@@ -38,7 +38,7 @@ npm run build
 npm run preview
 ```
 
-빌드 결과는 `dist/`에 생성됩니다. `npm run preview`는 Pages와 같은 파일 배치를 확인하도록 루트 기준으로 제공하며 `/insights/`로 접근합니다. 미리보기는 빌드된 결과를 제공하므로 콘텐츠를 수정한 뒤에는 다시 빌드해야 합니다.
+빌드 결과는 `dist/`에 생성되며, 실제 Pages 배포 폴더는 `dist/insights/`입니다. `npm run preview`는 `dist/`를 루트로 제공하므로 `/insights/`로 접근하면 배포와 같은 URL로 확인할 수 있습니다. 미리보기는 빌드된 결과를 제공하므로 콘텐츠를 수정한 뒤에는 다시 빌드해야 합니다.
 
 ## 콘텐츠 관리
 
@@ -128,32 +128,33 @@ npm run preview
 
 ## 발행과 배포
 
-GitHub Pages로 배포합니다. `main`에 push하면 `.github/workflows/deploy.yml`이 Node.js 24에서 `npm ci`, `npm run build`, 빌드 검증을 실행하고 `dist/`를 배포합니다. GitHub Actions 화면에서 수동 실행도 가능합니다.
+`CINEV/insights` 저장소의 GitHub Pages 프로젝트 사이트로 배포합니다. `main`에 push하면 `.github/workflows/deploy.yml`이 Node.js 24에서 `npm ci`, `npm run build`, 빌드 검증을 실행하고 `dist/insights/`를 배포합니다. GitHub Actions 화면에서 수동 실행도 가능합니다.
 
-배포 주소는 [https://cinev.github.io/](https://cinev.github.io/)입니다. 배포 상태와 실패 로그는 저장소의 **Actions → Deploy to GitHub Pages**에서 확인합니다. 빌드나 검증이 실패하면 새 버전은 배포되지 않습니다.
+배포 주소는 [https://cinev.github.io/insights/](https://cinev.github.io/insights/)입니다. `cinev.github.io` 저장소와 루트 주소는 별도 프로젝트에서 사용할 수 있습니다. 배포 상태와 실패 로그는 저장소의 **Actions → Deploy to GitHub Pages**에서 확인합니다. 빌드나 검증이 실패하면 새 버전은 배포되지 않습니다.
+
+기존 `CINEV/cinev.github.io`에서 이전할 때는 먼저 메인 프론트의 문서·피드 프록시 목적지를 `https://cinev.github.io/insights/...`로 변경하고 배포합니다. 기존 사이트도 이 경로를 제공하므로 먼저 전환할 수 있습니다. 그다음 저장소 이름을 `insights`로 변경하고 이 workflow로 재배포합니다. 이름 변경 전에는 deploy 단계가 중단되도록 검사합니다. 로컬 remote도 `git remote set-url origin https://github.com/CINEV/insights.git`으로 갱신합니다.
 
 초안은 `draft: true`로 관리하고 발행할 때 `false`로 변경합니다. 글 수정·삭제, 이미지·스타일·스크립트 변경도 `main`에 push한 뒤 배포가 완료되면 반영됩니다. 메인 프론트 앱의 재빌드는 필요하지 않습니다. 이전 버전으로 되돌리려면 해당 변경을 revert하고 `main`에 push합니다.
 
 ### 요청 경로
 
-GitHub Pages에서는 루트와 `/insights/` 경로 모두 같은 글과 목록을 제공합니다. `npm run build`의 postbuild 단계는 문서·피드의 호환 경로를 만들고, 이미지·영상·폰트는 `/insights/` 아래에 한 벌만 배치합니다. 메인 프론트의 자산 rewrite도 이 경로를 사용합니다.
+GitHub Pages는 배포 폴더의 파일을 저장소 이름에 따라 `/insights/` 아래에서 제공합니다. `npm run build`의 postbuild 단계는 문서·피드·이미지·영상·폰트를 `dist/insights/`에 모읍니다. 이 폴더만 업로드해야 `/insights/insights/`가 중복되지 않습니다. `dist/` 루트의 문서·피드 사본은 로컬 검증용이며 배포하지 않습니다. 메인 프론트는 문서와 자산 모두 `/insights/` 접두사를 유지해 프록시합니다.
 
-- `https://cinev.github.io/`: 블로그 홈
-- `https://cinev.github.io/insights/`: 기존 경로 형식으로 블로그 접근
+- `https://cinev.github.io/insights/`: 블로그 홈
 - `/insights/feed.xml`: 영어 RSS
 - `/insights/ko/feed.xml`, `/insights/ja/feed.xml`: 한국어·일본어 RSS
 - `/insights/all/feed.xml`: 전체 언어 RSS
 - `/insights/sitemap_index.xml`, `/insights/sitemap.xml`: 사이트맵
 - `/insights/search-index.json`: 검색 인덱스
 
-기존 `/feed/`, `/ko/feed/`, `/ja/feed/` 구독 주소를 유지합니다. 메인 프론트는 이 주소를 실제 `.xml` 파일로 프록시해 XML 응답 형식을 보존합니다. Pages 직접 접근에서는 디렉터리 별칭에 XML 본문을 제공하지만 응답 형식은 `text/html`이므로 새 구독에는 언어별 `feed.xml`을 사용합니다. 문서·피드만 두 경로를 제공하며 큰 자산은 복제하지 않습니다.
+기존 `/insights/feed/`, `/insights/ko/feed/`, `/insights/ja/feed/` 구독 주소를 유지합니다. 메인 프론트는 이 주소를 실제 `.xml` 파일로 프록시해 XML 응답 형식을 보존합니다. Pages 직접 접근에서는 디렉터리 별칭에 XML 본문을 제공하지만 응답 형식은 `text/html`이므로 새 구독에는 언어별 `feed.xml`을 사용합니다. 큰 자산은 복제하지 않습니다.
 
 운영 공개 주소와 SEO canonical은 `https://cinev.com/insights/`로 유지합니다. 운영 전환은 메인 프론트의 프록시 대상을 GitHub Pages로 변경하는 방식입니다. 블로그 배포만으로 프론트 설정이나 DNS가 바뀌지는 않습니다.
 
 ```text
 cinev.com/insights/글주소/
   → 메인 프론트 프록시
-  → cinev.github.io/글주소/
+  → cinev.github.io/insights/글주소/
 ```
 
 검색 메타데이터·분석·사이트 인증·색인 정책과 프론트 전환 방법은 [SEO와 운영 연결](docs/seo.md)을 참고합니다. `llms.txt`도 발행된 글에서 자동 생성합니다.

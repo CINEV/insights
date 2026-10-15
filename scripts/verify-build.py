@@ -124,7 +124,12 @@ def main():
     for endpoint in ("sitemap_index.xml", "sitemap.xml", "feed.xml", "llms.txt", "robots.txt"):
         if not (DIST / endpoint).is_file():
             errors.append(f"Missing compatibility endpoint: {endpoint}")
-    compatibility_paths = ["insights/index.html", ".nojekyll"]
+    compatibility_paths = ["insights/index.html", ".nojekyll", "insights/.nojekyll", "insights/asset-manifest.json"]
+    if (DIST / "insights/insights").exists():
+        errors.append("Project Pages artifact must not contain a second insights prefix")
+    manifest_copy = DIST / "insights/asset-manifest.json"
+    if manifest_copy.is_file() and manifest_copy.read_bytes() != (DIST / "asset-manifest.json").read_bytes():
+        errors.append("Project Pages asset manifest differs from the verified build")
     for language_prefix in ("", "ko/", "ja/", "all/"):
         for mirror in ("", "insights/"):
             compatibility_paths.extend([f"{mirror}{language_prefix}feed.xml", f"{mirror}{language_prefix}feed/index.html"])

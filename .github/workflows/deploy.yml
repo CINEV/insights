@@ -51,7 +51,8 @@ jobs:
       - uses: actions/upload-pages-artifact@v5.0.0
         if: github.event_name != 'pull_request'
         with:
-          path: dist
+          # Project Pages mounts this artifact at /insights/.
+          path: dist/insights
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -64,6 +65,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Verify project Pages target
+        run: |
+          if [ "$GITHUB_REPOSITORY" != "CINEV/insights" ]; then
+            echo "::error::Rename the repository to CINEV/insights before deploying the project Pages artifact."
+            exit 1
+          fi
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5.0.1
