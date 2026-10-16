@@ -81,6 +81,8 @@ try {
     assert.equal(rssBody('img[alt="RSS body image"]').attr('srcset'), 'https://cinev.com/insights/wp-content/uploads/2026/03/cinev-bi-white.png 1x, https://cinev.com/insights/wp-content/uploads/2026/03/cinev-bi-black.png 2x');
     for (const [other] of cases) if (other !== lang) assert(!xml('channel').text().includes(rssGuids.get(other)));
     assert.equal($('link[type="application/rss+xml"]').attr('href'), `/insights/${prefix}feed.xml`);
+    assert.equal($('.cinev-translations').length, 0);
+    assert.equal($('.cinev-site-languages a').length, 3);
     const alternates = Object.fromEntries([...$('head link[hreflang]')].map(element => [$(element).attr('hreflang'), $(element).attr('href')]));
     if (lang === 'ja') {
       assert.deepEqual(alternates, {}, 'Noindex translations must not emit hreflang');
@@ -90,9 +92,6 @@ try {
         en: 'https://cinev.com/insights/publishing-fixture-en/',
         ko: 'https://cinev.com/insights/ko/publishing-fixture-ko/',
       });
-      assert.equal($('.cinev-translations a').length, 1);
-      assert.equal($('.cinev-translations a').attr('href'), lang === 'en' ? '/insights/ko/publishing-fixture-ko/' : '/insights/publishing-fixture-en/');
-      assert.equal($('.cinev-translations [aria-current="page"]').attr('lang'), lang);
     }
     assert.equal(sitemap.includes(path), lang !== 'ja');
     assert.equal((await read('llms.txt')).includes(path), lang !== 'ja');

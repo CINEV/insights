@@ -218,7 +218,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<p class="wp-block-paragraph"><strong><a href="https://cinev.com/shorts">今すぐ試す →</a></strong></p>
+<p class="wp-block-paragraph"><strong><a href="/" aria-label="CINEV ホーム">CINEV ホーム</a></strong></p>
 
 
 

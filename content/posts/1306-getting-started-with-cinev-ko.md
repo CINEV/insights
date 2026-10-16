@@ -218,7 +218,7 @@ rssGuid: "https://cinev.com/insights/?p=1306"
 
 
 
-<p class="wp-block-paragraph"><strong><a href="https://cinev.com/shorts">지금 시작하기 →</a></strong></p>
+<p class="wp-block-paragraph"><strong><a href="/" aria-label="CINEV 홈">CINEV 홈</a></strong></p>
 
 
 

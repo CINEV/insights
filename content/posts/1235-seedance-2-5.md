@@ -35,7 +35,7 @@ translationKey: "wordpress-1218"
 
 
 
-<p class="wp-block-paragraph">CineVは、<a href="https://cinev.com/shorts">アニメーションを最もうまく作れる生成AIプラットフォーム</a>を目指している。この一文を少しひねって読むと、別の意味がひとつ立ち上がる。</p>
+<p class="wp-block-paragraph">CineVは、<a href="/">アニメーションを最もうまく作れる生成AIプラットフォーム</a>を目指している。この一文を少しひねって読むと、別の意味がひとつ立ち上がる。</p>
 
 
 
@@ -102,7 +102,7 @@ translationKey: "wordpress-1218"
 
 
 
-<p class="wp-block-paragraph">CineVの<strong>ストーリーボード</strong>機能は、まさにこの地点のために存在する。一行のloglineを入力すれば、sequence全体のハイライトフレームを順に生成してくれる。Contextが不在の状態でContextを組成してくれる道具だと理解すればよい。Seedanceのcapabilityをきちんと引き出したいが、像がまだ曖昧なら、<a href="https://cinev.com/ja/share/72595d0e7ee21b952b78d1819156ba26">CineVのストーリーボードで先にシーンを具体化してみる</a>のもひとつの方法である。</p>
+<p class="wp-block-paragraph">CineVの<strong>ストーリーボード</strong>機能は、まさにこの地点のために存在する。一行のloglineを入力すれば、sequence全体のハイライトフレームを順に生成してくれる。Contextが不在の状態でContextを組成してくれる道具だと理解すればよい。Seedanceのcapabilityをきちんと引き出したいが、像がまだ曖昧なら、CineVのストーリーボードで先にシーンを具体化してみる <small class="cinev-archived-link-note">(サービス内の作例です。アーカイブではリンクを提供していません。)</small>のもひとつの方法である。</p>
 </div>
 
 
@@ -255,7 +255,7 @@ translationKey: "wordpress-1218"
 
 
 
-<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-3.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="https://cinev.com/shorts">Seedance 2.5はCineVで利用できます。</a></figcaption></figure>
+<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-3.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="/">Seedance 2.5はCineVで利用できます。</a></figcaption></figure>
 
 
 
@@ -942,7 +942,7 @@ key-light rim separation.</code></pre>
 
 
 
-<p class="wp-block-paragraph">最小限の失敗でSeedance 2.5を使いこなせることを願っている。<a href="https://cinev.com/shorts">CineVでは現在50%オフキャンペーンを実施中です。</a></p>
+<p class="wp-block-paragraph">最小限の失敗でSeedance 2.5を使いこなせることを願っている。<a href="/">CineVでは現在50%オフキャンペーンを実施中です。</a></p>
 
 
 

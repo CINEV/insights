@@ -22,7 +22,7 @@ socialImage: "/insights/images/social-cover.webp"
 
 빌드 시 canonical, Open Graph, Twitter 카드, Organization·WebSite·WebPage·BlogPosting·BreadcrumbList·이미지 구조화 데이터를 생성한다. 본문에 있던 FAQ 구조화 데이터는 보존한다. 태그 목록은 `noindex`이며 사이트맵에 포함하지 않는다. 작성자 이름은 글에 표시하되 작성자 목록은 기존 WordPress 설정처럼 비활성화한다. 이전 작성자 URL은 홈으로 즉시 이동하는 정적 HTML을 제공한다. GitHub Pages에서는 이 응답 자체가 HTTP 301은 아니며, 메인 프론트에서 영구 리다이렉트를 제공한다.
 
-`/blog/` 같은 목록 별칭은 언어별 홈을 canonical로 사용하고 사이트맵에서는 제외한다. RSS·검색 인덱스·사이트맵·`llms.txt`는 발행된 Markdown에서 매 빌드마다 생성한다. `llms.txt`는 콘텐츠 안내 파일이며 검색 순위나 AI 서비스의 사용을 보장하지 않는다. 번역 관계가 지정되지 않은 글에는 hreflang을 추정해서 붙이지 않는다. 실제 번역본은 같은 `translationKey`를 지정하며, 동일 그룹에서 언어를 중복 지정하면 빌드가 실패한다. 공개된 번역본끼리 언어 전환 링크와 자기 자신을 포함한 상호 hreflang을 생성한다. 초안·noindex 문서는 번역 대안에서 제외한다. 기존 WordPress 번역 관계는 데이터베이스에서 확인한 그룹만 보존했으며 제목이 같다는 이유로 연결하지 않았다. 카테고리 번역은 `migration/translations.json`에서 관리한다.
+`/blog/` 같은 목록 별칭은 언어별 홈을 canonical로 사용하고 사이트맵에서는 제외한다. RSS·검색 인덱스·사이트맵·`llms.txt`는 발행된 Markdown에서 매 빌드마다 생성한다. `llms.txt`는 콘텐츠 안내 파일이며 검색 순위나 AI 서비스의 사용을 보장하지 않는다. 번역 관계가 지정되지 않은 글에는 hreflang을 추정해서 붙이지 않는다. 실제 번역본은 같은 `translationKey`를 지정하며, 동일 그룹에서 언어를 중복 지정하면 빌드가 실패한다. 공개된 번역본끼리 자기 자신을 포함한 상호 hreflang 메타데이터를 생성한다. 화면의 언어 선택은 상단의 언어별 홈 링크만 제공한다. 초안·noindex 문서는 번역 대안에서 제외한다. 기존 WordPress 번역 관계는 데이터베이스에서 확인한 그룹만 보존했으며 제목이 같다는 이유로 연결하지 않았다. 카테고리 번역은 `migration/translations.json`에서 관리한다.
 
 ## RSS와 기존 짧은 주소
 
@@ -42,9 +42,11 @@ Search Console의 기존 `https://cinev.com/insights/` 속성과 공개 검증 m
 
 ## 운영 프록시
 
-블로그 Pages 배포가 완료된 후 메인 프론트의 `vercel.json`에서 `/insights/:path*`를 `https://cinev.github.io/:path*/`, `/insights`를 `https://cinev.github.io/`로 연결한다. 이미지·영상·폰트 폴더는 `https://cinev.github.io/insights/:path`의 단일 자산 디렉터리로 연결한다. 스크립트·RSS·사이트맵 같은 파일 경로는 끝에 `/`를 붙이지 않는 별도 rewrite를 먼저 둔다. Pages의 디렉터리 응답이 `cinev.github.io` 주소로 리다이렉트되지 않도록 글·목록 목적지에만 끝 `/`를 붙인다. 과거 이미지 링크용 `/wp-content/:path*`, `/wp-includes/:path*`도 Pages의 `/insights/` 아래 같은 경로로 연결한다. 중복 영상과 TTF 글꼴의 기존 경로는 일반 자산 규칙보다 앞선 exact rewrite에서 대표 영상·압축 WOFF2 파일로 연결한다. `node scripts/export-asset-rewrites.mjs`로 이 규칙을 생성한다. URL은 그대로 유지되며 추가 리다이렉트는 없다. 기존 `/insights/author/:path*`는 `/insights/`로 영구 리다이렉트한다.
+현재 서비스 프론트는 `/insights/` 요청을 `https://cinev.github.io/insights/` 아래의 같은 경로로 프록시한다. 파일 경로에는 끝 `/`를 붙이지 않는다. 서비스 종료 후에는 조직 Pages 사이트에 `cinev.com`을 연결하여 별도 프로젝트 Pages인 Insights를 같은 도메인의 `/insights/`에서 제공한다. 메인 저장소에 Insights 빌드 결과를 복사하지 않는다.
 
-메인 프론트가 소유한 `/robots.txt`의 블로그 사이트맵은 `https://cinev.com/insights/sitemap_index.xml`이어야 한다. 블로그 내부의 `robots.txt`만 바꿔서는 메인 도메인 규칙이 바뀌지 않는다. DNS를 바꾸지 않고 이 프록시로 연결할 수 있다. Pages 원본의 루트 `/robots.txt`는 `Disallow: /`로 중복 호스트 수집을 차단하고, HTML canonical은 운영 주소를 가리킨다. GitHub Pages는 호스트별 응답 헤더를 설정할 수 없어 WordPress의 직접 접근 전용 `X-Robots-Tag: noindex`와 완전히 같은 동작은 아니다. robots 차단은 이미 색인된 URL의 삭제를 보장하지 않으므로, Pages 원본이 색인되어 있다면 별도 제거 처리가 필요하다. 운영 HTML에 공통 noindex를 넣으면 프록시된 운영 글까지 제외되므로 넣지 않는다.
+크롤러가 사용하는 `/robots.txt`는 메인 사이트가 관리한다. `/insights/robots.txt`는 호스트의 수집 정책을 제어하지 않는다. 메인 robots는 수집을 허용하고 메인·Insights 사이트맵을 안내한다. Insights canonical은 현재 프록시 운영 주소이자 전환 후 주소인 `https://cinev.com/insights/`를 유지한다. GitHub Pages 중복 주소는 canonical로 정규화하며 공통 noindex나 Disallow로 차단하지 않는다.
+
+공통 홈 버튼은 시점과 관계없는 언어별 `CINEV Home` 문구로 같은 호스트의 `/`에 연결한다. 공통 메뉴와 로고는 해당 언어의 블로그로 연결한다. 언어 메뉴는 각 언어 홈으로 이동하며 본문의 별도 언어 선택은 표시하지 않는다. 검색엔진용 hreflang은 확인된 번역 관계만 사용한다. Pinterest 공유 이미지도 `/insights/` 아래의 정규 자산 URL로 생성한다. 기존 호환 파일과 YouTube 임베드는 유지하며 과거 루트 `/wp-content/` 링크를 위한 호환 처리를 추가하지 않는다.
 
 전환 후 운영 주소에서 세 언어의 글·목록·이미지·RSS·사이트맵·404 응답을 확인한 뒤 기존 WordPress 전용 DNS·Lightsail 인스턴스·고정 IP와 인프라 선언을 제거한다. 최종 운영에는 WordPress 서버나 별도 블로그 도메인이 필요 없다. 이관 원본과 RSS GUID의 과거 주소는 기록·식별자로 보존한다. 배포 문제는 마지막 정상 Astro 버전을 Pages에 재배포하고 프론트도 Pages를 가리키는 정상 설정으로 복구한다. 이후 글 발행은 블로그 저장소의 `main` push로 완료하며 메인 앱 재배포는 필요 없다.
 
@@ -55,3 +57,7 @@ npm run check
 ```
 
 `check`는 빌드와 발행 회귀검증, 메타데이터·이미지·구조화 데이터·번역 연결·색인 정책·분석 호스트 제한, 언어별 RSS, 기존 짧은 주소, 미디어 SHA256과 기존 링크를 검사한다. `test:publishing`은 임시 글로 세 언어의 발행·SEO 기본값/재정의·noindex·초안 제외를 검증한다. GitHub Actions에서도 같은 검사를 실행한다.
+
+## 서비스 종료 후 링크
+
+서비스 이용 CTA는 같은 호스트의 `/`로 연결하며 언어별 CINEV 홈 문구를 쓴다. 글의 설명용 서비스 링크도 홈으로 연결한다. 특정 프로젝트·템플릿 링크는 본문과 로컬 예시 미디어를 유지하면서 링크를 해제하고 아카이브에서 링크를 제공하지 않는다는 안내를 표시한다. 본문은 작성 당시의 기록이므로 과거 프로모션·기능 설명까지 현행 안내로 재작성하지 않는다. 기존 WordPress 언어 드롭다운은 제거하고 상단 언어별 블로그 홈 선택만 유지한다.

@@ -35,7 +35,7 @@ translationKey: "wordpress-1218"
 
 
 
-<p class="wp-block-paragraph">CineV is built to be <a href="https://cinev.com/shorts">the generative AI platform that makes animation best</a>. Read that sentence sideways and a second meaning falls out.</p>
+<p class="wp-block-paragraph">CineV is built to be <a href="/">the generative AI platform that makes animation best</a>. Read that sentence sideways and a second meaning falls out.</p>
 
 
 
@@ -102,7 +102,7 @@ translationKey: "wordpress-1218"
 
 
 
-<p class="wp-block-paragraph">CineV&#8217;s storyboard feature exists for exactly this gap. Give it a one-line logline and it produces the highlight frames of the entire sequence in order. Think of it as a way to create context when you have none. If you want to unlock Seedance&#8217;s full potential but the image in your head is still blurry, <a href="https://cinev.com/share/c93bd6aaf8a7c4c358308477a5fef5b3">start by shaping the scene with CineV Storyboard.</a></p>
+<p class="wp-block-paragraph">CineV&#8217;s storyboard feature exists for exactly this gap. Give it a one-line logline and it produces the highlight frames of the entire sequence in order. Think of it as a way to create context when you have none. If you want to unlock Seedance&#8217;s full potential but the image in your head is still blurry, start by shaping the scene with CineV Storyboard. <small class="cinev-archived-link-note">(Service example; the original link is not available in this archive.)</small></p>
 </div>
 
 
@@ -255,7 +255,7 @@ translationKey: "wordpress-1218"
 
 
 
-<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-2.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="https://cinev.com/shorts">Seedance 2.5 is available on CineV.</a></figcaption></figure>
+<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-2.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="/">Seedance 2.5 is available on CineV.</a></figcaption></figure>
 
 
 
@@ -938,7 +938,7 @@ key-light rim separation.</code></pre>
 
 
 
-<p class="wp-block-paragraph">We hope you reach Seedance 2.5 with as few failed generations as possible. <a href="https://cinev.com/shorts">CineV is currently offering 50% off.</a></p>
+<p class="wp-block-paragraph">We hope you reach Seedance 2.5 with as few failed generations as possible. <a href="/">CineV is currently offering 50% off.</a></p>
 
 
 

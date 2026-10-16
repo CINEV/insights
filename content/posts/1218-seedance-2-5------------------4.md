@@ -53,7 +53,7 @@ translationKey: "wordpress-1218"
 
 
 
-<p class="wp-block-paragraph">CineV는 <a href="https://cinev.com/shorts" type="link" id="https://cinev.com/shorts">애니메이션을 가장 잘 만드는 생성 AI 플랫폼</a>을 지향한다. 이 문장을 조금 틀어서 읽으면 다른 뜻이 하나 나온다.</p>
+<p class="wp-block-paragraph">CineV는 <a href="/" type="link" id="https://cinev.com/shorts">애니메이션을 가장 잘 만드는 생성 AI 플랫폼</a>을 지향한다. 이 문장을 조금 틀어서 읽으면 다른 뜻이 하나 나온다.</p>
 
 
 
@@ -120,7 +120,7 @@ translationKey: "wordpress-1218"
 
 
 
-<p class="wp-block-paragraph">CineV의 <strong>스토리보드</strong> 기능은 정확히 이 지점을 위해 존재한다. 한 줄의 logline만 입력하면 전체 sequence의 하이라이트 프레임을 시퀀셜하게 산출해준다. Context가 부재한 상태에서 Context를 조성해주는 도구라고 이해하면 된다. Seedance의 capability를 제대로 활용해보고 싶은데 아직 상이 흐릿하다면, <a href="https://cinev.com/share/c93bd6aaf8a7c4c358308477a5fef5b3">CineV 스토리보드에서 먼저 장면을 구체화해보는 것</a>도 하나의 방법이다.</p>
+<p class="wp-block-paragraph">CineV의 <strong>스토리보드</strong> 기능은 정확히 이 지점을 위해 존재한다. 한 줄의 logline만 입력하면 전체 sequence의 하이라이트 프레임을 시퀀셜하게 산출해준다. Context가 부재한 상태에서 Context를 조성해주는 도구라고 이해하면 된다. Seedance의 capability를 제대로 활용해보고 싶은데 아직 상이 흐릿하다면, CineV 스토리보드에서 먼저 장면을 구체화해보는 것 <small class="cinev-archived-link-note">(서비스 내 예시 · 아카이브에서는 링크를 제공하지 않습니다.)</small>도 하나의 방법이다.</p>
 </div>
 
 
@@ -273,7 +273,7 @@ translationKey: "wordpress-1218"
 
 
 
-<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="https://cinev.com/shorts">Seedance 2.5는 CineV에서 사용할 수 있다.</a></figcaption></figure>
+<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="/">Seedance 2.5는 CineV에서 사용할 수 있다.</a></figcaption></figure>
 
 
 
@@ -946,7 +946,7 @@ key-light rim separation.</code></pre>
 
 
 
-<p class="wp-block-paragraph">가장 적은 실패로 Seedance 2.5를 써보시기 바란다. <a href="https://cinev.com/shorts">CineV는 현재 50% 할인 이벤트를 진행 중이다.</a></p>
+<p class="wp-block-paragraph">가장 적은 실패로 Seedance 2.5를 써보시기 바란다. <a href="/">CineV는 현재 50% 할인 이벤트를 진행 중이다.</a></p>
 
 
 

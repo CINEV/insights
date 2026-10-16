@@ -45,6 +45,31 @@ for (const file of readdirSync(resolve(root, 'dist'), { recursive: true })) {
   }
   for (const selector of ['meta[name="description"]', 'meta[property="og:title"]', 'meta[property="og:description"]', 'meta[property="og:image"]', 'meta[name="twitter:image"]']) assert.equal($(selector).length, 1, `${file}: ${selector}`);
   localImage($('meta[property="og:image"]').attr('content'));
+  assert.equal($('.cinev-translations').length, 0, file);
+  assert.equal($('.pll-parent-menu-item, .lang-item').length, 0, file);
+  $('a[href]').each((_, element) => {
+    const url = new URL($(element).attr('href'), site.origin);
+    if (['cinev.com', 'www.cinev.com'].includes(url.hostname)) assert(!/^\/(?:ko\/|ja\/)?(?:shorts(?:\/|$)|share\/)/.test(url.pathname), `Service-only link: ${file}: ${url}`);
+  });
+  const navigation = $('#masthead, #colophon, .ast-mobile-popup-drawer');
+  const language = $('html').attr('lang');
+  const home = `/insights/${language === 'en' ? '' : language + '/'}`;
+  assert.equal($('.cinev-site-languages a').length, 3, file);
+  assert.equal($('.cinev-site-languages [aria-current]').attr('lang'), language, file);
+  assert(navigation.find('a[href="/"]').length > 0, `Missing site home: ${file}`);
+  assert(!navigation.text().includes('Try CineV for Free'), file);
+  navigation.find('a[href]').each((_, element) => {
+    const href = $(element).attr('href');
+    assert(!href.includes('/shorts'), `Old CTA: ${file}`);
+    if (!href.startsWith('/insights/')) return;
+    assert(href.startsWith(home), `Wrong menu language: ${file}: ${href}`);
+    assert(existsSync(join(root, 'dist', decodeURI(href), 'index.html')), `Missing menu target: ${href}`);
+  });
+  $('.ast-post-social-sharing a[href]').each((_, element) => {
+    const url = new URL($(element).attr('href'), site.origin);
+    if (url.searchParams.has('media')) localImage(url.searchParams.get('media'));
+  });
+
   for (const token of site.googleVerification) assert($(`meta[name="google-site-verification"][content="${token}"]`).length === 1);
   const graphs = [...$('head script[type="application/ld+json"]')].flatMap(node => JSON.parse($(node).text())['@graph'] || []);
   for (const type of ['Organization', 'WebSite', 'ImageObject', 'BreadcrumbList']) assert(graphs.some(node => node['@type'] === type), `${file}: ${type}`);
@@ -58,13 +83,10 @@ for (const file of readdirSync(resolve(root, 'dist'), { recursive: true })) {
     assert(!noindex, `Noindex page advertises translations: ${file}`);
     assert.equal(alternates[language], normalizedUrl(canonical), `Missing self hreflang: ${file}`);
     assert.equal($('head link[hreflang]').length, Object.keys(alternates).length, `Duplicate language: ${file}`);
-    assert.equal($('.cinev-translations [aria-current="page"]').attr('lang'), language, file);
-    assert.equal($('.cinev-translations a').length, Object.keys(alternates).length - 1, file);
     for (const [targetLanguage, destination] of Object.entries(alternates)) {
       const target = html(new URL(destination).pathname);
       assert(!target('meta[name="robots"]').attr('content').includes('noindex'), destination);
       assert.equal(alternatesFor(target)[language], normalizedUrl(canonical), `Nonreciprocal hreflang: ${file} -> ${destination}`);
-      if (targetLanguage !== language) assert.equal(normalizedUrl($(`.cinev-translations a[hreflang="${targetLanguage}"]`).attr('href')), destination);
     }
   } else assert.equal($('.cinev-translations').length, 0, `Navigation without indexed translations: ${file}`);
   pages++;
@@ -113,7 +135,7 @@ for (const group of importedTranslations.terms) {
   assertTranslationGroup(group, catalog.categories);
   translatedCategories += Object.keys(group).length;
 }
-assert(read('dist/robots.txt').includes('Disallow: /\n'));
+assert(read('dist/robots.txt').includes('Allow: /\n'));
 assert(read('dist/robots.txt').includes('Sitemap: https://cinev.com/insights/sitemap_index.xml'));
 assert.equal(read('dist/insights/llms.txt'), llms);
 // Exercise host gating and duplicate loads without sending real analytics.
@@ -133,3 +155,27 @@ for (const origin of ['http://localhost:4321', 'https://cinev.github.io', 'https
   } else assert.equal(inserted.length, 0);
 }
 console.log(`SEO checks passed: ${pages} pages, metadata, local social images, schema, verification, ${translatedEntries} translated entries, ${translatedCategories} translated categories, reciprocal hreflang/navigation, current Markdown publication/draft policy, sitemap policy, llms.txt, analytics origin gating${migrationBaseline ? ', original WordPress translation baseline' : ''}.`);
+
+for (const [lang, label] of [['ko', '트렌드'], ['ja', 'トレンド']]) {
+  const page = html(`/insights/${lang}/trends-${lang}/`);
+  assert.equal(page('h1').text().trim(), label);
+  assert(page('title').text().includes(label));
+  assert.equal(page('#ast-breadcrumbs-yoast [aria-current]').text(), label);
+  assert.equal(page('.cinev-translations').length, 0);
+  assert.equal(page('.cinev-site-languages a').length, 3);
+  assert(!page('.ast-reading-time').text().includes('of reading'));
+  assert(!html(`/insights/${lang}/`)('title').text().includes('Tips & Guides'));
+}
+
+for (const [lang, text] of [['ko', '등록된 글이 없습니다.'], ['ja', '記事はまだありません。']]) {
+  assert.equal(html(`/insights/${lang}/showcase-${lang}/`)('.cinev-empty-archive').text(), text);
+}
+
+for (const lang of ['en', 'ko', 'ja']) {
+  const prefix = lang === 'en' ? '' : lang + '/';
+  const suffix = lang === 'en' ? '' : '-' + lang;
+  const page = html(`/insights/${prefix}ai-anime-series-generator${suffix}/`);
+  assert.equal(page('.uagb-block-ip-logo a').attr('href'), `/insights/${prefix}`);
+  assert.equal(page('.uagb-block-ip-btn-free a').attr('href'), '/');
+  assert.equal(page('.uagb-block-ip-btn-free a').text().trim(), {en:'CINEV Home',ko:'CINEV 홈',ja:'CINEV ホーム'}[lang]);
+}

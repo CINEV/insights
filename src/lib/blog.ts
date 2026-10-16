@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 import { load, type CheerioAPI } from 'cheerio';
 import site from '../config/site.json';
 import importedTranslations from '../../migration/translations.json';
-import { seoHead } from './seo';
+import { seoHead, imageUrl } from './seo';
 
 export type Entry = CollectionEntry<'posts'> | CollectionEntry<'pages'>;
 export type Term = { id: number | string; slug: string; name: string; path: string; lang?: string; [key: string]: unknown };
@@ -182,6 +182,14 @@ export function summary(entry: Entry): string {
   return plainText(entry.data.excerpt || entryBody(entry)).slice(0, 190);
 }
 
+export function termLabel(term: Term): string {
+  const labels: Record<string, string> = {
+    'trends-ko': '트렌드', 'news-kr': '소식', 'tutorials-ko': '튜토리얼', 'showcase-ko': '쇼케이스',
+    'trends-ja': 'トレンド', 'news-ja': 'ニュース', 'tutorials-ja': 'チュートリアル', 'showcase-ja': 'ショーケース',
+  };
+  return labels[term.slug] || plainText(term.name);
+}
+
 export function termsFor(entry: Entry, kind: 'categories' | 'tags'): Term[] {
   return entry.data[kind].map(value => catalog[kind].find(term => String(term.id) === String(value) || term.slug === value)
     || { id: value, slug: String(value), name: String(value), path: publicPath(`/${language(entry.data.lang) === 'en' ? '' : `${language(entry.data.lang)}/`}${kind === 'tags' ? 'tag/' : ''}${value}/`), lang: language(entry.data.lang) });
@@ -230,7 +238,7 @@ export async function blogRoutes(includeDrafts = import.meta.env.DEV): Promise<R
     for (const term of terms) {
       const filtered = posts.filter(post => matchesTerm(post, term, kind));
       const lang = language(term.lang || (publicPath(term.path).startsWith('/insights/ko/') ? 'ko' : publicPath(term.path).startsWith('/insights/ja/') ? 'ja' : 'en'));
-      addArchive(term.path, filtered, lang, plainText(term.name), sourceFor(term.path)?.snapshotFile,
+      addArchive(term.path, filtered, lang, termLabel(term), sourceFor(term.path)?.snapshotFile,
         kind === 'tags' ? !site.indexing.tags : kind === 'authors' && !site.indexing.authors,
         kind === 'authors' && !site.indexing.authors ? '/insights/' : undefined);
     }
@@ -269,6 +277,12 @@ export function readingMinutes(entry: Entry): number {
   return entry.data.readingMinutes || Math.max(1, Math.ceil(plainText(entryBody(entry)).split(/\s+/).length / 200));
 }
 
+function readingLabel(entry: Entry): string {
+  const minutes = readingMinutes(entry);
+  const lang = language(entry.data.lang);
+  return lang === 'ko' ? `읽는 데 약 ${minutes}분` : lang === 'ja' ? `読了まで約${minutes}分` : `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} of reading`;
+}
+
 function dateLabel(entry: Entry): string {
   return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(entry.data.date);
 }
@@ -288,13 +302,13 @@ function cardHtml(entry: Entry, archivePath: string): string {
   const image = entry.data.image || originalImage?.attr('src');
   const imageMarkup = image ? `<div class="ast-blog-featured-section post-thumb ast-blog-single-element"><div class="post-thumb-img-content post-thumb"><a href="${escapeHtml(entryPath(entry))}" aria-label="Read: ${escapeHtml(entry.data.title)}"><img src="${escapeHtml(image)}" alt="${escapeHtml(entry.data.imageAlt || originalImage?.attr('alt'))}" loading="lazy" decoding="async"${originalImage?.attr('width') ? ` width="${escapeHtml(originalImage.attr('width'))}"` : ''}${originalImage?.attr('height') ? ` height="${escapeHtml(originalImage.attr('height'))}"` : ''}></a></div></div>` : '';
   const categories = termsFor(entry, 'categories');
-  const categoryMarkup = categories.map(term => `<a href="${escapeHtml(publicPath(term.path))}" rel="category tag">${escapeHtml(plainText(term.name))}</a>`).join(', ');
+  const categoryMarkup = categories.map(term => `<a href="${escapeHtml(publicPath(term.path))}" rel="category tag">${escapeHtml(termLabel(term))}</a>`).join(', ');
   return `<article class="post type-post status-publish format-standard ${image ? 'has-post-thumbnail' : ''} hentry ast-grid-common-col ast-full-width ast-article-post ast-width-md-4 ast-archive-post ast-separate-posts" id="post-${escapeHtml(entry.data.wordpressId || entry.id)}" itemtype="https://schema.org/CreativeWork" itemscope>
     <div class="ast-post-format- blog-layout-4 ast-article-inner ast-no-date-box"><div class="post-content ast-grid-common-col">
       ${imageMarkup}<span class="ast-blog-single-element ast-taxonomy-container cat-links default">${categoryMarkup}</span>
       ${entry.data.draft ? '<span class="cinev-draft-label">Draft · 초안</span>' : ''}<h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="${escapeHtml(entryPath(entry))}" rel="bookmark">${escapeHtml(entry.data.title)}</a></h2>
       <div class="ast-excerpt-container ast-blog-single-element"><p>${escapeHtml(cardExcerpt(entry, archivePath))}</p></div>
-      <header class="entry-header ast-blog-single-element ast-blog-meta-container"><div class="entry-meta"><span class="ast-reading-time">${readingMinutes(entry)} ${readingMinutes(entry) === 1 ? 'minute' : 'minutes'} of reading</span> • <span class="posted-on"><span class="published" itemprop="datePublished"> ${dateLabel(entry)} </span></span></div></header>
+      <header class="entry-header ast-blog-single-element ast-blog-meta-container"><div class="entry-meta"><span class="ast-reading-time">${readingLabel(entry)}</span> • <span class="posted-on"><span class="published" itemprop="datePublished"> ${dateLabel(entry)} </span></span></div></header>
       <div class="entry-content clear" itemprop="text"></div>
     </div></div>
   </article>`;
@@ -338,8 +352,8 @@ function markdownArticle(entry: Entry, token: string) {
   return `<article class="post type-post ast-article-single cinev-native-post">
     ${entry.data.draft ? '<aside class="cinev-draft-banner">Draft · 초안 미리보기 — 배포 빌드에는 포함되지 않습니다.</aside>' : ''}
     <nav class="cinev-post-breadcrumb" aria-label="Breadcrumb"><a href="${home}">Blog</a>${firstCategory ? ` / <a href="${escapeHtml(publicPath(firstCategory.path))}">${escapeHtml(plainText(firstCategory.name))}</a>` : ''} / <span class="breadcrumb_last">${escapeHtml(entry.data.title)}</span></nav>
-    <header class="entry-header"><span class="cat-links">${categories.map(term => `<a href="${escapeHtml(publicPath(term.path))}">${escapeHtml(plainText(term.name))}</a>`).join(', ')}</span><h1 class="entry-title">${escapeHtml(entry.data.title)}</h1>
-      <div class="entry-meta"><a rel="author" href="${escapeHtml(publicPath(author.path))}"><span class="author-name">${escapeHtml(author.name)}</span></a> · <time class="published" datetime="${entry.data.date.toISOString()}">${dateLabel(entry)}</time> · <span class="ast-reading-time">${readingMinutes(entry)} minutes</span></div>
+    <header class="entry-header"><span class="cat-links">${categories.map(term => `<a href="${escapeHtml(publicPath(term.path))}">${escapeHtml(termLabel(term))}</a>`).join(', ')}</span><h1 class="entry-title">${escapeHtml(entry.data.title)}</h1>
+      <div class="entry-meta"><a rel="author" href="${escapeHtml(publicPath(author.path))}"><span class="author-name">${escapeHtml(author.name)}</span></a> · <time class="published" datetime="${entry.data.date.toISOString()}">${dateLabel(entry)}</time> · <span class="ast-reading-time">${readingLabel(entry)}</span></div>
     </header>
     <div class="entry-content">${token}</div>${share}
   </article>`;
@@ -388,6 +402,60 @@ function refreshLegacyRecommendations($: CheerioAPI, publishedPaths: Record<stri
   });
 }
 
+// Navigation is generated from the page language, not the imported snapshot's language.
+function localizeNavigation($: CheerioAPI, route: Route) {
+  const lang = ['ko', 'ja'].includes(route.lang) ? route.lang : 'en';
+  const homes: Record<string, string> = { en: '/insights/', ko: '/insights/ko/', ja: '/insights/ja/' };
+  const labels: Record<string, string[]> = {
+    en: ['Trends', 'News', 'Tutorials', 'Showcase', 'AI Anime Series Generator', 'Features', 'CINEV Home'],
+    ko: ['트렌드', '소식', '튜토리얼', '쇼케이스', 'AI 애니메이션 시리즈 생성기', '기능', 'CINEV 홈'],
+    ja: ['トレンド', 'ニュース', 'チュートリアル', 'ショーケース', 'AIアニメシリーズ生成', '機能', 'CINEV ホーム'],
+  };
+  const slugs: Record<string, string[]> = {
+    en: ['trends', 'news', 'tutorials', 'showcase', 'ai-anime-series-generator'],
+    ko: ['trends-ko', 'news-kr', 'tutorials-ko', 'showcase-ko', 'ai-anime-series-generator-ko'],
+    ja: ['trends-ja', 'news-ja', 'tutorials-ja', 'showcase-ja', 'ai-anime-series-generator-ja'],
+  };
+  const nav = $('#masthead, #colophon, .ast-mobile-popup-drawer');
+  nav.find('.pll-parent-menu-item, .lang-item').remove();
+  // Preserve nested icons and the theme's button wrappers.
+  function label(element: Parameters<CheerioAPI>[0], text: string) {
+    const link = $(element);
+    let replaced = false;
+    link.find('*').addBack().contents().each((_, node) => {
+      if (node.type === 'text' && node.data.trim()) {
+        node.data = replaced ? '' : text;
+        replaced = true;
+      }
+    });
+    if (!replaced) link.prepend(text);
+  }
+  nav.find('a[href]').each((_, element) => {
+    const link = $(element);
+    const path = new URL(localize(link.attr('href') || ''), SITE_URL).pathname;
+    if (path === '/shorts') {
+      link.attr('href', '/').removeAttr('target').attr('aria-label', labels[lang][6]);
+      label(element, labels[lang][6]);
+    } else if (Object.values(homes).includes(path)) {
+      link.attr('href', homes[lang]);
+    } else {
+      const index = Object.values(slugs).map(items => items.indexOf(path.split('/').filter(Boolean).at(-1) || '')).find(index => index >= 0);
+      if (index !== undefined) {
+        link.attr('href', `${homes[lang]}${slugs[lang][index]}/`);
+        label(element, labels[lang][index]);
+      } else if (link.text().trim() === 'Features') label(element, labels[lang][5]);
+    }
+  });
+  nav.find('.cinev-footer-nav .col-title').each((_, element) => {
+    const title = $(element);
+    if (title.text().trim() === 'Features') title.text(labels[lang][5]);
+    if (title.text().trim() === 'Blog') title.text(lang === 'ko' ? '블로그' : lang === 'ja' ? 'ブログ' : 'Blog');
+  });
+  const names: Record<string, string> = { en: 'English', ko: '한국어', ja: '日本語' };
+  const links = Object.entries(homes).map(([code, href]) => `<a href="${href}" lang="${code}"${code === lang ? ' aria-current="true"' : ''}>${names[code]}</a>`).join('');
+  $('#content').prepend(`<nav class="cinev-site-languages" aria-label="${lang === 'ko' ? '블로그 언어' : lang === 'ja' ? 'ブログの言語' : 'Blog language'}">${links}</nav>`);
+}
+
 export function renderTemplate(route: Route) {
   if (route.redirectTo) {
     const destination = escapeHtml(route.redirectTo);
@@ -401,6 +469,7 @@ export function renderTemplate(route: Route) {
   if (!template) throw new Error(`No preserved template available for ${route.path}`);
   const $ = load(template);
   cleanup($);
+  localizeNavigation($, route);
   $('.uagb-tax-link-wrap').each((_, element) => {
     const wrap = $(element), link = wrap.find('a.uagb-tax-link').first();
     const href = link.attr('href');
@@ -412,6 +481,17 @@ export function renderTemplate(route: Route) {
   let contentHtml = '';
   let title = $('title').text();
   let description = $('meta[name="description"]').attr('content') || '';
+
+  if (route.kind === 'archive') {
+    const descriptions: Record<string, string> = {
+      en: 'CINEV articles on AI animation, production techniques, tutorials, and news.',
+      ko: 'AI 애니메이션과 제작 기술, 튜토리얼, 소식을 담은 CINEV 블로그입니다.',
+      ja: 'AIアニメーション、制作技術、チュートリアル、ニュースを紹介するCINEVブログです。',
+    };
+    const names: Record<string, string> = { en: 'CINEV Insights', ko: 'CINEV Insights · 블로그', ja: 'CINEV Insights · ブログ' };
+    title = names[route.lang] || names.en;
+    description = descriptions[route.lang] || descriptions.en;
+  }
 
   if (route.entry) {
     const entry = route.entry;
@@ -431,8 +511,8 @@ export function renderTemplate(route: Route) {
     const authorName = author?.name || (typeof entry.data.author === 'string' ? entry.data.author : 'CineV');
     article.find('.author-name').text(authorName);
     article.find('a[rel="author"]').attr('title', `View all posts by ${authorName}`).attr('href', publicPath(author?.path || '/author/user/'));
-    article.find('.ast-reading-time').text(`${readingMinutes(entry)} ${readingMinutes(entry) === 1 ? 'minute' : 'minutes'} of reading`);
-    article.find('.cat-links').html(termsFor(entry, 'categories').map(term => `<a href="${escapeHtml(publicPath(term.path))}" rel="category tag">${escapeHtml(plainText(term.name))}</a>`).join(', '));
+    article.find('.ast-reading-time').text(`${readingLabel(entry)}`);
+    article.find('.cat-links').html(termsFor(entry, 'categories').map(term => `<a href="${escapeHtml(publicPath(term.path))}" rel="category tag">${escapeHtml(termLabel(term))}</a>`).join(', '));
     const image = entry.data.image;
     if (image) {
       $('.ast-single-post-featured-section img').first().attr('src', image).removeAttr('srcset').attr('alt', entry.data.imageAlt);
@@ -445,7 +525,7 @@ export function renderTemplate(route: Route) {
         for (const key of ['text', 'title', 'description']) if (url.searchParams.has(key)) url.searchParams.set(key, entry.data.title);
         if (url.searchParams.has('media')) {
           const media = image || (sourceSnapshot(entry) ? url.searchParams.get('media') : undefined);
-          if (media) url.searchParams.set('media', absoluteUrl(localize(media)));
+          if (media) url.searchParams.set('media', imageUrl(media));
           else url.searchParams.delete('media');
         }
         link.attr('href', url.toString());
@@ -482,23 +562,24 @@ export function renderTemplate(route: Route) {
     }
     if (route.label) {
       title = `${route.label}${route.page && route.page > 1 ? ` - Page ${route.page}` : ''} : CineV`;
-      description = sourceFor(route.path) ? description : `${route.label} · ${site.description}`;
+      description = `${route.label} · ${description}`;
       const archiveHeading = $('.ast-archive-title').first();
       if (archiveHeading.length) archiveHeading.text(route.label);
       else $('#main').prepend(`<header class="ast-archive-description"><h1 class="page-title ast-archive-title">${escapeHtml(route.label)}</h1></header>`);
     }
-    if (!route.label && route.page && route.page > 1) title = `${site.blogName} - Page ${route.page} : ${site.name}`;
-    if (!route.entries?.length) $('#main .ast-row').html('<p class="cinev-empty-archive">No posts yet.</p>');
+    if (!route.label && route.page && route.page > 1) title += ` · ${route.page}`;
+    if (!route.entries?.length) $('#main .ast-row').html(`<p class="cinev-empty-archive">${route.lang === 'ko' ? '등록된 글이 없습니다.' : route.lang === 'ja' ? '記事はまだありません。' : 'No posts yet.'}</p>`);
   }
 
-  if (route.translations?.length) {
-    const names: Record<string, string> = { en: 'English', ko: '한국어', ja: '日本語' };
-    const links = route.translations.map(item => item.lang === route.lang
-      ? `<span lang="${item.lang}" aria-current="page">${names[item.lang]}</span>`
-      : `<a lang="${item.lang}" hreflang="${item.lang}" href="${escapeHtml(item.path)}">${names[item.lang]}</a>`).join(' <span aria-hidden="true">/</span> ');
-    const nav = `<nav class="cinev-translations" aria-label="${route.lang === 'ko' ? '다른 언어' : route.lang === 'ja' ? '他の言語' : 'Other languages'}">${links}</nav>`;
-    if (route.entry) $('#main > article, #primary article').first().prepend(nav);
-    else $('#main').prepend(nav);
+  const languageHome = `/insights/${route.lang === 'en' ? '' : route.lang + '/'}`;
+  $('#ast-breadcrumbs-yoast a').each((_, element) => {
+    const link = $(element);
+    if (['Home', 'Blog'].includes(link.text().trim())) {
+      link.attr('href', languageHome).text(route.lang === 'ko' ? '블로그' : route.lang === 'ja' ? 'ブログ' : 'Blog');
+    }
+  });
+  if (route.kind === 'archive' && route.label) {
+    $('#ast-breadcrumbs-yoast').html(`<span><a href="${languageHome}">${route.lang === 'ko' ? '블로그' : route.lang === 'ja' ? 'ブログ' : 'Blog'}</a> » <span aria-current="page">${escapeHtml(route.label)}</span></span>`);
   }
   $('html').attr('lang', route.lang);
   $('title, link[rel="canonical"], link[rel="next"], link[rel="prev"], link[hreflang], meta[name="description"], meta[name="robots"], meta[name="author"], meta[property^="og:"], meta[property^="article:"], meta[name^="twitter:"]').remove();
@@ -513,7 +594,7 @@ export function renderTemplate(route: Route) {
   const author = route.entry ? catalog.authors.find(author => String(author.id) === String(route.entry!.data.author) || author.slug === route.entry!.data.author) : undefined;
   const category = route.entry ? termsFor(route.entry, 'categories')[0] : undefined;
   $head.root().append('<script src="/insights/legacy-links.js" defer></script>');
-  $head.root().append(seoHead(route, { title, description }, author, category));
+  $head.root().append(seoHead(route, { title, description }, author, category ? { ...category, name: termLabel(category) } : undefined));
   if (route.kind === 'archive' && route.page && route.totalPages && route.page < route.totalPages) $head.root().append(`<link rel="next" href="${SITE_URL}${route.archivePath}page/${route.page + 1}/">`);
   const body = localize($('body').html() || '');
   const [before, after = ''] = body.split(slotToken);
