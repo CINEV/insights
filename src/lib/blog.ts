@@ -1,6 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
 import { load, type CheerioAPI } from 'cheerio';
 import site from '../config/site.json';
 import importedTranslations from '../../migration/translations.json';
@@ -30,6 +31,7 @@ export type Route = {
 };
 
 const root = process.cwd();
+const stylesheetVersion = createHash('sha256').update(readFileSync(resolve(root, 'public/site.css'))).digest('hex').slice(0, 12);
 const catalogFile = resolve(root, 'migration/catalog.json');
 export const catalog: Catalog = JSON.parse(readFileSync(catalogFile, 'utf8'));
 const snapshotCache = new Map<string, string>();
@@ -588,7 +590,7 @@ export function renderTemplate(route: Route) {
   });
   $('link[type="application/rss+xml"]').remove();
   $('head').append(`<link rel="alternate" type="application/rss+xml" title="CineV ${route.lang}" href="/insights/${route.lang === 'en' ? '' : route.lang + '/'}feed.xml">`);
-  $('head').append('<link rel="stylesheet" href="/insights/site.css">');
+  $('head').append(`<link rel="stylesheet" href="/insights/site.css?v=${stylesheetVersion}">`);
   $('body').append('<script src="/insights/site.js" defer></script>');
   const $head = load(localize($('head').html() || ''), null, false);
   const author = route.entry ? catalog.authors.find(author => String(author.id) === String(route.entry!.data.author) || author.slug === route.entry!.data.author) : undefined;

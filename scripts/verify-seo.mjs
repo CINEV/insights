@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import vm from 'node:vm';
+import { createHash } from 'node:crypto';
 import { load } from 'cheerio';
 import { contentMetadata } from './lib/content-metadata.mjs';
 
@@ -11,6 +12,7 @@ const migrationBaseline = options.includes('--migration-baseline');
 
 const root = process.cwd();
 const read = path => readFileSync(resolve(root, path), 'utf8');
+const stylesheetVersion = createHash('sha256').update(read('public/site.css')).digest('hex').slice(0, 12);
 const site = JSON.parse(read('src/config/site.json'));
 const html = path => load(read(`dist/${decodeURI(path).replace(/^\/insights\//, '')}index.html`));
 const sitemap = new Set([...load(read('dist/sitemap.xml'), { xmlMode: true })('loc')].map(node => load(node).text()));
@@ -51,6 +53,7 @@ for (const file of readdirSync(resolve(root, 'dist'), { recursive: true })) {
     const url = new URL($(element).attr('href'), site.origin);
     if (['cinev.com', 'www.cinev.com'].includes(url.hostname)) assert(!/^\/(?:ko\/|ja\/)?(?:shorts(?:\/|$)|share\/)/.test(url.pathname), `Service-only link: ${file}: ${url}`);
   });
+  assert.equal($(`link[href="/insights/site.css?v=${stylesheetVersion}"]`).length, 1, `Unversioned stylesheet: ${file}`);
   const navigation = $('#masthead, #colophon, .ast-mobile-popup-drawer');
   const language = $('html').attr('lang');
   const home = `/insights/${language === 'en' ? '' : language + '/'}`;
