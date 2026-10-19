@@ -291,10 +291,14 @@ function dateLabel(entry: Entry): string {
 
 function cardExcerpt(entry: Entry, archivePath: string): string {
   const original = entrySource(entry);
-  // Astra's displayed excerpts differ from the REST excerpts. Preserve those
-  // exact card texts until the author edits this Markdown entry's excerpt.
-  if (original?.displayExcerpt !== undefined && plainText(entry.data.excerpt) === plainText(original.excerpt || '')) return original.displayExcerpts?.[publicPath(archivePath)] ?? original.displayExcerpt;
-  return plainText(entry.data.excerpt || entryBody(entry).slice(0, 1200)).slice(0, 190);
+  // Keep imported excerpts, but bound Japanese list summaries as well.
+  const preserved = original?.displayExcerpt !== undefined && plainText(entry.data.excerpt) === plainText(original.excerpt || '');
+  const excerpt = preserved
+    ? original.displayExcerpts?.[publicPath(archivePath)] ?? original.displayExcerpt!
+    : plainText(entry.data.excerpt || entryBody(entry).slice(0, 1200)).slice(0, 190);
+  if (language(entry.data.lang) !== 'ja') return excerpt;
+  const characters = Array.from(plainText(excerpt));
+  return characters.length > 160 ? characters.slice(0, 160).join('').trimEnd() + '…' : characters.join('');
 }
 
 function cardHtml(entry: Entry, archivePath: string): string {
@@ -409,15 +413,24 @@ function localizeNavigation($: CheerioAPI, route: Route) {
   const lang = ['ko', 'ja'].includes(route.lang) ? route.lang : 'en';
   const homes: Record<string, string> = { en: '/insights/', ko: '/insights/ko/', ja: '/insights/ja/' };
   const labels: Record<string, string[]> = {
-    en: ['Trends', 'News', 'Tutorials', 'Showcase', 'AI Anime Series Generator', 'Features', 'CINEV Home'],
-    ko: ['트렌드', '소식', '튜토리얼', '쇼케이스', 'AI 애니메이션 시리즈 생성기', '기능', 'CINEV 홈'],
-    ja: ['トレンド', 'ニュース', 'チュートリアル', 'ショーケース', 'AIアニメシリーズ生成', '機能', 'CINEV ホーム'],
+    en: ['Trends', 'News', 'Tutorials', 'Showcase', 'for IP Creators', 'Features', 'CINEV Home'],
+    ko: ['트렌드', '소식', '튜토리얼', '쇼케이스', 'IP 창작자를 위해', '기능', 'CINEV 홈'],
+    ja: ['トレンド', 'ニュース', 'チュートリアル', 'ショーケース', 'IPクリエイター向け', '機能', 'CINEV ホーム'],
   };
   const slugs: Record<string, string[]> = {
     en: ['trends', 'news', 'tutorials', 'showcase', 'ai-anime-series-generator'],
     ko: ['trends-ko', 'news-kr', 'tutorials-ko', 'showcase-ko', 'ai-anime-series-generator-ko'],
     ja: ['trends-ja', 'news-ja', 'tutorials-ja', 'showcase-ja', 'ai-anime-series-generator-ja'],
   };
+  // Reuse the original English menu structure, including its dropdown controls,
+  // for both desktop and mobile. Dedicated feature-page headers are untouched.
+  const common = load(snapshot(sourceFor('/insights/')?.snapshotFile) || '');
+  const menu = common('#masthead .main-header-menu').first().clone();
+  menu.find('[id]').removeAttr('id');
+  menu.find('[aria-current]').removeAttr('aria-current');
+  menu.find('li').removeClass('current-menu-item current-menu-parent current-menu-ancestor current_page_item');
+  if (!menu.children().length) throw new Error('Missing common Insights navigation');
+  $('#masthead .main-header-menu, .ast-mobile-popup-drawer .main-header-menu').html(menu.html() || '');
   const nav = $('#masthead, #colophon, .ast-mobile-popup-drawer');
   nav.find('.pll-parent-menu-item, .lang-item').remove();
   // Preserve nested icons and the theme's button wrappers.
@@ -448,13 +461,34 @@ function localizeNavigation($: CheerioAPI, route: Route) {
       } else if (link.text().trim() === 'Features') label(element, labels[lang][5]);
     }
   });
+  // Restore the active category after replacing the snapshot's menu.
+  const activePath = route.kind === 'archive' ? route.archivePath || route.path : route.path;
+  $('#masthead .main-header-menu a, .ast-mobile-popup-drawer .main-header-menu a').each((_, element) => {
+    const link = $(element);
+    if (link.attr('href') === activePath) {
+      link.attr('aria-current', 'page');
+      link.parent('li').addClass('current-menu-item');
+    }
+  });
   nav.find('.cinev-footer-nav .col-title').each((_, element) => {
     const title = $(element);
     if (title.text().trim() === 'Features') title.text(labels[lang][5]);
     if (title.text().trim() === 'Blog') title.text(lang === 'ko' ? '블로그' : lang === 'ja' ? 'ブログ' : 'Blog');
   });
+  // This feature is available as English content only; keep legacy URLs accessible.
+  if (lang !== 'en') {
+    nav.find('a[href]').filter((_, element) => /\/ai-anime-series-generator(?:-(?:ko|ja))?\/$/.test($(element).attr('href') || '')).each((_, element) => {
+      const link = $(element);
+      if (link.closest('.cinev-footer-nav').length) link.parent().remove();
+      else link.closest('.menu-item-has-children').remove();
+    });
+  }
+  if (/\/ai-anime-series-generator(?:-(?:ko|ja))?\/$/.test(route.path)) return;
   const names: Record<string, string> = { en: 'English', ko: '한국어', ja: '日本語' };
-  const links = Object.entries(homes).map(([code, href]) => `<a href="${href}" lang="${code}"${code === lang ? ' aria-current="true"' : ''}>${names[code]}</a>`).join('');
+  const links = Object.entries(homes).map(([code, home]) => {
+    const href = code === lang && route.path !== '/insights/404/' ? route.path : route.translations?.find(item => item.lang === code)?.path || home;
+    return `<a href="${escapeHtml(href)}" lang="${code}"${code === lang ? ' aria-current="true"' : ''}>${names[code]}</a>`;
+  }).join('');
   $('#content').prepend(`<nav class="cinev-site-languages" aria-label="${lang === 'ko' ? '블로그 언어' : lang === 'ja' ? 'ブログの言語' : 'Blog language'}">${links}</nav>`);
 }
 

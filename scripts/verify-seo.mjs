@@ -57,8 +57,42 @@ for (const file of readdirSync(resolve(root, 'dist'), { recursive: true })) {
   const navigation = $('#masthead, #colophon, .ast-mobile-popup-drawer');
   const language = $('html').attr('lang');
   const home = `/insights/${language === 'en' ? '' : language + '/'}`;
-  assert.equal($('.cinev-site-languages a').length, 3, file);
-  assert.equal($('.cinev-site-languages [aria-current]').attr('lang'), language, file);
+  const featurePage = /\/ai-anime-series-generator(?:-(?:ko|ja))?\/$/.test(path);
+  assert.equal($('.cinev-site-languages a').length, featurePage ? 0 : 3, file);
+  if (!featurePage) assert.equal($('.cinev-site-languages [aria-current]').attr('lang'), language, file);
+  $('.cinev-site-languages a').each((_, element) => {
+    const link = $(element), code = link.attr('lang');
+    const alternate = $(`head link[hreflang="${code}"]`).attr('href');
+    const expected = code === language ? path : alternate ? new URL(alternate).pathname : `/insights/${code === 'en' ? '' : code + '/'}`;
+    assert.equal(decodeURI(link.attr('href')), decodeURI(expected), `Wrong language destination: ${file}: ${code}`);
+    assert(existsSync(join(root, 'dist', decodeURI(expected), 'index.html')), `Missing language target: ${expected}`);
+  });
+  if (language === 'ja') $('.ast-excerpt-container p').each((_, element) => {
+    assert(Array.from($(element).text()).length <= 161, `Japanese summary too long: ${file}`);
+  });
+  const menuLabels = {
+    en: ['Trends', 'News', 'Tutorials', 'Showcase', 'Features'],
+    ko: ['트렌드', '소식', '튜토리얼', '쇼케이스'],
+    ja: ['トレンド', 'ニュース', 'チュートリアル', 'ショーケース'],
+  };
+  $('#masthead .main-header-menu, .ast-mobile-popup-drawer .main-header-menu').each((_, element) => {
+    const menu = $(element);
+    assert.deepEqual(menu.children('li').map((_, item) => $(item).children('a').text().trim()).get(), menuLabels[language], `Inconsistent menu: ${file}`);
+    const categoryPath = path.replace(/page\/\d+\/$/, '');
+    const expectedActive = menu.find('a').filter((_, link) => $(link).attr('href') === categoryPath);
+    assert.equal(menu.find('a[aria-current="page"]').length, expectedActive.length, `Wrong active menu: ${file}`);
+    expectedActive.each((_, link) => {
+      assert.equal($(link).attr('aria-current'), 'page', file);
+      assert($(link).parent().hasClass('current-menu-item'), file);
+    });
+    const feature = menu.find('.sub-menu a');
+    assert.equal(feature.length, language === 'en' ? 1 : 0, file);
+    if (language !== 'en') return;
+    assert.equal(feature.text().trim(), { en: 'for IP Creators', ko: 'IP 창작자를 위해', ja: 'IPクリエイター向け' }[language], file);
+    assert.equal(feature.attr('href'), home + 'ai-anime-series-generator' + (language === 'en' ? '' : '-' + language) + '/', file);
+    assert.equal(menu.find('.menu-item-has-children > .ast-menu-toggle').length, 1, `Missing mobile dropdown: ${file}`);
+  });
+  if (language !== 'en') assert.equal(navigation.find('a[href*="ai-anime-series-generator"]').length, 0, file);
   assert(navigation.find('a[href="/"]').length > 0, `Missing site home: ${file}`);
   assert(!navigation.text().includes('Try CineV for Free'), file);
   navigation.find('a[href]').each((_, element) => {

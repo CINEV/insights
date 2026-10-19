@@ -74,8 +74,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 }
 
 
-/* The single language selector links to each language's blog home. */
+/* One language selector: translated page when available, otherwise blog home. */
 .cinev-site-languages{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:16px;max-width:1200px;margin:0 auto;padding:12px 20px;font-size:14px}
 .cinev-site-languages a{color:inherit;text-decoration:underline;text-underline-offset:4px}
 .cinev-site-languages a[aria-current]{font-weight:700}
 .cinev-site-languages a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+/* Keep Japanese archive cards scannable without changing article content. */
+html[lang="ja"] .ast-excerpt-container p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
