@@ -162,7 +162,7 @@ async function reservedPaths(catalog) {
   reserve('/insights/insights/', 'Pages 호환 배포 경로');
   for (const lang of languages) {
     reserve(prefix(lang), '언어별 글 목록');
-    for (const slug of ['blog', 'tag', 'author', 'page', 'feed', 'wp-content', 'wp-includes', '404']) reserve(`${prefix(lang)}${slug}/`, '블로그의 예약 경로');
+    for (const slug of ['blog', 'tag', 'author', 'page', 'feed', 'assets', 'wp-content', 'wp-includes', '404']) reserve(`${prefix(lang)}${slug}/`, '블로그의 예약 경로');
   }
   for (const collection of ['posts', 'pages']) {
     const directory = join(root, 'content', collection);
@@ -202,7 +202,7 @@ function seoulDate() {
 
 async function main() {
   const options = argsFor(process.argv.slice(2));
-  const catalog = JSON.parse(await readFile(join(root, 'migration', 'catalog.json'), 'utf8'));
+  const catalog = JSON.parse(await readFile(join(root, 'src', 'config', 'catalog.json'), 'utf8'));
   if (options.help) {
     console.log(`새 글 초안 생성\n\nnpm run post:new -- slug --title "제목" --lang ko --category tutorials-ko\n\n옵션:\n  --title TEXT       제목(필수)\n  --lang en|ko|ja    언어(기본 ko)\n  --category SLUG    선택 언어의 카테고리 slug 또는 ID; 반복·쉼표 목록 가능\n  --tags SLUG,...    선택 언어의 기존 태그 slug/ID 또는 새 태그 slug; --tag 반복 가능\n  --excerpt TEXT    목록·검색·RSS 요약\n  --author SLUG     기존 작성자 slug 또는 ID(기본 user/CineV)\n  --image PATH      대표 이미지의 로컬 공개 경로 /insights/...\n  --image-alt TEXT  대표 이미지 대체 텍스트\n  --list-categories 선택 언어의 카테고리 목록\n  --help, -h        도움말\n\n슬러그: 소문자 영문·숫자와 단어 사이 하이픈, 최대 100자.\n기존 파일·공개 주소는 덮어쓰지 않습니다. draft: true로 생성됩니다.\n이미지 파일은 별도로 public/에 추가하세요. 생성 시 파일 존재 여부는 검사하지 않습니다.\n초안을 확인한 뒤 draft: false로 변경하고 빌드·배포하세요.`);
     console.log('\n작성자:');

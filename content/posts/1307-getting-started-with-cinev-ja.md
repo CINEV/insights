@@ -9,16 +9,15 @@ categories: [37]
 tags: []
 lang: "ja"
 author: 1
-sourceUrl: "https://cinev.com/insights/ja/getting-started-with-cinev-ja/"
 excerpt: "CineVなら、明確なステップに沿ってアニメーション動画を制作できます。"
-format: "wordpress-html"
-wordpressId: 1307
-snapshotFile: "migration/snapshots/c326c0f90734.html"
-image: "/wp-content/uploads/2026/09/01-overview-1024x500.webp"
+format: "html"
+legacyId: 1307
+templateFile: "src/templates/c326c0f90734.html"
+image: "/insights/assets/media/c0343b5362-01-overview-1024x500.webp"
 readingMinutes: 1
 seoTitle: "CineVの始め方"
 description: "CineVの基本的な使い方を、ストーリーボードの作成から画像編集、アニメーション化、Cut & Mix、エクスポートまで順を追って紹介します。"
-socialImage: "/insights/wp-content/uploads/2026/09/01-overview.webp"
+socialImage: "/insights/assets/media/276164912d-01-overview.webp"
 rssGuid: "https://cinev.com/insights/?p=1307"
 ---
 
@@ -38,7 +37,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1800" height="879" src="/wp-content/uploads/2026/09/01-overview.webp" alt="" class="wp-image-1288" srcset="/wp-content/uploads/2026/09/01-overview.webp 1800w, /wp-content/uploads/2026/09/01-overview-300x147.webp 300w, /wp-content/uploads/2026/09/01-overview-1024x500.webp 1024w, /wp-content/uploads/2026/09/01-overview-768x375.webp 768w, /wp-content/uploads/2026/09/01-overview-1536x750.webp 1536w" sizes="auto, (max-width: 1800px) 100vw, 1800px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1800" height="879" src="/insights/assets/media/276164912d-01-overview.webp" alt="" class="wp-image-1288" srcset="/insights/assets/media/276164912d-01-overview.webp 1800w, /insights/assets/media/38478d2dda-01-overview-300x147.webp 300w, /insights/assets/media/c0343b5362-01-overview-1024x500.webp 1024w, /insights/assets/media/6b6f0a09aa-01-overview-768x375.webp 768w, /insights/assets/media/0d26756d5c-01-overview-1536x750.webp 1536w" sizes="auto, (max-width: 1800px) 100vw, 1800px" /></figure>
 
 
 
@@ -50,7 +49,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2336" height="736" src="/wp-content/uploads/2026/09/02-workflow-guide.png" alt="" class="wp-image-1289" srcset="/wp-content/uploads/2026/09/02-workflow-guide.png 2336w, /wp-content/uploads/2026/09/02-workflow-guide-300x95.png 300w, /wp-content/uploads/2026/09/02-workflow-guide-1024x323.png 1024w, /wp-content/uploads/2026/09/02-workflow-guide-768x242.png 768w, /wp-content/uploads/2026/09/02-workflow-guide-1536x484.png 1536w, /wp-content/uploads/2026/09/02-workflow-guide-2048x645.png 2048w" sizes="auto, (max-width: 2336px) 100vw, 2336px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2336" height="736" src="/insights/assets/media/d8f68715c2-02-workflow-guide.png" alt="" class="wp-image-1289" srcset="/insights/assets/media/d8f68715c2-02-workflow-guide.png 2336w, /insights/assets/media/fd1b280541-02-workflow-guide-300x95.png 300w, /insights/assets/media/e05d0b64e2-02-workflow-guide-1024x323.png 1024w, /insights/assets/media/10150471c7-02-workflow-guide-768x242.png 768w, /insights/assets/media/e38a8c26b1-02-workflow-guide-1536x484.png 1536w, /insights/assets/media/2e16cb07e2-02-workflow-guide-2048x645.png 2048w" sizes="auto, (max-width: 2336px) 100vw, 2336px" /></figure>
 
 
 
@@ -66,7 +65,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1400" height="681" src="/wp-content/uploads/2026/09/03-write-your-story.png" alt="" class="wp-image-1290" srcset="/wp-content/uploads/2026/09/03-write-your-story.png 1400w, /wp-content/uploads/2026/09/03-write-your-story-300x146.png 300w, /wp-content/uploads/2026/09/03-write-your-story-1024x498.png 1024w, /wp-content/uploads/2026/09/03-write-your-story-768x374.png 768w" sizes="auto, (max-width: 1400px) 100vw, 1400px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1400" height="681" src="/insights/assets/media/cf9bb13d89-03-write-your-story.png" alt="" class="wp-image-1290" srcset="/insights/assets/media/cf9bb13d89-03-write-your-story.png 1400w, /insights/assets/media/9925ff5826-03-write-your-story-300x146.png 300w, /insights/assets/media/e0610475b0-03-write-your-story-1024x498.png 1024w, /insights/assets/media/bc7a1a3005-03-write-your-story-768x374.png 768w" sizes="auto, (max-width: 1400px) 100vw, 1400px" /></figure>
 
 
 
@@ -74,7 +73,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1400" height="681" src="/wp-content/uploads/2026/09/04-review-the-script.png" alt="" class="wp-image-1291" srcset="/wp-content/uploads/2026/09/04-review-the-script.png 1400w, /wp-content/uploads/2026/09/04-review-the-script-300x146.png 300w, /wp-content/uploads/2026/09/04-review-the-script-1024x498.png 1024w, /wp-content/uploads/2026/09/04-review-the-script-768x374.png 768w" sizes="auto, (max-width: 1400px) 100vw, 1400px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1400" height="681" src="/insights/assets/media/c2b03f59c4-04-review-the-script.png" alt="" class="wp-image-1291" srcset="/insights/assets/media/c2b03f59c4-04-review-the-script.png 1400w, /insights/assets/media/a41fb864a5-04-review-the-script-300x146.png 300w, /insights/assets/media/bbefcf3285-04-review-the-script-1024x498.png 1024w, /insights/assets/media/1dc9f42a6c-04-review-the-script-768x374.png 768w" sizes="auto, (max-width: 1400px) 100vw, 1400px" /></figure>
 
 
 
@@ -82,7 +81,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1400" height="681" src="/wp-content/uploads/2026/09/05-review-elements.png" alt="" class="wp-image-1292" srcset="/wp-content/uploads/2026/09/05-review-elements.png 1400w, /wp-content/uploads/2026/09/05-review-elements-300x146.png 300w, /wp-content/uploads/2026/09/05-review-elements-1024x498.png 1024w, /wp-content/uploads/2026/09/05-review-elements-768x374.png 768w" sizes="auto, (max-width: 1400px) 100vw, 1400px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1400" height="681" src="/insights/assets/media/5c74409a08-05-review-elements.png" alt="" class="wp-image-1292" srcset="/insights/assets/media/5c74409a08-05-review-elements.png 1400w, /insights/assets/media/a0d7b6a863-05-review-elements-300x146.png 300w, /insights/assets/media/44ef063c2a-05-review-elements-1024x498.png 1024w, /insights/assets/media/8842410471-05-review-elements-768x374.png 768w" sizes="auto, (max-width: 1400px) 100vw, 1400px" /></figure>
 
 
 
@@ -112,11 +111,11 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1800" height="1281" src="/wp-content/uploads/2026/09/06-poseshot-3d-character.png" alt="" class="wp-image-1293" srcset="/wp-content/uploads/2026/09/06-poseshot-3d-character.png 1800w, /wp-content/uploads/2026/09/06-poseshot-3d-character-300x214.png 300w, /wp-content/uploads/2026/09/06-poseshot-3d-character-1024x729.png 1024w, /wp-content/uploads/2026/09/06-poseshot-3d-character-768x547.png 768w, /wp-content/uploads/2026/09/06-poseshot-3d-character-1536x1093.png 1536w" sizes="auto, (max-width: 1800px) 100vw, 1800px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1800" height="1281" src="/insights/assets/media/dc51ebcf8b-06-poseshot-3d-character.png" alt="" class="wp-image-1293" srcset="/insights/assets/media/dc51ebcf8b-06-poseshot-3d-character.png 1800w, /insights/assets/media/a8c44c0209-06-poseshot-3d-character-300x214.png 300w, /insights/assets/media/258e34f3c0-06-poseshot-3d-character-1024x729.png 1024w, /insights/assets/media/877307094c-06-poseshot-3d-character-768x547.png 768w, /insights/assets/media/98baa5d697-06-poseshot-3d-character-1536x1093.png 1536w" sizes="auto, (max-width: 1800px) 100vw, 1800px" /></figure>
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1800" height="1281" src="/wp-content/uploads/2026/09/07-poseshot-pose-camera.png" alt="" class="wp-image-1294" srcset="/wp-content/uploads/2026/09/07-poseshot-pose-camera.png 1800w, /wp-content/uploads/2026/09/07-poseshot-pose-camera-300x214.png 300w, /wp-content/uploads/2026/09/07-poseshot-pose-camera-1024x729.png 1024w, /wp-content/uploads/2026/09/07-poseshot-pose-camera-768x547.png 768w, /wp-content/uploads/2026/09/07-poseshot-pose-camera-1536x1093.png 1536w" sizes="auto, (max-width: 1800px) 100vw, 1800px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1800" height="1281" src="/insights/assets/media/f45c3a0026-07-poseshot-pose-camera.png" alt="" class="wp-image-1294" srcset="/insights/assets/media/f45c3a0026-07-poseshot-pose-camera.png 1800w, /insights/assets/media/e7e2c9d5d9-07-poseshot-pose-camera-300x214.png 300w, /insights/assets/media/7f97d3194d-07-poseshot-pose-camera-1024x729.png 1024w, /insights/assets/media/5f570f7d3e-07-poseshot-pose-camera-768x547.png 768w, /insights/assets/media/d6c26be5d9-07-poseshot-pose-camera-1536x1093.png 1536w" sizes="auto, (max-width: 1800px) 100vw, 1800px" /></figure>
 
 
 
@@ -134,7 +133,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1352" height="1042" src="/wp-content/uploads/2026/09/08-style-enhancer.png" alt="" class="wp-image-1295" srcset="/wp-content/uploads/2026/09/08-style-enhancer.png 1352w, /wp-content/uploads/2026/09/08-style-enhancer-300x231.png 300w, /wp-content/uploads/2026/09/08-style-enhancer-1024x789.png 1024w, /wp-content/uploads/2026/09/08-style-enhancer-768x592.png 768w" sizes="auto, (max-width: 1352px) 100vw, 1352px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1352" height="1042" src="/insights/assets/media/847d94d24f-08-style-enhancer.png" alt="" class="wp-image-1295" srcset="/insights/assets/media/847d94d24f-08-style-enhancer.png 1352w, /insights/assets/media/19cd6f0b1f-08-style-enhancer-300x231.png 300w, /insights/assets/media/e19ef58792-08-style-enhancer-1024x789.png 1024w, /insights/assets/media/250eb12b84-08-style-enhancer-768x592.png 768w" sizes="auto, (max-width: 1352px) 100vw, 1352px" /></figure>
 
 
 
@@ -152,7 +151,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1346" height="991" src="/wp-content/uploads/2026/09/09-mark-up-image.png" alt="" class="wp-image-1296" srcset="/wp-content/uploads/2026/09/09-mark-up-image.png 1346w, /wp-content/uploads/2026/09/09-mark-up-image-300x221.png 300w, /wp-content/uploads/2026/09/09-mark-up-image-1024x754.png 1024w, /wp-content/uploads/2026/09/09-mark-up-image-768x565.png 768w" sizes="auto, (max-width: 1346px) 100vw, 1346px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1346" height="991" src="/insights/assets/media/4ac4760edd-09-mark-up-image.png" alt="" class="wp-image-1296" srcset="/insights/assets/media/4ac4760edd-09-mark-up-image.png 1346w, /insights/assets/media/0164aa7be0-09-mark-up-image-300x221.png 300w, /insights/assets/media/8f518217c8-09-mark-up-image-1024x754.png 1024w, /insights/assets/media/02809bacc8-09-mark-up-image-768x565.png 768w" sizes="auto, (max-width: 1346px) 100vw, 1346px" /></figure>
 
 
 
@@ -174,15 +173,15 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1238" height="730" src="/wp-content/uploads/2026/09/10-animate.png" alt="" class="wp-image-1297" srcset="/wp-content/uploads/2026/09/10-animate.png 1238w, /wp-content/uploads/2026/09/10-animate-300x177.png 300w, /wp-content/uploads/2026/09/10-animate-1024x604.png 1024w, /wp-content/uploads/2026/09/10-animate-768x453.png 768w" sizes="auto, (max-width: 1238px) 100vw, 1238px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1238" height="730" src="/insights/assets/media/facecf1d9b-10-animate.png" alt="" class="wp-image-1297" srcset="/insights/assets/media/facecf1d9b-10-animate.png 1238w, /insights/assets/media/382b574092-10-animate-300x177.png 300w, /insights/assets/media/9af537f6a4-10-animate-1024x604.png 1024w, /insights/assets/media/f5585cf3e4-10-animate-768x453.png 768w" sizes="auto, (max-width: 1238px) 100vw, 1238px" /></figure>
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1612" height="544" src="/wp-content/uploads/2026/09/11-animate-multiple-images.png" alt="" class="wp-image-1298" srcset="/wp-content/uploads/2026/09/11-animate-multiple-images.png 1612w, /wp-content/uploads/2026/09/11-animate-multiple-images-300x101.png 300w, /wp-content/uploads/2026/09/11-animate-multiple-images-1024x346.png 1024w, /wp-content/uploads/2026/09/11-animate-multiple-images-768x259.png 768w, /wp-content/uploads/2026/09/11-animate-multiple-images-1536x518.png 1536w" sizes="auto, (max-width: 1612px) 100vw, 1612px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1612" height="544" src="/insights/assets/media/b3bc5bf54b-11-animate-multiple-images.png" alt="" class="wp-image-1298" srcset="/insights/assets/media/b3bc5bf54b-11-animate-multiple-images.png 1612w, /insights/assets/media/848ddb2ed4-11-animate-multiple-images-300x101.png 300w, /insights/assets/media/03bd9e1165-11-animate-multiple-images-1024x346.png 1024w, /insights/assets/media/be108b39b7-11-animate-multiple-images-768x259.png 768w, /insights/assets/media/996f418c7e-11-animate-multiple-images-1536x518.png 1536w" sizes="auto, (max-width: 1612px) 100vw, 1612px" /></figure>
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1810" height="638" src="/wp-content/uploads/2026/09/12-animate-video-clip.png" alt="" class="wp-image-1299" srcset="/wp-content/uploads/2026/09/12-animate-video-clip.png 1810w, /wp-content/uploads/2026/09/12-animate-video-clip-300x106.png 300w, /wp-content/uploads/2026/09/12-animate-video-clip-1024x361.png 1024w, /wp-content/uploads/2026/09/12-animate-video-clip-768x271.png 768w, /wp-content/uploads/2026/09/12-animate-video-clip-1536x541.png 1536w" sizes="auto, (max-width: 1810px) 100vw, 1810px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1810" height="638" src="/insights/assets/media/b2f5ad8f29-12-animate-video-clip.png" alt="" class="wp-image-1299" srcset="/insights/assets/media/b2f5ad8f29-12-animate-video-clip.png 1810w, /insights/assets/media/4c3ca1bb4b-12-animate-video-clip-300x106.png 300w, /insights/assets/media/c09a101b67-12-animate-video-clip-1024x361.png 1024w, /insights/assets/media/dbf29144d0-12-animate-video-clip-768x271.png 768w, /insights/assets/media/359ee69985-12-animate-video-clip-1536x541.png 1536w" sizes="auto, (max-width: 1810px) 100vw, 1810px" /></figure>
 
 
 
@@ -194,7 +193,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1784" height="1146" src="/wp-content/uploads/2026/09/13-cut-and-mix.png" alt="" class="wp-image-1300" srcset="/wp-content/uploads/2026/09/13-cut-and-mix.png 1784w, /wp-content/uploads/2026/09/13-cut-and-mix-300x193.png 300w, /wp-content/uploads/2026/09/13-cut-and-mix-1024x658.png 1024w, /wp-content/uploads/2026/09/13-cut-and-mix-768x493.png 768w, /wp-content/uploads/2026/09/13-cut-and-mix-1536x987.png 1536w" sizes="auto, (max-width: 1784px) 100vw, 1784px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1784" height="1146" src="/insights/assets/media/2fa6980b40-13-cut-and-mix.png" alt="" class="wp-image-1300" srcset="/insights/assets/media/2fa6980b40-13-cut-and-mix.png 1784w, /insights/assets/media/99d1249c4d-13-cut-and-mix-300x193.png 300w, /insights/assets/media/76860135fe-13-cut-and-mix-1024x658.png 1024w, /insights/assets/media/01824dc1d1-13-cut-and-mix-768x493.png 768w, /insights/assets/media/67290b6fb2-13-cut-and-mix-1536x987.png 1536w" sizes="auto, (max-width: 1784px) 100vw, 1784px" /></figure>
 
 
 
@@ -206,7 +205,7 @@ rssGuid: "https://cinev.com/insights/?p=1307"
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1784" height="1146" src="/wp-content/uploads/2026/09/14-export.png" alt="" class="wp-image-1301" srcset="/wp-content/uploads/2026/09/14-export.png 1784w, /wp-content/uploads/2026/09/14-export-300x193.png 300w, /wp-content/uploads/2026/09/14-export-1024x658.png 1024w, /wp-content/uploads/2026/09/14-export-768x493.png 768w, /wp-content/uploads/2026/09/14-export-1536x987.png 1536w" sizes="auto, (max-width: 1784px) 100vw, 1784px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1784" height="1146" src="/insights/assets/media/b1abe8829b-14-export.png" alt="" class="wp-image-1301" srcset="/insights/assets/media/b1abe8829b-14-export.png 1784w, /insights/assets/media/c0c1193768-14-export-300x193.png 300w, /insights/assets/media/258175337e-14-export-1024x658.png 1024w, /insights/assets/media/326109a697-14-export-768x493.png 768w, /insights/assets/media/7dad6724d1-14-export-1536x987.png 1536w" sizes="auto, (max-width: 1784px) 100vw, 1784px" /></figure>
 
 
 

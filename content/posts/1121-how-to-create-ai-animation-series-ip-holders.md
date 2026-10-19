@@ -9,21 +9,20 @@ categories: [10]
 tags: []
 lang: "en"
 author: 1
-sourceUrl: "https://cinev.com/insights/how-to-create-ai-animation-series-ip-holders/"
 excerpt: "You have a character with a world behind it. Maybe it is a webtoon you have been writing for two […]"
-format: "wordpress-html"
-wordpressId: 1121
-snapshotFile: "migration/snapshots/5438b5468509.html"
-image: "/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png"
+format: "html"
+legacyId: 1121
+templateFile: "src/templates/5438b5468509.html"
+image: "/insights/assets/media/3d39c4b0ec-ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png"
 readingMinutes: 6
 seoTitle: "How to Create an AI Animation Series (A Practical Guide for IP Holders) : CineV"
 description: "A practical breakdown of how IP holders and creators are building AI animation series in 2026, from production pipelines to character consistency and cost."
-socialImage: "/insights/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png"
+socialImage: "/insights/assets/media/be4ab34a3a-ai-animation-for-ip-holder-osmu-mixmedia.png"
 pageType: "AboutPage"
 rssGuid: "https://cinev.com/insights/?p=1121"
 ---
 
-<div class="wp-block-uagb-image aligncenter uagb-block-48dc5109 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-center"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png ,/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png 780w, /wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/04/ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png" alt="" class="uag-image-1125" width="826" height="461" title="ai animation for ip holder- osmu-mixmedia" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image aligncenter uagb-block-48dc5109 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-center"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/3d39c4b0ec-ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png ,/insights/assets/media/be4ab34a3a-ai-animation-for-ip-holder-osmu-mixmedia.png 780w, /insights/assets/media/be4ab34a3a-ai-animation-for-ip-holder-osmu-mixmedia.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/3d39c4b0ec-ai-animation-for-ip-holder-osmu-mixmedia-1024x572.png" alt="" class="uag-image-1125" width="826" height="461" title="ai animation for ip holder- osmu-mixmedia" loading="lazy" role="img"/></figure></div>
 
 
 
@@ -110,7 +109,7 @@ rssGuid: "https://cinev.com/insights/?p=1121"
 
 
 
-<figure class="wp-block-image aligncenter size-full"><img loading="lazy" decoding="async" width="600" height="338" src="/wp-content/uploads/2026/04/cat-biggie-ai-animation.webp" alt="" class="wp-image-1124" srcset="/wp-content/uploads/2026/04/cat-biggie-ai-animation.webp 600w, /wp-content/uploads/2026/04/cat-biggie-ai-animation-300x169.webp 300w" sizes="auto, (max-width: 600px) 100vw, 600px" /><figcaption class="wp-element-caption"><sub>Cat Biggie (2025) — Image: CJ ENM</sub></figcaption></figure>
+<figure class="wp-block-image aligncenter size-full"><img loading="lazy" decoding="async" width="600" height="338" src="/insights/assets/media/a461e37721-cat-biggie-ai-animation.webp" alt="" class="wp-image-1124" srcset="/insights/assets/media/a461e37721-cat-biggie-ai-animation.webp 600w, /insights/assets/media/020d1e8d81-cat-biggie-ai-animation-300x169.webp 300w" sizes="auto, (max-width: 600px) 100vw, 600px" /><figcaption class="wp-element-caption"><sub>Cat Biggie (2025) — Image: CJ ENM</sub></figcaption></figure>
 
 
 
@@ -118,7 +117,7 @@ rssGuid: "https://cinev.com/insights/?p=1121"
 
 
 
-<figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="662" src="/wp-content/uploads/2026/04/spacevets_ai_animation-1024x662.webp" alt="Space Vets (2024) — Image: Storybook Studios 출처 링크: https://www.storybookstudios.ai/space-vets" class="wp-image-1123" style="width:662px;height:auto" srcset="/wp-content/uploads/2026/04/spacevets_ai_animation-1024x662.webp 1024w, /wp-content/uploads/2026/04/spacevets_ai_animation-300x194.webp 300w, /wp-content/uploads/2026/04/spacevets_ai_animation-768x497.webp 768w, /wp-content/uploads/2026/04/spacevets_ai_animation-1536x994.webp 1536w, /wp-content/uploads/2026/04/spacevets_ai_animation-2048x1325.webp 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption"><sup><kbd><code>Space Vets (2024) — Image: Storybook Studios</code></kbd></sup></figcaption></figure>
+<figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="662" src="/insights/assets/media/3f937e09d1-spacevets_ai_animation-1024x662.webp" alt="Space Vets (2024) — Image: Storybook Studios 출처 링크: https://www.storybookstudios.ai/space-vets" class="wp-image-1123" style="width:662px;height:auto" srcset="/insights/assets/media/3f937e09d1-spacevets_ai_animation-1024x662.webp 1024w, /insights/assets/media/239619dfd2-spacevets_ai_animation-300x194.webp 300w, /insights/assets/media/742f361705-spacevets_ai_animation-768x497.webp 768w, /insights/assets/media/b4ac4ab9ad-spacevets_ai_animation-1536x994.webp 1536w, /insights/assets/media/7282757970-spacevets_ai_animation-2048x1325.webp 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption"><sup><kbd><code>Space Vets (2024) — Image: Storybook Studios</code></kbd></sup></figcaption></figure>
 
 
 
@@ -198,7 +197,7 @@ rssGuid: "https://cinev.com/insights/?p=1121"
 
 
 
-<figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="534" src="/wp-content/uploads/2026/04/ai-driven-animation-workflow-1024x534.png" alt="" class="wp-image-1127" style="width:634px;height:auto" srcset="/wp-content/uploads/2026/04/ai-driven-animation-workflow-1024x534.png 1024w, /wp-content/uploads/2026/04/ai-driven-animation-workflow-300x156.png 300w, /wp-content/uploads/2026/04/ai-driven-animation-workflow-768x400.png 768w, /wp-content/uploads/2026/04/ai-driven-animation-workflow.png 1190w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="534" src="/insights/assets/media/20c5baceb2-ai-driven-animation-workflow-1024x534.png" alt="" class="wp-image-1127" style="width:634px;height:auto" srcset="/insights/assets/media/20c5baceb2-ai-driven-animation-workflow-1024x534.png 1024w, /insights/assets/media/425820a5d5-ai-driven-animation-workflow-300x156.png 300w, /insights/assets/media/0fa9c2025e-ai-driven-animation-workflow-768x400.png 768w, /insights/assets/media/4b54f67c71-ai-driven-animation-workflow.png 1190w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 

@@ -5,7 +5,7 @@ import { load } from 'cheerio';
 
 const options = process.argv.slice(2);
 if (options.includes('--help')) {
-  console.log('Usage: node scripts/verify-rss.mjs [--migration-baseline]\nDefault: verify current publication, RSS structure, GUID stability and aliases.\n--migration-baseline: also compare original WordPress author/category/date/enclosure metadata.');
+  console.log('Usage: node scripts/verify-rss.mjs [--migration-baseline]\nDefault: verify current publication, RSS structure, GUID stability and aliases.\n--migration-baseline: also compare archived author/category/date/enclosure metadata.');
   process.exit(0);
 }
 assert(options.every(option => option === '--migration-baseline'), 'Unknown RSS verification option');
@@ -14,17 +14,15 @@ const root = process.cwd();
 const read = path => readFileSync(resolve(root, path), 'utf8');
 const site = JSON.parse(read('src/config/site.json'));
 const published = JSON.parse(read('dist/search-index.json')).filter(entry => entry.collection === 'posts');
-const originalPosts = JSON.parse(read('migration/source-api/posts.json'));
 const assetManifest = JSON.parse(read('dist/asset-manifest.json'));
 const assets = new Map(assetManifest.assets.map(asset => [decodeURI(asset.path), asset]));
-const aliases = new Set(Object.keys(assetManifest.aliases).map(path => decodeURI(site.base + path)));
 const checkedAssets = new Set();
 const checkOwnedAsset = (value, context) => {
   const url = new URL(value);
   if (url.origin !== site.origin) return;
   const path = decodeURI(url.pathname);
-  if (!path.startsWith(site.base + '/') || !/^\/(?:wp-content|wp-includes|images|_astro)\//.test(path.slice(site.base.length))) return;
-  assert(!aliases.has(path), `Unresolved RSS asset alias in ${context}: ${path}`);
+  if (!path.startsWith(site.base + '/') || !/^\/(?:assets|wp-content|wp-includes|images|_astro)\//.test(path.slice(site.base.length))) return;
+  assert(!/\/(?:wp-content|wp-includes)\//.test(path), `Retired RSS asset URL in ${context}: ${path}`);
   const asset = assets.get(path);
   assert(asset, `RSS asset omitted from deployment manifest in ${context}: ${path}`);
   if (!checkedAssets.has(path)) {
@@ -109,36 +107,27 @@ for (const lang of ['en', 'ko', 'ja', 'all']) {
   assert.equal(entries.size, expected.length, `${lang}: missing RSS entries`);
   feeds.set(lang, entries);
 }
-for (const lang of ['en', 'ko', 'ja']) {
-  const source = xml(read(`migration/source-feeds/${lang}.xml`));
-  source('channel > item').each((_, element) => {
-    const original = source(element);
-    const link = canonical(original.children('link').text());
-    // The archive is a migration baseline, not a requirement to republish a
-    // post that an editor later removes or marks as a draft.
-    if (!published.some(entry => site.origin + entry.path === link)) return;
+const baseline = JSON.parse(read('tests/fixtures/rss-baseline.json'));
+for (const [lang, originals] of Object.entries(baseline)) {
+  for (const original of originals) {
+    const link = canonical(original.link);
+    if (!published.some(entry => site.origin + entry.path === link)) continue;
     for (const kind of [lang, 'all']) {
       const current = feeds.get(kind).get(link);
-      assert(current, `${kind}: missing migrated RSS item ${link}`);
-      assert.equal(current.children('guid').text(), original.children('guid').text());
+      assert(current, `${kind}: missing baseline RSS item ${link}`);
+      assert.equal(current.children('guid').text(), original.guid);
       assert.equal(current.children('guid').attr('isPermaLink'), 'false');
       if (migrationBaseline) {
-        assert.equal(child(current, 'dc:creator').text(), child(original, 'dc:creator').text());
-        assert.deepEqual(current.children('category').map((_, element) => source(element).text()).get().sort(), original.children('category').map((_, element) => source(element).text()).get().sort());
-        assert.equal(Date.parse(current.children('pubDate').text()), Date.parse(original.children('pubDate').text()));
-        assert.equal(current.children('enclosure').length, original.children('enclosure').length);
-        if (original.children('enclosure').length) {
-          assert.equal(current.children('enclosure').attr('length'), original.children('enclosure').attr('length'));
-          assert.equal(current.children('enclosure').attr('type'), original.children('enclosure').attr('type'));
+        assert.equal(child(current, 'dc:creator').text(), original.author);
+        assert.deepEqual(current.children('category').map((_, element) => load(element).text()).get().sort(), original.categories.slice().sort());
+        assert.equal(Date.parse(current.children('pubDate').text()), Date.parse(original.date));
+        assert.equal(current.children('enclosure').length, original.enclosure ? 1 : 0);
+        if (original.enclosure) {
+          assert.equal(current.children('enclosure').attr('length'), original.enclosure.length);
+          assert.equal(current.children('enclosure').attr('type'), original.enclosure.type);
         }
       }
     }
-  });
+  }
 }
-for (const original of originalPosts) {
-  const guid = original.guid.rendered;
-  const publishedPost = [...feeds.get('all').values()].find(item => item.children('guid').text() === guid);
-  const link = canonical(original.link);
-  if (published.some(entry => site.origin + entry.path === link)) assert(publishedPost, `Original API GUID missing: ${guid}`);
-}
-console.log(`RSS checks passed: ${checked} items across en/ko/ja/all, language isolation, original GUIDs, current page metadata, absolute body URLs, feed aliases, ${checkedAssets.size} deployed body/media assets and resolved asset aliases${migrationBaseline ? ', original WordPress metadata baseline' : ''}.`);
+console.log(`RSS checks passed: ${checked} items across en/ko/ja/all, language isolation, stable GUIDs, current page metadata, absolute body URLs, feed aliases, ${checkedAssets.size} deployed body/media assets${migrationBaseline ? ', original WordPress metadata baseline' : ''}.`);

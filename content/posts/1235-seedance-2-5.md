@@ -9,17 +9,16 @@ categories: [20]
 tags: []
 lang: "ja"
 author: 4
-sourceUrl: "https://cinev.com/insights/ja/seedance-2-5%e3%82%92%e6%9c%80%e5%a4%a7%e9%99%90%e3%81%ab%e4%bd%bf%e3%81%84%e3%81%93%e3%81%aa%e3%81%99/"
 excerpt: "この記事は Seedance 2.5 専用である。2.0 向けの記述とどこが違うかは「Seedance 2.5で実際に何が変わったのか」の章にまとめた。 CineVがSeedanceを語る理由 CineVは、アニメーションを最もうまく作れる生成AIプラットフォームを目指している。この一文を少しひねって読むと、別の意味がひとつ立ち上がる。 Seedanceの公式ドキュメントには次の警告がある。Dreamina Seedance 2.5 and Dreamina Seedance 2.0 series models do not support […]"
-format: "wordpress-html"
-wordpressId: 1235
-snapshotFile: "migration/snapshots/239dfa18afc1.html"
-image: "/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png"
+format: "html"
+legacyId: 1235
+templateFile: "src/templates/239dfa18afc1.html"
+image: "/insights/assets/media/0844bcb56a-seedance2-5-on-cinev-1024x578.png"
 readingMinutes: 9
 seoTitle: "Seedance 2.5を最大限に使いこなす : CineV"
-socialImage: "/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-scaled.png"
+socialImage: "/insights/assets/media/b33f764b90-seedance2-5-on-cinev-scaled.png"
 rssGuid: "https://cinev.com/insights/?p=1235"
-rssEnclosure: {"url": "/insights/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4", "length": 33272361, "type": "video/mp4"}
+rssEnclosure: {"url": "/insights/assets/media/dcfc3a97ab-SD2-5_OneRoom_02-1-1.mp4", "length": 33272361, "type": "video/mp4"}
 translationKey: "wordpress-1218"
 ---
 
@@ -27,7 +26,7 @@ translationKey: "wordpress-1218"
 
 
 
-<div class="wp-block-uagb-image alignfull uagb-block-136cc885 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-full"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/08/seedance2.5-on-cinev-1-scaled.png ,/wp-content/uploads/2026/08/seedance2.5-on-cinev-1-scaled.png 780w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-1-scaled.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/08/seedance2.5-on-cinev-1-scaled.png" alt="" class="uag-image-1236" width="2560" height="1445" title="seedance2.5-on-cinev" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image alignfull uagb-block-136cc885 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-full"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/841f1bc580-seedance2-5-on-cinev-1-scaled.png ,/insights/assets/media/841f1bc580-seedance2-5-on-cinev-1-scaled.png 780w, /insights/assets/media/841f1bc580-seedance2-5-on-cinev-1-scaled.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/841f1bc580-seedance2-5-on-cinev-1-scaled.png" alt="" class="uag-image-1236" width="2560" height="1445" title="seedance2.5-on-cinev" loading="lazy" role="img"/></figure></div>
 
 
 
@@ -123,7 +122,7 @@ translationKey: "wordpress-1218"
 
 
 
-<div class="wp-block-uagb-image uagb-block-727c083c wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/08/flowchart-ja-scaled.png ,/wp-content/uploads/2026/08/flowchart-ja-scaled.png 780w, /wp-content/uploads/2026/08/flowchart-ja-scaled.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/08/flowchart-ja-scaled.png" alt="" class="uag-image-1237" width="1700" height="2560" title="flowchart-ja" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image uagb-block-727c083c wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/077086b00d-flowchart-ja-scaled.png ,/insights/assets/media/077086b00d-flowchart-ja-scaled.png 780w, /insights/assets/media/077086b00d-flowchart-ja-scaled.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/077086b00d-flowchart-ja-scaled.png" alt="" class="uag-image-1237" width="1700" height="2560" title="flowchart-ja" loading="lazy" role="img"/></figure></div>
 
 
 
@@ -255,7 +254,7 @@ translationKey: "wordpress-1218"
 
 
 
-<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-3.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="/">Seedance 2.5はCineVで利用できます。</a></figcaption></figure>
+<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/insights/assets/media/dcfc3a97ab-SD2-5_OneRoom_02-1-1.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="/">Seedance 2.5はCineVで利用できます。</a></figcaption></figure>
 
 
 

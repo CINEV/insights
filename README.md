@@ -10,13 +10,15 @@ CineV의 게시글과 기능 소개 페이지를 제공하는 독립 Astro 블�
 | --- | --- |
 | `content/posts/` | 게시글 Markdown |
 | `content/pages/` | 기능 소개 등 콘텐츠 페이지 Markdown |
-| `src/config/site.json` | 사이트·조직·SEO·Search Console·Analytics 공통 설정 |
+| `src/config/site.json` | 사이트·조직·SEO·Search Console 공통 설정 |
 | `src/content.config.ts` | 콘텐츠 수집과 frontmatter 스키마 |
 | `src/pages/` | 게시글·목록 라우트, RSS, 사이트맵, 검색 인덱스 생성 |
-| `src/lib/` | 라우트 구성, 원본 템플릿 렌더링, SEO·피드 처리 |
+| `src/lib/` | 라우트 구성, 사이트 템플릿 렌더링, SEO·피드 처리 |
 | `public/` | 이미지·영상·폰트·CSS와 브라우저 동작 스크립트 |
-| `migration/` | 원본 템플릿, 콘텐츠·분류 카탈로그, 공개 API 백업 |
-| `scripts/` | WordPress 가져오기와 빌드 결과 검증 |
+| `src/templates/` | 본문을 분리한 HTML 레이아웃 |
+| `src/config/` | 분류·번역 설정과 자산 무결성 목록 |
+| `tests/fixtures/` | RSS 구독 식별자와 메타데이터 검증 기준 |
+| `scripts/` | 새 글 생성과 빌드 결과 검증 |
 
 게시글과 언어별·카테고리별·태그별 목록을 빌드 시 생성합니다. 작성자 이름은 글에 표시하며, 작성자 목록 URL은 홈으로 이동합니다. 검색은 정적 검색 인덱스를 사용합니다. 메뉴·FAQ·슬라이더·고정 헤더·무한스크롤은 `public/site.js`, 보완 스타일은 `public/site.css`에서 관리합니다.
 
@@ -80,14 +82,14 @@ Markdown으로 본문을 작성합니다.
 ![튜토리얼 화면](/insights/images/tutorial-cover.webp)
 ```
 
-예시 이미지는 `public/images/tutorial-cover.webp`에 저장합니다. `public/images/`에 추가한 파일은 빌드 결과에 포함됩니다. 기존 WordPress 자산은 실제 페이지·RSS·CSS에서 참조하는 파일만 배포하며, 본문과 대표 이미지에는 `/insights/`를 포함한 공개 경로를 사용합니다. 대표 이미지가 없으면 `image`와 `imageAlt`를 생략합니다.
+예시 이미지는 `public/images/tutorial-cover.webp`에 저장합니다. `public/images/`에 추가한 파일은 빌드 결과에 포함됩니다. 기존 디자인에 필요한 자산은 `public/assets/`에서 관리하며, 본문과 대표 이미지에는 `/insights/`를 포함한 공개 경로를 사용합니다. 대표 이미지가 없으면 `image`와 `imageAlt`를 생략합니다.
 
 | 항목 | 규칙 |
 | --- | --- |
 | `title`, `date` | 필수. 날짜는 시간대가 포함된 ISO 형식 권장 |
 | `lang`, `path` | 영어 `/insights/slug/`, 한국어 `/insights/ko/slug/`, 일본어 `/insights/ja/slug/` |
 | `excerpt` | 글 목록·검색·RSS에 쓰는 요약문 |
-| `categories`, `tags` | 기존 분류의 ID 또는 slug. 기존 분류는 `migration/catalog.json` 참조 |
+| `categories`, `tags` | 기존 분류의 ID 또는 slug. 기존 분류는 `src/config/catalog.json` 참조 |
 | `draft` | `true`인 콘텐츠는 로컬 개발 서버에서만 미리보기 가능하며 배포·검색·RSS·사이트맵에서 제외 |
 | `seoTitle`, `description`, `socialImage` | 검색·공유 표시를 따로 지정할 때만 사용. 기본값은 제목·요약·대표 이미지 |
 | `noindex` | 공개 상태로 검색 색인·사이트맵·llms.txt에서 제외. 비공개 기능이 아님 |
@@ -116,15 +118,15 @@ npm run preview
 
 `check`는 Python 3.9 이상을 사용해 운영 빌드와 글·이미지·링크·RSS·사이트맵 검증을 실행합니다. URL 중복·예약 경로·언어에 맞지 않는 분류·없는 작성자는 빌드를 실패시킵니다. 요약이 비어 있으면 본문에서 목록·검색·RSS 요약을 생성합니다. 새 글은 기존 글의 본문 템플릿을 상속하지 않고 제목·분류·작성자·대표 이미지로 전용 Markdown 화면을 구성합니다.
 
-기본 분류는 `--help`에 표시되는 카테고리 ID 또는 slug를 사용합니다. 새 태그는 frontmatter의 `tags`에 추가하면 목록이 생성됩니다. 새 작성자나 카테고리를 운영에 추가하려면 `migration/catalog.json`의 해당 항목과 메뉴 구성을 함께 관리합니다.
+기본 분류는 `--help`에 표시되는 카테고리 ID 또는 slug를 사용합니다. 새 태그는 frontmatter의 `tags`에 추가하면 목록이 생성됩니다. 새 작성자나 카테고리를 운영에 추가하려면 `src/config/catalog.json`의 해당 항목과 메뉴 구성을 함께 관리합니다.
 
 직접 `main`에 push하면 자동 배포됩니다. 리뷰를 거칠 때는 작업 브랜치에서 PR을 만들면 같은 빌드·검증이 실행되며, `main`에 반영된 뒤 배포됩니다. **PR 검증은 배포하지 않습니다.** CI는 `npm run test:publishing`으로 임시 글을 생성해 3개 언어의 새 글 반영과 초안 제외도 검증합니다. 임시 글은 운영 콘텐츠에 추가되지 않습니다.
 
 ### 기존 콘텐츠 수정
 
-기능 소개 페이지는 `content/pages/`에서 관리합니다. 기존 WordPress 콘텐츠는 레이아웃을 유지하기 위해 Markdown 안에 HTML을 포함합니다. 자동 관련 글·이전/다음 글 링크는 현재 발행 상태와 경로에 맞춰 갱신합니다. 직접 작성한 본문의 링크는 자동 변경하지 않으므로 대상 글을 내리거나 주소를 바꿀 때 함께 수정합니다. 기존 글의 `wordpressId`, `snapshotFile`과 HTML 클래스·구조는 원본 템플릿과 디자인을 연결하므로 유지합니다. `migration/`은 빌드에 필요한 자료이며 삭제하지 않습니다.
+기능 소개 페이지는 `content/pages/`에서 관리합니다. 기존 WordPress 콘텐츠는 레이아웃을 유지하기 위해 Markdown 안에 HTML을 포함합니다. 자동 관련 글·이전/다음 글 링크는 현재 발행 상태와 경로에 맞춰 갱신합니다. 직접 작성한 본문의 링크는 자동 변경하지 않으므로 대상 글을 내리거나 주소를 바꿀 때 함께 수정합니다. 기존 글의 `legacyId`는 예전 짧은 URL 호환용이며 `templateFile`은 `src/templates/`의 레이아웃을 지정합니다. 본문 HTML의 클래스는 현재 CSS와 연결되므로 유지합니다. WordPress 원본 백업과 `migration/` 폴더는 빌드에 사용하지 않습니다.
 
-원본 디자인과 콘텐츠를 보존하지만 WordPress 플러그인 자체를 실행하지는 않습니다. 정상 로드되는 원본 글꼴에 따라 기존 프록시 화면과 일부 줄바꿈이 달라질 수 있으며, 검색 제목·설명은 글의 frontmatter에서 관리합니다.
+원본 디자인과 콘텐츠를 보존하지만 WordPress 플러그인 자체를 실행하지는 않습니다. 사이트에 포함된 WOFF2 글꼴을 사용하며, 검색 제목·설명은 글의 frontmatter에서 관리합니다.
 
 ## 발행과 배포
 
@@ -132,7 +134,7 @@ npm run preview
 
 배포 주소는 [https://cinev.github.io/insights/](https://cinev.github.io/insights/)입니다. `cinev.github.io` 저장소와 루트 주소는 별도 프로젝트에서 사용할 수 있습니다. 배포 상태와 실패 로그는 저장소의 **Actions → Deploy to GitHub Pages**에서 확인합니다. 빌드나 검증이 실패하면 새 버전은 배포되지 않습니다.
 
-기존 `CINEV/cinev.github.io`에서 이전할 때는 먼저 메인 프론트의 문서·피드 프록시 목적지를 `https://cinev.github.io/insights/...`로 변경하고 배포합니다. 기존 사이트도 이 경로를 제공하므로 먼저 전환할 수 있습니다. 그다음 저장소 이름을 `insights`로 변경하고 이 workflow로 재배포합니다. 이름 변경 전에는 deploy 단계가 중단되도록 검사합니다. 로컬 remote도 `git remote set-url origin https://github.com/CINEV/insights.git`으로 갱신합니다.
+서비스 프론트가 운영되는 동안에는 `/insights/` 요청을 이 프로젝트 Pages의 같은 경로로 프록시합니다. 서비스 종료 후에는 조직 Pages 사이트에 `cinev.com`을 연결하고, 독립 프로젝트 Pages인 Insights를 `/insights/`에서 계속 제공합니다. 메인 저장소에 블로그 빌드 결과를 복사하지 않습니다.
 
 초안은 `draft: true`로 관리하고 발행할 때 `false`로 변경합니다. 글 수정·삭제, 이미지·스타일·스크립트 변경도 `main`에 push한 뒤 배포가 완료되면 반영됩니다. 메인 프론트 앱의 재빌드는 필요하지 않습니다. 이전 버전으로 되돌리려면 해당 변경을 revert하고 `main`에 push합니다.
 
@@ -149,7 +151,7 @@ GitHub Pages는 배포 폴더의 파일을 저장소 이름에 따라 `/insights
 
 기존 `/insights/feed/`, `/insights/ko/feed/`, `/insights/ja/feed/` 구독 주소를 유지합니다. 메인 프론트는 이 주소를 실제 `.xml` 파일로 프록시해 XML 응답 형식을 보존합니다. Pages 직접 접근에서는 디렉터리 별칭에 XML 본문을 제공하지만 응답 형식은 `text/html`이므로 새 구독에는 언어별 `feed.xml`을 사용합니다. 큰 자산은 복제하지 않습니다.
 
-운영 공개 주소와 SEO canonical은 `https://cinev.com/insights/`로 유지합니다. 운영 전환은 메인 프론트의 프록시 대상을 GitHub Pages로 변경하는 방식입니다. 블로그 배포만으로 프론트 설정이나 DNS가 바뀌지는 않습니다.
+운영 공개 주소와 SEO canonical은 `https://cinev.com/insights/`로 유지합니다. 서비스 종료 전에는 프론트 프록시를, 종료 후에는 조직 Pages의 도메인 연결을 사용합니다. 블로그 배포만으로 프론트 설정이나 DNS가 바뀌지는 않습니다.
 
 ```text
 cinev.com/insights/글주소/
@@ -157,19 +159,17 @@ cinev.com/insights/글주소/
   → cinev.github.io/insights/글주소/
 ```
 
-검색 메타데이터·분석·사이트 인증·색인 정책과 프론트 전환 방법은 [SEO와 운영 연결](docs/seo.md)을 참고합니다. `llms.txt`도 발행된 글에서 자동 생성합니다.
+검색 메타데이터·사이트 인증·색인 정책과 프론트 전환 방법은 [SEO와 운영 연결](docs/seo.md)을 참고합니다. `llms.txt`도 발행된 글에서 자동 생성합니다.
 
 ## 유지보수
 
 ### 배포 용량 관리
 
-`public/`의 WordPress 원본 파일은 복구용으로 유지합니다. 배포 시에는 생성된 HTML·RSS·CSS와 그 간접 참조를 따라 필요한 파일만 포함합니다. 글에서 사용하지 않는 원본·썸네일·과거 플러그인 파일은 `dist/`에서 제외합니다. 새 글용 `public/images/` 파일은 보존합니다.
+`public/assets/media/`, `fonts/`, `styles/`에는 현재 사이트에 필요한 파일만 보관합니다. 미사용 원본 283개(원본 TTF 8개와 중복 영상 4개 포함)는 제거했고, WordPress 플러그인 JavaScript를 실행하지 않습니다. 이미지·영상·WOFF2는 재인코딩하지 않고 기존 배포 파일의 바이트를 유지했습니다. CSS는 새 자산 경로를 참조합니다.
 
-내용이 동일한 영상은 `migration/asset-aliases.json`의 대표 파일로 통합합니다. 빌드 시 두 원본의 바이트가 같은지 확인하고 HTML·CSS·RSS 참조를 바꿉니다. 원본 미디어는 수정하거나 재인코딩하지 않습니다. 운영 도메인의 기존 영상·폰트 주소는 메인 프론트의 명시적 rewrite로 유지합니다. 이 매핑을 추가·변경할 때는 `node scripts/export-asset-rewrites.mjs` 결과를 프론트에도 반영해야 합니다. 일반적인 새 글 발행에는 프론트 변경이 필요 없습니다.
+`src/config/asset-integrity.json`은 관리 자산 271개의 경로·크기·SHA256입니다. 빌드는 이를 검증하며 `dist/asset-manifest.json`에 실제 배포 목록을 기록합니다. 새 글의 `public/images/`와 사이트 스크립트도 배포합니다. 검증된 한·일 글꼴은 원본 TTF 없이 사용할 수 있으며, 교체 절차는 [글꼴 관리](docs/font-optimization.md)를 참고합니다.
 
-한·일 Noto 글꼴 8개는 전체 글리프를 유지한 WOFF2로 배포합니다. 검증된 파일을 저장소에 포함하므로 일반 빌드나 새 글 발행에 별도 변환 도구는 필요 없습니다. 빌드는 `migration/font-conversions.json`의 원본·결과 SHA256을 확인하고 CSS 경로와 형식을 자동으로 바꿉니다. 글꼴 원본을 변경할 때만 [글꼴 재생성 절차](docs/font-optimization.md)를 따릅니다.
-
-`dist/asset-manifest.json`에 실제 배포 자산·SHA256·제외 파일·총 자산 용량을 기록합니다. 이는 빌드 결과이며 수동으로 편집하지 않습니다. 원본 보존 검사는 `migration/media-library.json`, 배포 검사는 이 manifest를 사용합니다. Pages에서 옛 루트 자산 URL(`/wp-content/...`)은 제공하지 않으며, 실제 페이지는 `/insights/wp-content/...`를 참조합니다.
+자산 URL은 `/insights/assets/`로 전환했습니다. `/wp-content/`·`/wp-includes/`의 옛 경로에는 호환 파일이나 rewrite를 제공하지 않습니다. 따라서 외부에 저장된 옛 자산 링크와 구독기의 과거 캐시 본문에서는 이미지가 표시되지 않을 수 있습니다. 기존 글·RSS 구독 주소와 GUID는 이번 자산 이전에서 유지하며, 새 HTML·RSS·CSS는 모두 새 자산 경로를 사용합니다. 서비스 프론트가 있는 동안에는 `/insights/` 아래의 같은 파일 경로를 Pages로 프록시하고, 종료 후 조직 Pages에 연결된 도메인에서도 프로젝트 Pages의 `/insights/` 경로로 제공합니다.
 
 ### 빌드 결과 검증
 
@@ -185,15 +185,8 @@ python3 scripts/verify-build.py
 python3 scripts/verify-build.py --base-url http://localhost:4321
 ```
 
-### WordPress 콘텐츠 다시 가져오기
+### 원본 제거 이후의 자료
 
-원본 사이트의 공개 콘텐츠를 다시 수집할 때만 사용합니다. 일반적인 글 발행에는 필요하지 않습니다.
+WordPress 원본 HTML·RSS 내보내기·API 응답·PHP 설정·미디어 보관 폴더와 수집 도구는 제거했습니다. `src/templates/`에는 본문이 없는 레이아웃, `src/config/catalog.json`에는 경로·분류와 카드 표시 정보, `tests/fixtures/rss-baseline.json`에는 구독 호환성 검사에 필요한 메타데이터만 남습니다. 본문은 `content/`에서 관리합니다.
 
-```sh
-python3 scripts/import-wordpress.py
-python3 scripts/archive-wordpress-media.py
-```
-
-기존 Markdown은 기본적으로 보존하지만 `migration/`의 카탈로그·템플릿·API 백업과 가져온 자산은 갱신합니다. 기존 Markdown까지 원본으로 덮어쓰려면 별도 백업 후 `--overwrite-content`를 사용합니다. 두 번째 명령은 미디어 라이브러리 전체의 원본·축소본을 내려받고 `migration/media-library.json`에 크기와 SHA256을 기록합니다. 기존 파일은 덮어쓰지 않습니다. 가져온 뒤에는 변경사항과 `migration/catalog.json`의 `failures`, `skipped`를 확인하고 다시 빌드합니다.
-
-다운로드 캐시는 `.migration-cache/`에 저장합니다. `--use-cache`는 스냅샷과 자산을 재사용하며, API·사이트맵 요청은 계속 수행합니다. 캐시와 달리 `migration/`은 저장소에 유지해야 합니다. WordPress 관리자·사용자 계정·플러그인 런타임은 운영하지 않습니다. 이전한 범위와 원본 설정의 대응 관계는 [이관 자료](migration/README.md)에 기록되어 있습니다.
+`npm run test:media`는 네트워크 없이 관리 자산의 크기·SHA256을 검사합니다. 폐기한 호스트가 들어 있던 RSS GUID 3개는 앞선 정리에서 고정 UUID로 변경했으며 이번 원본 제거에서 다시 바꾸지 않았습니다. 외부 CSS의 저작권·라이선스 표시는 유지합니다. 파일 삭제는 Git 과거 이력을 삭제하지 않습니다.

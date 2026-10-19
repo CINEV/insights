@@ -9,22 +9,21 @@ categories: []
 tags: []
 lang: "ko"
 author: 1
-sourceUrl: "https://cinev.com/insights/ko/ai-anime-series-generator-ko/"
 excerpt: "Animate Your Characters,Launch Your Anime Series Simple Story to Rich Scripts Input a synopsis and CineV generates a detailed script […]"
-format: "wordpress-html"
-wordpressId: 1096
-snapshotFile: "migration/snapshots/45785613b340.html"
-image: "/wp-content/uploads/2026/03/og-cinev-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%86%8C%EA%B0%9C-1024x577.png"
+format: "html"
+legacyId: 1096
+templateFile: "src/templates/45785613b340.html"
+image: "/insights/assets/media/8ec373cc13-og-cinev.png"
 seoTitle: "Animate Your IP Characters, Launch Your Own Anime Series : CineV"
 description: "Register your IP character once and direct your own anime series. no studio, no animation skills needed. CineV gives creators a virtual 3D studio."
-socialImage: "/insights/wp-content/uploads/2026/03/og-cinev-서비스-소개.png"
+socialImage: "/insights/assets/media/8ec373cc13-og-cinev.png"
 pageType: "AboutPage"
 translationKey: "wordpress-414"
 ---
 
-<section class="wp-block-uagb-container uagb-layout-flex uagb-block-ip-hero-wrap alignfull uagb-is-root-container uagb-block-b2575748 alignfull uagb-is-root-container"><div class="uagb-container__video-wrap"><video autoplay loop muted playsinline><source src="/wp-content/uploads/2026/03/showcase_video1.mp4" type="video/mp4"/></video></div>
+<section class="wp-block-uagb-container uagb-layout-flex uagb-block-ip-hero-wrap alignfull uagb-is-root-container uagb-block-b2575748 alignfull uagb-is-root-container"><div class="uagb-container__video-wrap"><video autoplay loop muted playsinline><source src="/insights/assets/media/662a32d6ec-showcase_video1.mp4" type="video/mp4"/></video></div>
 <header class="uagb-position__sticky wp-block-uagb-container .uagb-block-ip-header {  left: 0 !important; width: 100% } uagb-layout-flex uagb-block-ip-header alignfull uagb-is-root-container"><div class="uagb-container-inner-blocks-wrap">
-<div class="wp-block-uagb-container uagb-block-ip-logo"><div class="wp-block-site-logo"><a aria-label="CINEV Insights" href="/insights/ko/" class="custom-logo-link" rel="home"><img loading="lazy" decoding="async" width="100" height="20" src="/wp-content/uploads/2026/03/cinev-bi-white-80x16.png" class="custom-logo" alt="cinev-header-logo-wh" srcset="/wp-content/uploads/2026/03/cinev-bi-white.png 100w, /wp-content/uploads/2026/03/cinev-bi-white-80x16.png 80w" sizes="auto, (max-width: 100px) 100vw, 100px" /></a></div></div>
+<div class="wp-block-uagb-container uagb-block-ip-logo"><div class="wp-block-site-logo"><a aria-label="CINEV Insights" href="/insights/ko/" class="custom-logo-link" rel="home"><img loading="lazy" decoding="async" width="100" height="20" src="/insights/assets/media/fee33a29f0-cinev-bi-white-80x16.png" class="custom-logo" alt="cinev-header-logo-wh" srcset="/insights/assets/media/6ffb94c6fa-cinev-bi-white.png 100w, /insights/assets/media/fee33a29f0-cinev-bi-white-80x16.png 80w" sizes="auto, (max-width: 100px) 100vw, 100px" /></a></div></div>
 
 
 
@@ -150,7 +149,7 @@ translationKey: "wordpress-414"
 
 
 
-<div class="wp-block-uagb-image alignleft uagb-block-1e1f628f wp-block-uagb-image--layout-default wp-block-uagb-image--effect-zoomin wp-block-uagb-image--align-left"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/03/generate-stroryboard.png ,/wp-content/uploads/2026/03/generate-stroryboard.png 780w, /wp-content/uploads/2026/03/generate-stroryboard.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/03/generate-stroryboard.png" alt="Type a simple synopsis. CineV automatically generates a full storyboard — scenes, camera angles, and shot composition. No planning experience needed." class="uag-image-434" width="1024" height="652" title="generate stroryboard" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image alignleft uagb-block-1e1f628f wp-block-uagb-image--layout-default wp-block-uagb-image--effect-zoomin wp-block-uagb-image--align-left"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/9e52b3ae31-generate-stroryboard.png ,/insights/assets/media/9e52b3ae31-generate-stroryboard.png 780w, /insights/assets/media/9e52b3ae31-generate-stroryboard.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/9e52b3ae31-generate-stroryboard.png" alt="Type a simple synopsis. CineV automatically generates a full storyboard — scenes, camera angles, and shot composition. No planning experience needed." class="uag-image-434" width="1024" height="652" title="generate stroryboard" loading="lazy" role="img"/></figure></div>
 </div>
 
 
@@ -182,7 +181,7 @@ translationKey: "wordpress-414"
 
 
 
-<div class="wp-block-uagb-image alignleft uagb-block-0de14e36 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-zoomin wp-block-uagb-image--align-left"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/03/3D-Studio-1.png ,/wp-content/uploads/2026/03/3D-Studio-1.png 780w, /wp-content/uploads/2026/03/3D-Studio-1.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/03/3D-Studio-1.png" alt="Step into the director's chair. Place your character on the 3D set, adjust movement, gaze, and camera angle — all from your browser. What you see is exactly what you export." class="uag-image-435" width="1024" height="652" title="3D Studio" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image alignleft uagb-block-0de14e36 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-zoomin wp-block-uagb-image--align-left"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/b3026b7f50-3D-Studio-1.png ,/insights/assets/media/b3026b7f50-3D-Studio-1.png 780w, /insights/assets/media/b3026b7f50-3D-Studio-1.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/b3026b7f50-3D-Studio-1.png" alt="Step into the director's chair. Place your character on the 3D set, adjust movement, gaze, and camera angle — all from your browser. What you see is exactly what you export." class="uag-image-435" width="1024" height="652" title="3D Studio" loading="lazy" role="img"/></figure></div>
 </div>
 
 
@@ -214,7 +213,7 @@ translationKey: "wordpress-414"
 
 
 
-<div class="wp-block-uagb-image alignleft uagb-block-0c3cf56f wp-block-uagb-image--layout-default wp-block-uagb-image--effect-zoomin wp-block-uagb-image--align-left"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/03/chracter.png ,/wp-content/uploads/2026/03/chracter.png 780w, /wp-content/uploads/2026/03/chracter.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/03/chracter.png" alt="Upload your original character as an image or VRM file. CineV locks in the look — the same face, outfit, and style appear consistently across every scene and every episode." class="uag-image-432" width="1024" height="652" title="chracter" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image alignleft uagb-block-0c3cf56f wp-block-uagb-image--layout-default wp-block-uagb-image--effect-zoomin wp-block-uagb-image--align-left"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/7235f7f242-chracter.png ,/insights/assets/media/7235f7f242-chracter.png 780w, /insights/assets/media/7235f7f242-chracter.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/7235f7f242-chracter.png" alt="Upload your original character as an image or VRM file. CineV locks in the look — the same face, outfit, and style appear consistently across every scene and every episode." class="uag-image-432" width="1024" height="652" title="chracter" loading="lazy" role="img"/></figure></div>
 </div>
 
 
@@ -246,7 +245,7 @@ translationKey: "wordpress-414"
 
 
 
-<div class="wp-block-uagb-image alignleft uagb-block-5ef92477 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-zoomin wp-block-uagb-image--align-left"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/03/ai-enhance.png ,/wp-content/uploads/2026/03/ai-enhance.png 780w, /wp-content/uploads/2026/03/ai-enhance.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/03/ai-enhance.png" alt="Before and after comparison of a CineV anime scene, showing raw 3D output transformed into a cinematic anime episode with AI enhancement" class="uag-image-430" width="1024" height="652" title="ai-enhance" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image alignleft uagb-block-5ef92477 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-zoomin wp-block-uagb-image--align-left"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/c6268c2b6a-ai-enhance.png ,/insights/assets/media/c6268c2b6a-ai-enhance.png 780w, /insights/assets/media/c6268c2b6a-ai-enhance.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/c6268c2b6a-ai-enhance.png" alt="Before and after comparison of a CineV anime scene, showing raw 3D output transformed into a cinematic anime episode with AI enhancement" class="uag-image-430" width="1024" height="652" title="ai-enhance" loading="lazy" role="img"/></figure></div>
 </div>
 
 
@@ -278,9 +277,9 @@ translationKey: "wordpress-414"
 												<div class="spectra-image-gallery__media-wrapper" data-spectra-gallery-image-id="727">
 							<div class="spectra-image-gallery__media spectra-image-gallery__media--carousel">
 				<picture>
-					<source media="(min-width: 1024px)" srcset="/wp-content/uploads/2026/03/image.png">
-					<source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/03/image.png">
-					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/wp-content/uploads/2026/03/image-300x130.png" alt="" />
+					<source media="(min-width: 1024px)" srcset="/insights/assets/media/8d418e6f74-image.png">
+					<source media="(min-width: 768px)" srcset="/insights/assets/media/8d418e6f74-image.png">
+					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/insights/assets/media/2f4851594e-image-300x130.png" alt="" />
 				</picture>
 				<div class="spectra-image-gallery__media-thumbnail-blurrer"></div>
 											<div class="spectra-image-gallery__media-thumbnail-caption-wrapper spectra-image-gallery__media-thumbnail-caption-wrapper--overlay"></div>
@@ -289,9 +288,9 @@ translationKey: "wordpress-414"
 						<div class="spectra-image-gallery__media-wrapper" data-spectra-gallery-image-id="737">
 							<div class="spectra-image-gallery__media spectra-image-gallery__media--carousel">
 				<picture>
-					<source media="(min-width: 1024px)" srcset="/wp-content/uploads/2026/03/altos-ventures.png">
-					<source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/03/altos-ventures.png">
-					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/wp-content/uploads/2026/03/altos-ventures.png" alt="" />
+					<source media="(min-width: 1024px)" srcset="/insights/assets/media/4fb7a03bd1-altos-ventures.png">
+					<source media="(min-width: 768px)" srcset="/insights/assets/media/4fb7a03bd1-altos-ventures.png">
+					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/insights/assets/media/4fb7a03bd1-altos-ventures.png" alt="" />
 				</picture>
 				<div class="spectra-image-gallery__media-thumbnail-blurrer"></div>
 											<div class="spectra-image-gallery__media-thumbnail-caption-wrapper spectra-image-gallery__media-thumbnail-caption-wrapper--overlay"></div>
@@ -300,9 +299,9 @@ translationKey: "wordpress-414"
 						<div class="spectra-image-gallery__media-wrapper" data-spectra-gallery-image-id="736">
 							<div class="spectra-image-gallery__media spectra-image-gallery__media--carousel">
 				<picture>
-					<source media="(min-width: 1024px)" srcset="/wp-content/uploads/2026/03/naver-webtoon.png">
-					<source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/03/naver-webtoon.png">
-					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/wp-content/uploads/2026/03/naver-webtoon.png" alt="" />
+					<source media="(min-width: 1024px)" srcset="/insights/assets/media/d211031dd6-naver-webtoon.png">
+					<source media="(min-width: 768px)" srcset="/insights/assets/media/d211031dd6-naver-webtoon.png">
+					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/insights/assets/media/d211031dd6-naver-webtoon.png" alt="" />
 				</picture>
 				<div class="spectra-image-gallery__media-thumbnail-blurrer"></div>
 											<div class="spectra-image-gallery__media-thumbnail-caption-wrapper spectra-image-gallery__media-thumbnail-caption-wrapper--overlay"></div>
@@ -311,9 +310,9 @@ translationKey: "wordpress-414"
 						<div class="spectra-image-gallery__media-wrapper" data-spectra-gallery-image-id="735">
 							<div class="spectra-image-gallery__media spectra-image-gallery__media--carousel">
 				<picture>
-					<source media="(min-width: 1024px)" srcset="/wp-content/uploads/2026/03/naver-z.png">
-					<source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/03/naver-z.png">
-					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/wp-content/uploads/2026/03/naver-z-300x71.png" alt="" />
+					<source media="(min-width: 1024px)" srcset="/insights/assets/media/2346f3ab07-naver-z.png">
+					<source media="(min-width: 768px)" srcset="/insights/assets/media/2346f3ab07-naver-z.png">
+					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/insights/assets/media/ffc3c671b2-naver-z-300x71.png" alt="" />
 				</picture>
 				<div class="spectra-image-gallery__media-thumbnail-blurrer"></div>
 											<div class="spectra-image-gallery__media-thumbnail-caption-wrapper spectra-image-gallery__media-thumbnail-caption-wrapper--overlay"></div>
@@ -322,9 +321,9 @@ translationKey: "wordpress-414"
 						<div class="spectra-image-gallery__media-wrapper" data-spectra-gallery-image-id="734">
 							<div class="spectra-image-gallery__media spectra-image-gallery__media--carousel">
 				<picture>
-					<source media="(min-width: 1024px)" srcset="/wp-content/uploads/2026/03/krafton.png">
-					<source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/03/krafton.png">
-					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/wp-content/uploads/2026/03/krafton-300x68.png" alt="" />
+					<source media="(min-width: 1024px)" srcset="/insights/assets/media/555495d5aa-krafton.png">
+					<source media="(min-width: 768px)" srcset="/insights/assets/media/555495d5aa-krafton.png">
+					<img decoding="async" class="spectra-image-gallery__media-thumbnail spectra-image-gallery__media-thumbnail--carousel" src="/insights/assets/media/9ee706bff3-krafton-300x68.png" alt="" />
 				</picture>
 				<div class="spectra-image-gallery__media-thumbnail-blurrer"></div>
 											<div class="spectra-image-gallery__media-thumbnail-caption-wrapper spectra-image-gallery__media-thumbnail-caption-wrapper--overlay"></div>

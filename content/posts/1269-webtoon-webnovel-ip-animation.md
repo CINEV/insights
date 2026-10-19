@@ -9,16 +9,15 @@ categories: [52]
 tags: [74, 77, 80, 83, 86, 89, 92, 95]
 lang: "ko"
 author: 1
-sourceUrl: "https://cinev.com/insights/ko/webtoon-webnovel-ip-animation/"
 excerpt: "웹툰·웹소설 IP를 애니메이션 본편으로 만들기 전에 무엇을 봐야 할까요? IP 체크 포인트, 본편과 트레일러의 차이, 원작 압축과 각색, 제작 전 준비사항을 정리했습니다."
-format: "wordpress-html"
-wordpressId: 1269
-snapshotFile: "migration/snapshots/9ec6bb3ecc81.html"
-image: "/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-1024x576.png"
+format: "html"
+legacyId: 1269
+templateFile: "src/templates/9ec6bb3ecc81.html"
+image: "/insights/assets/media/ad3a647acc-cinev-webtoon-animation-cover-1024x576.png"
 readingMinutes: 6
 seoTitle: "웹툰 애니메이션 본편 제작 전 체크리스트 | CineV"
 description: "웹툰·웹소설 IP를 애니메이션 본편으로 만들 때 무엇을 봐야 할까요? 트레일러 한계, 원작 압축, 각색, 본편 검증 포인트를 정리했습니다."
-socialImage: "/insights/wp-content/uploads/2026/09/cinev-webtoon-animation-cover-1024x576.png"
+socialImage: "/insights/assets/media/ad3a647acc-cinev-webtoon-animation-cover-1024x576.png"
 rssGuid: "https://cinev.com/insights/?p=1269"
 ---
 
@@ -32,7 +31,7 @@ rssGuid: "https://cinev.com/insights/?p=1269"
 <li>트레일러만으로 판단할 수 없는 부분은 무엇인지</li>
 <li>빠르게 본편을 만들어보며 확인할 수 있는 구조인지</li>
 </ul>
-<figure class="wp-block-image size-large"><img decoding="async" src="/wp-content/uploads/2026/09/cinev-webtoon-animation-cover.png" alt="웹툰 원작이 애니메이션 본편으로 바뀌는 제작 흐름" /></figure>
+<figure class="wp-block-image size-large"><img decoding="async" src="/insights/assets/media/9d4f581095-cinev-webtoon-animation-cover.png" alt="웹툰 원작이 애니메이션 본편으로 바뀌는 제작 흐름" /></figure>
 <p>이 글은 그런 질문을 가진 분들을 위해, 웹툰·웹소설 IP를 애니메이션 본편으로 만들기 전에 먼저 확인해야 할 것들을 정리한 글입니다.</p>
 <h2>1. 애니메이션화할 때 IP에서 먼저 체크해야 할 것</h2>
 <p>모든 IP가 애니메이션 본편에 똑같이 잘 맞는 건 아닙니다. 중요한 건 “인기 있는 원작인가”만이 아니라, 애니메이션으로 옮겼을 때도 강점이 살아나는가입니다.</p>

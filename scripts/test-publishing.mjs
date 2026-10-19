@@ -15,7 +15,7 @@ function run(command, args) {
   return result.stdout;
 }
 try {
-  for (const name of ['src', 'content', 'migration', 'scripts']) await cp(join(root, name), join(fixture, name), { recursive: true });
+  for (const name of ['src', 'content', 'tests', 'scripts']) await cp(join(root, name), join(fixture, name), { recursive: true });
   for (const name of ['astro.config.mjs', 'package.json', 'package-lock.json', 'tsconfig.json']) await cp(join(root, name), join(fixture, name));
   await symlink(join(root, 'node_modules'), join(fixture, 'node_modules'), 'dir');
   await symlink(join(root, 'public'), join(fixture, 'public'), 'dir');
@@ -25,21 +25,24 @@ try {
   const cases = [['en', 'tutorials'], ['ko', 'tutorials-ko'], ['ja', 'tutorials-ja']];
   const rssGuids = new Map();
   for (const [lang, category] of cases) {
-    run(process.execPath, ['scripts/new-post.mjs', `publishing-fixture-${lang}`, '--title', `Publishing fixture ${lang}`, '--lang', lang, '--category', category, '--tags', `publishing-fixture-${lang}`, ...(lang === 'en' ? ['--image', '/insights/wp-content/uploads/2026/03/cinev-bi-white.png', '--image-alt', 'Publishing cover'] : [])]);
+    run(process.execPath, ['scripts/new-post.mjs', `publishing-fixture-${lang}`, '--title', `Publishing fixture ${lang}`, '--lang', lang, '--category', category, '--tags', `publishing-fixture-${lang}`, ...(lang === 'en' ? ['--image', '/insights/assets/media/6ffb94c6fa-cinev-bi-white.png', '--image-alt', 'Publishing cover'] : [])]);
     const file = join(fixture, 'content/posts', lang, `publishing-fixture-${lang}.md`);
     const source = await readFile(file, 'utf8');
     assert.match(source, /draft: true/);
     const guid = source.match(/^rssGuid: "(urn:uuid:[0-9a-f-]{36})"$/m)?.[1];
     assert(guid, 'Scaffold must persist a stable RSS GUID');
     rssGuids.set(lang, guid);
-    await writeFile(file, source.replace('draft: true', 'draft: false\ntranslationKey: "publishing-translations"') + '\n## Publishing body\n\n**Markdown works.**\n\n- First\n- Second\n\n[Home](/insights/)\n\n<img src="/insights/wp-content/uploads/2026/03/cinev-bi-white.png" srcset="/insights/wp-content/uploads/2026/03/cinev-bi-white.png 1x,/insights/wp-content/uploads/2026/03/cinev-bi-black.png 2x" alt="RSS body image">\n');
+    await writeFile(file, source.replace('draft: true', 'draft: false\ntranslationKey: "publishing-translations"') + '\n## Publishing body\n\n**Markdown works.**\n\n- First\n- Second\n\n[Home](/insights/)\n\n<img src="/insights/assets/media/6ffb94c6fa-cinev-bi-white.png" srcset="/insights/assets/media/6ffb94c6fa-cinev-bi-white.png 1x,/insights/assets/media/5696fe24a5-cinev-bi-black.png 2x" alt="RSS body image">\n');
   }
+  const proseFile = join(fixture, 'content/posts/en/publishing-fixture-en.md');
+  await writeFile(proseFile, (await readFile(proseFile, 'utf8')).replace('excerpt: ""', 'excerpt: "dataLayer 설명"')
+    + '\n`dataLayer`도 삭제했다.\n\n```js\nwindow.dataLayer = [];\n```\n');
   run(process.execPath, ['scripts/new-post.mjs', 'publishing-draft-fixture', '--title', 'PUBLISHING_DRAFT_MUST_STAY_PRIVATE', '--lang', 'ko', '--tags', 'publishing-draft-tag']);
   const draftTranslation = join(fixture, 'content/posts/ko/publishing-draft-fixture.md');
   await writeFile(draftTranslation, (await readFile(draftTranslation, 'utf8')).replace('draft: true', 'draft: true\ntranslationKey: "publishing-draft-translations"'));
   await writeFile(join(fixture, 'content/pages/publishing-draft-translation-source.md'), '---\ntitle: "Published translation source"\ndate: "2026-10-02T12:00:00+09:00"\nlang: "en"\npath: "/insights/publishing-draft-translation-source/"\ntranslationKey: "publishing-draft-translations"\n---\n\nPublished source with an unfinished translation.\n');
   const overrideFile = join(fixture, 'content/posts/ko/publishing-fixture-ko.md');
-  await writeFile(overrideFile, (await readFile(overrideFile, 'utf8')).replace('draft: false', 'draft: false\nseoTitle: "Custom SEO title"\ndescription: "Custom search description"\nsocialImage: "/insights/wp-content/uploads/2026/03/cinev-bi-black.png"'));
+  await writeFile(overrideFile, (await readFile(overrideFile, 'utf8')).replace('draft: false', 'draft: false\nseoTitle: "Custom SEO title"\ndescription: "Custom search description"\nsocialImage: "/insights/assets/media/5696fe24a5-cinev-bi-black.png"'));
   const noindexFile = join(fixture, 'content/posts/ja/publishing-fixture-ja.md');
   await writeFile(noindexFile, (await readFile(noindexFile, 'utf8')).replace('draft: false', 'draft: false\nnoindex: true'));
   run('npm', ['run', 'build']);
@@ -77,8 +80,8 @@ try {
     assert(item.children('category').map((_, element) => xml(element).text()).get().includes(`publishing-fixture-${lang}`));
     const rssBody = load(item.children().filter((_, element) => element.name === 'content:encoded').text(), null, false);
     assert.equal(rssBody('a').last().attr('href'), 'https://cinev.com/insights/');
-    assert.equal(rssBody('img[alt="RSS body image"]').attr('src'), 'https://cinev.com/insights/wp-content/uploads/2026/03/cinev-bi-white.png');
-    assert.equal(rssBody('img[alt="RSS body image"]').attr('srcset'), 'https://cinev.com/insights/wp-content/uploads/2026/03/cinev-bi-white.png 1x, https://cinev.com/insights/wp-content/uploads/2026/03/cinev-bi-black.png 2x');
+    assert.equal(rssBody('img[alt="RSS body image"]').attr('src'), 'https://cinev.com/insights/assets/media/6ffb94c6fa-cinev-bi-white.png');
+    assert.equal(rssBody('img[alt="RSS body image"]').attr('srcset'), 'https://cinev.com/insights/assets/media/6ffb94c6fa-cinev-bi-white.png 1x, https://cinev.com/insights/assets/media/5696fe24a5-cinev-bi-black.png 2x');
     for (const [other] of cases) if (other !== lang) assert(!xml('channel').text().includes(rssGuids.get(other)));
     assert.equal($('link[type="application/rss+xml"]').attr('href'), `/insights/${prefix}feed.xml`);
     assert.equal($('.cinev-translations').length, 0);
@@ -106,11 +109,11 @@ try {
     assert.equal($('title').text(), lang === 'ko' ? 'Custom SEO title' : `Publishing fixture ${lang} : CineV`);
     if (lang === 'ko') {
       assert.equal($('meta[name="description"]').attr('content'), 'Custom search description');
-      assert.equal($('meta[property="og:image"]').attr('content'), 'https://cinev.com/insights/wp-content/uploads/2026/03/cinev-bi-black.png');
+      assert.equal($('meta[property="og:image"]').attr('content'), 'https://cinev.com/insights/assets/media/5696fe24a5-cinev-bi-black.png');
     }
     if (lang === 'ja') {
       assert($('meta[name="robots"]').attr('content').includes('noindex'));
-      assert.equal($('meta[property="og:image"]').attr('content'), 'https://cinev.com/insights/wp-content/uploads/2026/03/videoframe_29767.png');
+      assert.equal($('meta[property="og:image"]').attr('content'), 'https://cinev.com/insights/assets/media/26deb5e298-videoframe_29767.png');
     }
     assert((await read(`insights/${prefix}publishing-fixture-${lang}/index.html`)).includes('Publishing body'));
   }

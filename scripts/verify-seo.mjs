@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
-import vm from 'node:vm';
 import { createHash } from 'node:crypto';
 import { load } from 'cheerio';
 import { contentMetadata } from './lib/content-metadata.mjs';
+import { trackingReferences } from './lib/tracking-check.mjs';
 
 const options = process.argv.slice(2);
 assert(options.every(option => option === '--migration-baseline'), 'Unknown SEO verification option');
@@ -18,8 +18,8 @@ const html = path => load(read(`dist/${decodeURI(path).replace(/^\/insights\//, 
 const sitemap = new Set([...load(read('dist/sitemap.xml'), { xmlMode: true })('loc')].map(node => load(node).text()));
 const llms = read('dist/llms.txt');
 const published = JSON.parse(read('dist/search-index.json'));
-const catalog = JSON.parse(read('migration/catalog.json'));
-const importedTranslations = JSON.parse(read('migration/translations.json'));
+const catalog = JSON.parse(read('src/config/catalog.json'));
+const importedTranslations = JSON.parse(read('src/config/translations.json'));
 const currentContent = contentMetadata(root);
 const normalizedUrl = value => decodeURI(new URL(value, site.origin).toString());
 const alternatesFor = $ => Object.fromEntries([...$('head link[rel="alternate"][hreflang]')].map(element => [$(element).attr('hreflang'), normalizedUrl($(element).attr('href'))]));
@@ -29,6 +29,13 @@ const localImage = value => {
   assert(url.pathname.startsWith(site.base + '/'), value);
   assert(existsSync(join(root, 'dist', decodeURI(url.pathname))), `Missing SEO image: ${value}`);
 };
+// Inspect executable contexts and resource loads, not prose or feed/index data.
+for (const file of readdirSync(resolve(root, 'dist'), { recursive: true })) {
+  assert(!/(?:^|\/)analytics\.js$/.test(file), `Tracking loader was emitted: ${file}`);
+  if (!/\.(?:html|js|mjs|css|svg)$/.test(file)) continue;
+  const references = trackingReferences(file, read(`dist/${file}`));
+  assert.equal(references.length, 0, `Tracking code or resource in ${file}: ${references.join(', ')}`);
+}
 let pages = 0;
 for (const file of readdirSync(resolve(root, 'dist'), { recursive: true })) {
   if (!file.endsWith('index.html') || file.startsWith('insights/') || /(?:^|\/)feed\/index\.html$/.test(file)) continue;
@@ -110,9 +117,7 @@ for (const file of readdirSync(resolve(root, 'dist'), { recursive: true })) {
   for (const token of site.googleVerification) assert($(`meta[name="google-site-verification"][content="${token}"]`).length === 1);
   const graphs = [...$('head script[type="application/ld+json"]')].flatMap(node => JSON.parse($(node).text())['@graph'] || []);
   for (const type of ['Organization', 'WebSite', 'ImageObject', 'BreadcrumbList']) assert(graphs.some(node => node['@type'] === type), `${file}: ${type}`);
-  assert(!JSON.stringify(graphs).includes('blog.cinev.com'));
-  assert(!JSON.stringify(graphs).includes('43.200.218.52'));
-  assert.equal($('script[src="/insights/analytics.js"]').length, 1);
+  assert(!/https?:\/\/(?:\d{1,3}\.){3}\d{1,3}(?=[:/\"])/.test(JSON.stringify(graphs)), 'Structured data must not expose an IP origin');
   assert(!$('a[href*="?p="]').length, `Unresolved WordPress link: ${file}`);
   const alternates = alternatesFor($);
   if (Object.keys(alternates).length) {
@@ -175,24 +180,6 @@ for (const group of importedTranslations.terms) {
 assert(read('dist/robots.txt').includes('Allow: /\n'));
 assert(read('dist/robots.txt').includes('Sitemap: https://cinev.com/insights/sitemap_index.xml'));
 assert.equal(read('dist/insights/llms.txt'), llms);
-// Exercise host gating and duplicate loads without sending real analytics.
-const analytics = read('public/analytics.js');
-for (const origin of ['http://localhost:4321', 'https://cinev.github.io', 'https://dev.cinev.com', site.origin]) {
-  const inserted = [];
-  const context = { window: { location: { origin } }, document: {
-    currentScript: { dataset: { origin: site.origin, tag: site.analytics.googleTagId } },
-    createElement: () => ({}), head: { appendChild: node => inserted.push(node) },
-  } };
-  vm.runInNewContext(analytics, context);
-  vm.runInNewContext(analytics, context);
-  if (origin === site.origin) {
-    assert.equal(inserted.length, 1);
-    assert.equal(inserted[0].src, 'https://www.googletagmanager.com/gtag/js?id=GT-TB7PRSX5');
-    assert.equal(context.window.dataLayer.filter(args => args[0] === 'config').length, 1);
-  } else assert.equal(inserted.length, 0);
-}
-console.log(`SEO checks passed: ${pages} pages, metadata, local social images, schema, verification, ${translatedEntries} translated entries, ${translatedCategories} translated categories, reciprocal hreflang/navigation, current Markdown publication/draft policy, sitemap policy, llms.txt, analytics origin gating${migrationBaseline ? ', original WordPress translation baseline' : ''}.`);
-
 for (const [lang, label] of [['ko', '트렌드'], ['ja', 'トレンド']]) {
   const page = html(`/insights/${lang}/trends-${lang}/`);
   assert.equal(page('h1').text().trim(), label);
@@ -216,3 +203,5 @@ for (const lang of ['en', 'ko', 'ja']) {
   assert.equal(page('.uagb-block-ip-btn-free a').attr('href'), '/');
   assert.equal(page('.uagb-block-ip-btn-free a').text().trim(), {en:'CINEV Home',ko:'CINEV 홈',ja:'CINEV ホーム'}[lang]);
 }
+
+console.log(`SEO checks passed: ${pages} pages, metadata, local social images, schema, verification, ${translatedEntries} translated entries, ${translatedCategories} translated categories, reciprocal hreflang/navigation, current Markdown publication/draft policy, sitemap policy, llms.txt, tracking script exclusion${migrationBaseline ? ', original WordPress translation baseline' : ''}.`);

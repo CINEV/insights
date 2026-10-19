@@ -54,7 +54,7 @@ class Links(HTMLParser):
             value = attrs.get(key, "")
             if not value:
                 continue
-            if re.search(r"https?://blog\.cinev\.com/(?:wp-content|wp-includes|wp-json)", value):
+            if re.search(r"/(?:wp-admin|wp-json)(?:/|$)|/(?:xmlrpc|wp-login|admin-ajax)\.php(?:[?#]|$)", value) or (re.search(r"/wp-(?:content|includes)/", value) and urlsplit(value).netloc not in ("", "cinev.com", "cinev.github.io")):
                 self.remote_wordpress.append(value)
             if value.startswith(("/insights", "/wp-content/", "/wp-includes/")):
                 self.links.append(value)
@@ -71,7 +71,7 @@ def main():
     options = args.parse_args()
     if not DIST.is_dir():
         sys.exit("Run npm run build first: dist/ is missing")
-    catalog = json.loads((ROOT / "migration/catalog.json").read_text())
+    catalog = json.loads((ROOT / "src/config/catalog.json").read_text())
     errors = []
     deployment = json.loads((DIST / "asset-manifest.json").read_text())
     # Historical content and pagination can disappear when editors unpublish
@@ -90,7 +90,7 @@ def main():
         target = DIST / asset["path"].lstrip("/")
         if not target.is_file() or target.stat().st_size != asset["bytes"] or hashlib.sha256(target.read_bytes()).hexdigest() != asset["sha256"]:
             errors.append(f"Missing or changed deployment asset: {asset['path']}")
-        if re.match(r"^/insights/(?:wp-content|wp-includes|images|_astro)/", asset["path"]):
+        if re.match(r"^/insights/(?:assets|wp-content|wp-includes|images|_astro)/", asset["path"]):
             if (DIST / asset["path"].removeprefix("/insights/")).is_file():
                 errors.append(f"Duplicated root asset: {asset['path']}")
     for path in deployment["excluded"]:

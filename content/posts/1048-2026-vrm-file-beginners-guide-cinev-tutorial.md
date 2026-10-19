@@ -9,16 +9,15 @@ categories: [10]
 tags: []
 lang: "en"
 author: 1
-sourceUrl: "https://cinev.com/insights/2026-vrm-file-beginners-guide-cinev-tutorial/"
 excerpt: "You found a VRM file somewhere, or someone told you to “just use VRM.” But you have no idea what […]"
-format: "wordpress-html"
-wordpressId: 1048
-snapshotFile: "migration/snapshots/8fdff29e5709.html"
-image: "/wp-content/uploads/2026/04/VRM-import-Guide-1024x537.png"
+format: "html"
+legacyId: 1048
+templateFile: "src/templates/8fdff29e5709.html"
+image: "/insights/assets/media/5876d5b29e-VRM-import-Guide-1024x537.png"
 readingMinutes: 3
 seoTitle: "What Is a VRM File? A Beginner's Guide to Making Your First Free AI Animation : CineV"
 description: "Never heard of VRM? No problem. This guide explains what a VRM file is, where to get one, and how to turn it into an AI animation with CineV, using your free starting credits."
-socialImage: "/insights/wp-content/uploads/2026/04/VRM-import-Guide.png"
+socialImage: "/insights/assets/media/c67aa741b2-VRM-import-Guide.png"
 rssGuid: "https://cinev.com/insights/?p=1048"
 translationKey: "wordpress-1048"
 ---
@@ -105,7 +104,7 @@ translationKey: "wordpress-1048"
 
 
 
-<div class="wp-block-uagb-image uagb-block-19e12956 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/03/register_my_character.png ,/wp-content/uploads/2026/03/register_my_character.png 780w, /wp-content/uploads/2026/03/register_my_character.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/03/register_my_character.png" alt="CineV character registration screen showing an original anime IP character being uploaded as VRM and previewed on a 3D stage" class="uag-image-428" width="609" height="387" title="register_my_character" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image uagb-block-19e12956 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/7baeac6dc3-register_my_character.png ,/insights/assets/media/7baeac6dc3-register_my_character.png 780w, /insights/assets/media/7baeac6dc3-register_my_character.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/7baeac6dc3-register_my_character.png" alt="CineV character registration screen showing an original anime IP character being uploaded as VRM and previewed on a 3D stage" class="uag-image-428" width="609" height="387" title="register_my_character" loading="lazy" role="img"/></figure></div>
 
 
 
@@ -121,7 +120,7 @@ translationKey: "wordpress-1048"
 
 
 
-<div class="wp-block-uagb-image uagb-block-6fd62d31 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/04/upload_my_character.png ,/wp-content/uploads/2026/04/upload_my_character.png 780w, /wp-content/uploads/2026/04/upload_my_character.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/04/upload_my_character.png" alt="Click Add Character, then select Upload VRM. CineV reads the VRM data and builds a preview of your character. This usually takes under a minute." class="uag-image-1054" width="636" height="404" title="upload_my_character" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image uagb-block-6fd62d31 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/1c3788f407-upload_my_character.png ,/insights/assets/media/1c3788f407-upload_my_character.png 780w, /insights/assets/media/1c3788f407-upload_my_character.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/1c3788f407-upload_my_character.png" alt="Click Add Character, then select Upload VRM. CineV reads the VRM data and builds a preview of your character. This usually takes under a minute." class="uag-image-1054" width="636" height="404" title="upload_my_character" loading="lazy" role="img"/></figure></div>
 
 
 
@@ -137,7 +136,7 @@ translationKey: "wordpress-1048"
 
 
 
-<div class="wp-block-uagb-image uagb-block-a666cc0d wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/03/chracter.png ,/wp-content/uploads/2026/03/chracter.png 780w, /wp-content/uploads/2026/03/chracter.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/03/chracter.png" alt="Character Swap is CineV signature feature. It lets you replace characters your own in scenes to ensure professional quality and visual consistency across all clips. Swap characters while keeping your video's style and background perfectly consistent." class="uag-image-432" width="600" height="381" title="character-swap" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image uagb-block-a666cc0d wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/7235f7f242-chracter.png ,/insights/assets/media/7235f7f242-chracter.png 780w, /insights/assets/media/7235f7f242-chracter.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/7235f7f242-chracter.png" alt="Character Swap is CineV signature feature. It lets you replace characters your own in scenes to ensure professional quality and visual consistency across all clips. Swap characters while keeping your video's style and background perfectly consistent." class="uag-image-432" width="600" height="381" title="character-swap" loading="lazy" role="img"/></figure></div>
 
 
 

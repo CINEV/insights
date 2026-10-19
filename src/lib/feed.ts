@@ -61,7 +61,7 @@ export async function rssFeed(lang: FeedLanguage = 'en') {
   const seen = new Set<string>();
   const items = posts.map(post => {
     const canonical = SITE_URL + entryPath(post);
-    // Imported WordPress GUIDs are identifiers, including their old hostname.
+    // RSS GUIDs are permanent identifiers, independent of hosting.
     // Do not rewrite them when changing permalinks or hosting providers.
     const guid = post.data.rssGuid || canonical;
     if (seen.has(guid)) throw new Error(`Duplicate RSS GUID: ${guid}`);

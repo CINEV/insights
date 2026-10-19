@@ -7,7 +7,7 @@ export const GET: APIRoute = async () => {
   const { posts, pages } = await publishedEntries();
   const links: Record<string, Record<string, string>> = { p: {}, page_id: {} };
   for (const entry of [...posts, ...pages]) {
-    const id = entry.data.wordpressId;
+    const id = entry.data.legacyId;
     if (id === undefined) continue;
     if (!Number.isSafeInteger(id) || id <= 0 || links.p[id]) {
       throw new Error(`${entry.id}: WordPress ID must be a unique positive integer`);

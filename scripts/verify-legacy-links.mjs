@@ -11,11 +11,11 @@ assert.equal(read('dist/insights/legacy-links.js'), script, 'Pages prefix mirror
 const links = JSON.parse(script.match(/const links = (\{[^\n]+\});/)[1]);
 const expected = { p: {}, page_id: {} };
 for (const entry of contentMetadata()) {
-  if (entry.wordpressId === undefined || entry.draft) continue;
-  assert(Number.isSafeInteger(entry.wordpressId) && entry.wordpressId > 0, `Invalid WordPress ID: ${entry.file}`);
-  assert(!Object.hasOwn(expected.p, entry.wordpressId), `Duplicate WordPress ID: ${entry.wordpressId}`);
-  expected.p[entry.wordpressId] = entry.path;
-  if (entry.collection === 'pages') expected.page_id[entry.wordpressId] = entry.path;
+  if (entry.legacyId === undefined || entry.draft) continue;
+  assert(Number.isSafeInteger(entry.legacyId) && entry.legacyId > 0, `Invalid WordPress ID: ${entry.file}`);
+  assert(!Object.hasOwn(expected.p, entry.legacyId), `Duplicate WordPress ID: ${entry.legacyId}`);
+  expected.p[entry.legacyId] = entry.path;
+  if (entry.collection === 'pages') expected.page_id[entry.legacyId] = entry.path;
 }
 assert.deepEqual(links, expected, 'Legacy IDs must match current published Markdown, excluding drafts/deleted entries');
 const run = href => {
@@ -65,7 +65,6 @@ if (publicId) {
 }
 const home = read('dist/index.html');
 assert.equal(home.split('src="/insights/legacy-links.js"').length - 1, 1);
-assert(home.indexOf('src="/insights/legacy-links.js"') < home.indexOf('src="/insights/analytics.js"'));
 const redirects = JSON.parse(execFileSync(process.execPath, ['scripts/export-legacy-redirects.mjs'], { encoding: 'utf8' }));
 assert.equal(redirects.length, Object.values(links).reduce((sum, ids) => sum + Object.keys(ids).length, 0));
 for (const redirect of redirects) {

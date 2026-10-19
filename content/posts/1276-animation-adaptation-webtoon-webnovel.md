@@ -9,25 +9,24 @@ categories: [52]
 tags: [77, 80, 83, 86, 89]
 lang: "ko"
 author: 1
-sourceUrl: "https://cinev.com/insights/ko/animation-adaptation-webtoon-webnovel/"
 excerpt: "웹툰·웹소설 IP를 3분 내외 시리즈 애니메이션으로 각색할 때 무엇을 봐야 할까요? 한 화의 길이, 끊는 지점, 클리프행어, 압축과 재배치 기준을 단계별로 설명합니다."
-format: "wordpress-html"
-wordpressId: 1276
-snapshotFile: "migration/snapshots/36850caafc36.html"
-image: "/wp-content/uploads/2026/09/videoframe_57272-1024x576.png"
+format: "html"
+legacyId: 1276
+templateFile: "src/templates/36850caafc36.html"
+image: "/insights/assets/media/1e5b092861-videoframe_57272-1024x576.png"
 readingMinutes: 6
 seoTitle: "애니메이션 각색에서 중요한 것 | 3분 내외 시리즈형 원작 각색"
 description: "웹툰·웹소설 IP를 3분 내외 시리즈 애니메이션으로 각색할 때 무엇을 봐야 할까요? 한 화의 길이, 끊는 지점, 클리프행어, 압축과 재배치 기준을 단계별로 설명합니다."
-socialImage: "/insights/wp-content/uploads/2026/09/videoframe_57272.png"
+socialImage: "/insights/assets/media/7e5db453dd-videoframe_57272.png"
 rssGuid: "https://cinev.com/insights/?p=1276"
-rssEnclosure: {"url": "/insights/wp-content/migration-external/e62712da84e1f1d2c61e.mp4", "length": 26977378, "type": "video/mp4"}
+rssEnclosure: {"url": "/insights/assets/media/ea373cbe51-e62712da84e1f1d2c61e.mp4", "length": 26977378, "type": "video/mp4"}
 ---
 
 <p>애니메이션 각색은 단순 축약이 아니라, 시리즈형 구조에 맞게 다시 설계하는 일입니다.</p>
 <p>웹툰·웹소설 IP 홀더가 애니메이션 각색을 고민할 때, 이것이 긴 장편 애니메이션인지 시리즈 형태의 애니메이션인지에 따라 해야할 작업이 완전히 달라집니다. 이번 글은 1화 3분 내외의 시리즈형 애니메이션을 기준으로, 매 화 끝마다 클리프행어가 있고 다음 화를 반드시 보게 만드는 구조를 어떻게 각색에 반영할지 정리합니다. 큰 흐름은 <a href="/insights/?p=1269">앞선 pillar 글</a>에서 먼저 잡아두었고, 이번 글은 각 화의 길이, 끊는 지점, 화말 훅을 설계하는 방법에 집중합니다.</p>
 <p>원작이 좋은데도 영상으로 옮기면 힘이 약해지는 경우가 있는 이유는, 읽는 리듬과 보는 리듬이 다르기 때문입니다. 시리즈형 애니메이션 각색에서는 이 차이가 더 크게 드러납니다. 한 화가 짧기 때문에, 각 화마다 무엇을 보여주고 어디서 끊을지 결정하지 않으면 흐름이 쉽게 무너집니다.</p>
 <p>아래는 그런 회차형 흐름을 참고하기 위한 예시 영상입니다. 실제로는 각 화의 끝에서 다음 화를 보게 만드는 훅이 얼마나 자연스럽게 걸리는지 함께 보는 게 중요합니다.</p>
-<figure class="wp-block-video"><video src="/wp-content/migration-external/e62712da84e1f1d2c61e.mp4" preload="metadata" controls="controls" width="300" height="150"></video><figcaption>예시 영상 출처: CineV 템플릿 페이지 <small class="cinev-archived-link-note">(서비스 내 예시 · 아카이브에서는 링크를 제공하지 않습니다.)</small></figcaption></figure>
+<figure class="wp-block-video"><video src="/insights/assets/media/ea373cbe51-e62712da84e1f1d2c61e.mp4" preload="metadata" controls="controls" width="300" height="150"></video><figcaption>예시 영상 출처: CineV 템플릿 페이지 <small class="cinev-archived-link-note">(서비스 내 예시 · 아카이브에서는 링크를 제공하지 않습니다.)</small></figcaption></figure>
 <h2>1. 애니메이션 각색은 왜 번역이 아닌가</h2>
 <p>원작을 애니메이션으로 옮긴다고 해서 문장이나 장면을 그대로 “번역”하면 되는 건 아닙니다. 웹툰과 웹소설은 독자가 머릿속에서 속도를 조절하며 읽는 매체이고, 애니메이션은 제작자가 정한 시간과 리듬 안에서 흘러가는 매체입니다.</p>
 <p>그래서 각색은 원작을 다른 언어로 옮기는 수준이 아니라, 영상 언어에 맞게 다시 써야 하는 작업입니다. 같은 사건이라도 화면으로 보면 느리게 느껴질 수 있고, 같은 감정이라도 표정과 타이밍으로 다시 보여줘야 할 수 있습니다.</p>

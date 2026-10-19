@@ -9,7 +9,7 @@ if (!literal) throw new Error('Run npm run build before exporting legacy redirec
 const links = JSON.parse(literal[1]);
 const redirects = Object.entries(links).flatMap(([key, values]) =>
   Object.entries(values).map(([id, destination]) => ({
-    source: '/insights/:legacy((?:ko|ja)(?:/index\\.php)?|index\\.php)?',
+    source: '/insights/:legacy((?:ko|ja)(?:/index\\.php)?|index\\.php)?{/}?',
     has: [{ type: 'query', key, value: id }],
     destination,
     permanent: true,

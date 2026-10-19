@@ -1,6 +1,6 @@
 ---
 import { renderTemplate, sourceFor } from '../lib/blog';
-const template = renderTemplate({ path: '/insights/404/', kind: 'archive', entries: [], lang: 'en', snapshotFile: sourceFor('/insights/')?.snapshotFile });
+const template = renderTemplate({ path: '/insights/404/', kind: 'archive', entries: [], lang: 'en', templateFile: sourceFor('/insights/')?.templateFile });
 const body = template.before.replace('<p class="cinev-empty-archive">No posts yet.</p>', '<section class="cinev-not-found"><h1>Page not found</h1><p>The page may have moved. <a href="/insights/">Visit the CineV Blog</a> or <a href="/">CINEV Home</a>.</p></section>');
 const head = template.head.replace(/<title>.*?<\/title>/, '<title>Page not found - CineV</title>').replace(/<link[^>]*rel="canonical"[^>]*>/g, '').replace(/<meta[^>]*property="og:url"[^>]*>/g, '').replace(/<meta[^>]*name="robots"[^>]*>/g, '').replace(/<script type="application\/ld\+json">.*?<\/script>/gs, '') + '<meta name="robots" content="noindex">';
 ---

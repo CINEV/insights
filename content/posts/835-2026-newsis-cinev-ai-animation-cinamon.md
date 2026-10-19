@@ -9,16 +9,15 @@ categories: [9]
 tags: [26]
 lang: "en"
 author: 1
-sourceUrl: "https://cinev.com/insights/2026-newsis-cinev-ai-animation-cinamon/"
 excerpt: "Newsis, one of Korea’s leading news agencies, featured Cinamon in a deep-dive article on March 28, 2026. The report highlights […]"
-format: "wordpress-html"
-wordpressId: 835
-snapshotFile: "migration/snapshots/4e2c1b36fb18.html"
-image: "/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg"
+format: "html"
+legacyId: 835
+templateFile: "src/templates/4e2c1b36fb18.html"
+image: "/insights/assets/media/e40f210635-NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg"
 readingMinutes: 1
 seoTitle: "Cinamon Featured in Newsis: \"Anyone Can Become a 3D Animation Director with AI\" : CineV"
-socialImage: "/insights/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg"
-rssGuid: "https://blog.cinev.com/?p=835"
+socialImage: "/insights/assets/media/e40f210635-NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg"
+rssGuid: "urn:uuid:863d5ade-9628-4894-b184-72a17f338e86"
 ---
 
 <div class="wp-block-uagb-container uagb-block-7a23a879 alignfull uagb-is-root-container">
@@ -27,7 +26,7 @@ rssGuid: "https://blog.cinev.com/?p=835"
 
 
 
-<div class="wp-block-uagb-image uagb-block-d572bd9c wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg ,/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg 780w, /wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/04/NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg" alt="CineV AI 3D animation sample - anime characters with dynamic lighting" class="uag-image-865" width="720" height="404" title="NISI20260326_0002094895_web_20260326171151_20260328130026984" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image uagb-block-d572bd9c wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/e40f210635-NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg ,/insights/assets/media/e40f210635-NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg 780w, /insights/assets/media/e40f210635-NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/e40f210635-NISI20260326_0002094895_web_20260326171151_20260328130026984.jpg" alt="CineV AI 3D animation sample - anime characters with dynamic lighting" class="uag-image-865" width="720" height="404" title="NISI20260326_0002094895_web_20260326171151_20260328130026984" loading="lazy" role="img"/></figure></div>
 </div></summary>
 
 

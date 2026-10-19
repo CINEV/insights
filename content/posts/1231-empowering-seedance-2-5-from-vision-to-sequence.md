@@ -9,17 +9,16 @@ categories: [10]
 tags: []
 lang: "en"
 author: 4
-sourceUrl: "https://cinev.com/insights/empowering-seedance-2-5-from-vision-to-sequence/"
 excerpt: "A prompt guide built from ByteDance’s four official Seedance guides. Why CineV is writing about Seedance CineV is built to […]"
-format: "wordpress-html"
-wordpressId: 1231
-snapshotFile: "migration/snapshots/bcdb31b1df1e.html"
-image: "/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png"
+format: "html"
+legacyId: 1231
+templateFile: "src/templates/bcdb31b1df1e.html"
+image: "/insights/assets/media/0844bcb56a-seedance2-5-on-cinev-1024x578.png"
 readingMinutes: 28
 seoTitle: "Empowering Seedance 2.5: From Vision to Sequence : CineV"
-socialImage: "/insights/wp-content/uploads/2026/08/seedance2.5-on-cinev-scaled.png"
+socialImage: "/insights/assets/media/b33f764b90-seedance2-5-on-cinev-scaled.png"
 rssGuid: "https://cinev.com/insights/?p=1231"
-rssEnclosure: {"url": "/insights/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-1.mp4", "length": 33272361, "type": "video/mp4"}
+rssEnclosure: {"url": "/insights/assets/media/dcfc3a97ab-SD2-5_OneRoom_02-1-1.mp4", "length": 33272361, "type": "video/mp4"}
 translationKey: "wordpress-1218"
 ---
 
@@ -27,7 +26,7 @@ translationKey: "wordpress-1218"
 
 
 
-<figure class="wp-block-image alignfull size-large"><img loading="lazy" decoding="async" width="1024" height="578" src="/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png" alt="" class="wp-image-1222" srcset="/wp-content/uploads/2026/08/seedance2.5-on-cinev-1024x578.png 1024w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-300x169.png 300w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-768x433.png 768w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-1536x867.png 1536w, /wp-content/uploads/2026/08/seedance2.5-on-cinev-2048x1156.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image alignfull size-large"><img loading="lazy" decoding="async" width="1024" height="578" src="/insights/assets/media/0844bcb56a-seedance2-5-on-cinev-1024x578.png" alt="" class="wp-image-1222" srcset="/insights/assets/media/0844bcb56a-seedance2-5-on-cinev-1024x578.png 1024w, /insights/assets/media/b8b8a6356a-seedance2-5-on-cinev-300x169.png 300w, /insights/assets/media/3a9c56b2c1-seedance2-5-on-cinev-768x433.png 768w, /insights/assets/media/3dd9ae274b-seedance2-5-on-cinev-1536x867.png 1536w, /insights/assets/media/8c086f183d-seedance2-5-on-cinev-2048x1156.png 2048w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -123,7 +122,7 @@ translationKey: "wordpress-1218"
 
 
 
-<div class="wp-block-uagb-image uagb-block-5aaba704 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/08/flowchart-en-scaled.png ,/wp-content/uploads/2026/08/flowchart-en-scaled.png 780w, /wp-content/uploads/2026/08/flowchart-en-scaled.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/08/flowchart-en-scaled.png" alt="" class="uag-image-1232" width="1675" height="2560" title="flowchart-en" loading="lazy" role="img"/></figure></div>
+<div class="wp-block-uagb-image uagb-block-5aaba704 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/c727b1e43a-flowchart-en-scaled.png ,/insights/assets/media/c727b1e43a-flowchart-en-scaled.png 780w, /insights/assets/media/c727b1e43a-flowchart-en-scaled.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/c727b1e43a-flowchart-en-scaled.png" alt="" class="uag-image-1232" width="1675" height="2560" title="flowchart-en" loading="lazy" role="img"/></figure></div>
 
 
 
@@ -255,7 +254,7 @@ translationKey: "wordpress-1218"
 
 
 
-<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/wp-content/uploads/2026/08/SD2.5_OneRoom_02-1-2.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="/">Seedance 2.5 is available on CineV.</a></figcaption></figure>
+<figure class="wp-block-video alignfull"><video height="2160" style="aspect-ratio: 3760 / 2160;" width="3760" controls src="/insights/assets/media/dcfc3a97ab-SD2-5_OneRoom_02-1-1.mp4" playsinline></video><figcaption class="wp-element-caption"><a href="/">Seedance 2.5 is available on CineV.</a></figcaption></figure>
 
 
 

@@ -29,12 +29,11 @@ const schema = z.object({
   image: z.string().optional(),
   imageAlt: z.string().default(''),
   readingMinutes: z.number().optional(),
-  wordpressId: z.number().optional(),
+  legacyId: z.number().optional(),
   translationKey: z.string().trim().min(1).optional(),
   rssGuid: z.string().trim().min(1).optional(),
   rssEnclosure: z.object({ url: z.string(), length: z.number().int().nonnegative(), type: z.string() }).optional(),
-  sourceUrl: z.string().optional(),
-  snapshotFile: z.string().optional(),
+  templateFile: z.string().optional(),
   draft: z.boolean().default(false),
 }).passthrough();
 

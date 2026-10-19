@@ -9,16 +9,15 @@ categories: [8]
 tags: []
 lang: "en"
 author: 1
-sourceUrl: "https://cinev.com/insights/how-to-animate-character-ai/"
 excerpt: "You have a character. You know exactly how they move, how they talk, what their first scene would look like. […]"
-format: "wordpress-html"
-wordpressId: 1026
-snapshotFile: "migration/snapshots/fc64a0f2a8db.html"
-image: "/wp-content/uploads/2026/04/storyboard-beta.png"
+format: "html"
+legacyId: 1026
+templateFile: "src/templates/fc64a0f2a8db.html"
+image: "/insights/assets/media/ed249617dd-storyboard-beta.png"
 readingMinutes: 5
 seoTitle: "How to Turn Your Webtoon Character into an Animated Clip Using AI : CineV"
 description: "A step-by-step guide to animating your original webtoon or comic character using AI, without a studio or animation skills. From storyboard to finished clip inside CineV."
-socialImage: "/insights/wp-content/uploads/2026/04/storyboard-beta.png"
+socialImage: "/insights/assets/media/ed249617dd-storyboard-beta.png"
 rssGuid: "https://cinev.com/insights/?p=1026"
 ---
 

@@ -7,11 +7,10 @@ for (const language of ['', 'ko', 'ja', 'all']) {
   await mkdir(resolve(dist, language, 'feed'), { recursive: true });
   await writeFile(resolve(dist, language, 'feed/index.html'), await readFile(resolve(dist, language, 'feed.xml')));
 }
-const aliases = JSON.parse(await readFile(resolve('migration/asset-aliases.json'), 'utf8'));
-const fontConversions = JSON.parse(await readFile(resolve('migration/font-conversions.json'), 'utf8'));
-const report = await prepareAssets({ dist, publicDir: resolve('public'), aliases, fontConversions });
+const { assets: inventory } = JSON.parse(await readFile(resolve('src/config/asset-integrity.json'), 'utf8'));
+const report = await prepareAssets({ dist, publicDir: resolve('public'), inventory });
 // GitHub project Pages adds /insights/ to the artifact root. Upload only this
 // subtree, with documents and assets together, to avoid a doubled URL prefix.
 await writeFile(resolve(dist, 'insights/.nojekyll'), '');
 await writeFile(resolve(dist, 'insights/asset-manifest.json'), JSON.stringify(report, null, 2) + '\n');
-console.log(`Prepared Pages: ${report.assets.length} assets in one shared directory, ${report.excluded.length} archived files excluded; ${(report.assetBytes / 1048576).toFixed(1)} MiB of assets.`);
+console.log(`Prepared Pages: ${report.assets.length} assets in one shared directory, ${(report.assetBytes / 1048576).toFixed(1)} MiB of assets.`);

@@ -9,17 +9,16 @@ categories: [9]
 tags: [26]
 lang: "en"
 author: 1
-sourceUrl: "https://cinev.com/insights/2025-chosunilbo-ai-animation-industry/"
 excerpt: "Chosun Ilbo’s Economy & Tech section featured CineV on March 12, 2025, in a piece titled “AI Does 95% of […]"
-format: "wordpress-html"
-wordpressId: 897
-snapshotFile: "migration/snapshots/3395e2600dcb.html"
-image: "/wp-content/uploads/2026/04/image.png"
+format: "html"
+legacyId: 897
+templateFile: "src/templates/3395e2600dcb.html"
+image: "/insights/assets/media/d8417d5a62-image.png"
 readingMinutes: 2
 seoTitle: "AI Is Reshaping the Animation Industry -CineV Featured in Chosun Ilbo : CineV"
 description: "AI now handles up to 95% of animation production, cutting costs by 60–70% and production time in half. See why Chosun Ilbo named CineV as a Korean startup leading this shift."
-socialImage: "/insights/wp-content/uploads/2026/04/image.png"
-rssGuid: "https://blog.cinev.com/?p=897"
+socialImage: "/insights/assets/media/d8417d5a62-image.png"
+rssGuid: "urn:uuid:139ac77f-65d2-48be-a6c6-6435911d036d"
 ---
 
 <div class="wp-block-uagb-container uagb-block-7a23a879 alignfull uagb-is-root-container">

@@ -34,17 +34,15 @@ jobs:
         run: npm run build
       - name: Verify new post publication and draft exclusion
         run: npm run test:publishing
-      - name: Verify SEO metadata and analytics gating
+      - name: Verify SEO metadata and tracking script exclusion
         run: npm run test:seo
       - name: Verify language feeds and subscriber compatibility
         run: npm run test:rss
       - name: Verify legacy WordPress links
         run: npm run test:legacy
-      - name: Verify archived media coverage and integrity
+      - name: Verify maintained site asset integrity
         run: npm run test:media
-      - name: Verify WordPress reimport and authored metadata preservation
-        run: npm run test:import
-      - name: Verify deployment asset pruning and duplicate aliases
+      - name: Verify site asset deployment and retired source absence
         run: npm run test:assets
       - name: Verify routes and assets
         run: python3 scripts/verify-build.py

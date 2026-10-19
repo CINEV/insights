@@ -9,14 +9,13 @@
     "preview": "astro preview --host 0.0.0.0 --base /",
     "postbuild": "node scripts/prepare-pages.mjs",
     "post:new": "node scripts/new-post.mjs",
-    "check": "npm run build && npm run test:publishing && npm run test:seo && npm run test:rss && npm run test:legacy && npm run test:media && npm run test:import && npm run test:assets && python3 scripts/verify-build.py",
+    "check": "npm run build && npm run test:publishing && npm run test:seo && npm run test:rss && npm run test:legacy && npm run test:media && npm run test:assets && python3 scripts/verify-build.py",
     "test:publishing": "node scripts/test-publishing.mjs",
-    "test:seo": "node scripts/verify-seo.mjs",
+    "test:seo": "node scripts/test-tracking-check.mjs && node scripts/verify-seo.mjs",
     "test:rss": "node scripts/verify-rss.mjs",
     "test:legacy": "node scripts/verify-legacy-links.mjs",
-    "test:media": "python3 scripts/test-archive-wordpress-media.py && python3 scripts/archive-wordpress-media.py --check",
-    "test:import": "python3 scripts/test-import-wordpress.py",
-    "test:assets": "node scripts/test-deployment-assets.mjs"
+    "test:media": "python3 scripts/verify-media.py",
+    "test:assets": "node scripts/test-deployment-assets.mjs && node scripts/verify-site-assets.mjs"
   },
   "engines": {
     "node": ">=22.12.0"

@@ -9,16 +9,15 @@ categories: [10]
 tags: []
 lang: "en"
 author: 1
-sourceUrl: "https://cinev.com/insights/2026-ai-ip-renewal-animation-trends/"
 excerpt: "Pocoyo almost didn’t make it. The little blue boy had won a BAFTA and a Cristal at Annecy. He had […]"
-format: "wordpress-html"
-wordpressId: 1134
-snapshotFile: "migration/snapshots/a3201a31abba.html"
-image: "/wp-content/uploads/2026/04/animaj_pocoyo-1024x576.jpeg"
+format: "html"
+legacyId: 1134
+templateFile: "src/templates/a3201a31abba.html"
+image: "/insights/assets/media/2a15d53b00-animaj_pocoyo-1024x576.jpeg"
 readingMinutes: 7
 seoTitle: "How AI is giving IP a second life : CineV"
 description: "Pocoyo nearly disappeared when its studio went bankrupt. Solo Leveling needed Sony and a year per episode. Here is what AI animation means for IP holders who have neither."
-socialImage: "/insights/wp-content/uploads/2026/04/animaj_pocoyo.jpeg"
+socialImage: "/insights/assets/media/bb2aa838dd-animaj_pocoyo.jpeg"
 rssGuid: "https://cinev.com/insights/?p=1134"
 ---
 
@@ -26,7 +25,7 @@ rssGuid: "https://cinev.com/insights/?p=1134"
 
 
 
-<div class="wp-block-uagb-image uagb-block-a35c2498 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/04/animaj_pocoyo-1024x576.jpeg ,/wp-content/uploads/2026/04/animaj_pocoyo.jpeg 780w, /wp-content/uploads/2026/04/animaj_pocoyo.jpeg 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/04/animaj_pocoyo-1024x576.jpeg" alt="Pocoyo Season 5 new episode still from Animaj AI-assisted animation production 2024" class="uag-image-1137" width="672" height="378" title="animaj_pocoyo" loading="lazy" role="img"/><figcaption class="uagb-image-caption">Image: Animaj Pocoyo Season 5 or 6 still</figcaption></figure></div>
+<div class="wp-block-uagb-image uagb-block-a35c2498 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/2a15d53b00-animaj_pocoyo-1024x576.jpeg ,/insights/assets/media/bb2aa838dd-animaj_pocoyo.jpeg 780w, /insights/assets/media/bb2aa838dd-animaj_pocoyo.jpeg 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/2a15d53b00-animaj_pocoyo-1024x576.jpeg" alt="Pocoyo Season 5 new episode still from Animaj AI-assisted animation production 2024" class="uag-image-1137" width="672" height="378" title="animaj_pocoyo" loading="lazy" role="img"/><figcaption class="uagb-image-caption">Image: Animaj Pocoyo Season 5 or 6 still</figcaption></figure></div>
 
 
 
@@ -50,7 +49,7 @@ rssGuid: "https://cinev.com/insights/?p=1134"
 
 
 
-<div class="wp-block-uagb-image uagb-block-84abce21 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/04/solo_leveling_official_s2-1024x725.jpeg ,/wp-content/uploads/2026/04/solo_leveling_official_s2-scaled.jpeg 780w, /wp-content/uploads/2026/04/solo_leveling_official_s2-scaled.jpeg 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/04/solo_leveling_official_s2-1024x725.jpeg" alt="Solo Leveling anime adaptation by A-1 Pictures showing high-quality action animation from Korean webtoon IP" class="uag-image-1136" width="672" height="378" title="solo_leveling_official_s2" loading="lazy" role="img"/><figcaption class="uagb-image-caption">Image: Solo leveling Season2 Official Key Visual </figcaption></figure></div>
+<div class="wp-block-uagb-image uagb-block-84abce21 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/4f966bb333-solo_leveling_official_s2-1024x725.jpeg ,/insights/assets/media/9c457ea360-solo_leveling_official_s2-scaled.jpeg 780w, /insights/assets/media/9c457ea360-solo_leveling_official_s2-scaled.jpeg 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/4f966bb333-solo_leveling_official_s2-1024x725.jpeg" alt="Solo Leveling anime adaptation by A-1 Pictures showing high-quality action animation from Korean webtoon IP" class="uag-image-1136" width="672" height="378" title="solo_leveling_official_s2" loading="lazy" role="img"/><figcaption class="uagb-image-caption">Image: Solo leveling Season2 Official Key Visual </figcaption></figure></div>
 
 
 
@@ -110,7 +109,7 @@ rssGuid: "https://cinev.com/insights/?p=1134"
 
 
 
-<div class="wp-block-uagb-image aligncenter uagb-block-cf8c0dd5 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-center"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/04/cat-biggie.avif ,/wp-content/uploads/2026/04/cat-biggie.avif 780w, /wp-content/uploads/2026/04/cat-biggie.avif 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/04/cat-biggie.avif" alt="Cat Biggie CJ ENM AI-generated animation series showing cat and baby chick characters from 2025 YouTube release" class="uag-image-1144" width="674" height="449" title="cat-biggie" loading="lazy" role="img"/><figcaption class="uagb-image-caption">Image: Cat biggie CJ ENM</figcaption></figure></div>
+<div class="wp-block-uagb-image aligncenter uagb-block-cf8c0dd5 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-center"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/fd6ee96ba0-cat-biggie.avif ,/insights/assets/media/fd6ee96ba0-cat-biggie.avif 780w, /insights/assets/media/fd6ee96ba0-cat-biggie.avif 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/fd6ee96ba0-cat-biggie.avif" alt="Cat Biggie CJ ENM AI-generated animation series showing cat and baby chick characters from 2025 YouTube release" class="uag-image-1144" width="674" height="449" title="cat-biggie" loading="lazy" role="img"/><figcaption class="uagb-image-caption">Image: Cat biggie CJ ENM</figcaption></figure></div>
 
 
 
@@ -166,7 +165,7 @@ rssGuid: "https://cinev.com/insights/?p=1134"
 
 
 
-<div class="wp-block-uagb-image uagb-block-d0946bb4 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/wp-content/uploads/2026/04/storyboard-beta.png ,/wp-content/uploads/2026/04/storyboard-beta.png 780w, /wp-content/uploads/2026/04/storyboard-beta.png 360w" sizes="auto, (max-width: 480px) 150px" src="/wp-content/uploads/2026/04/storyboard-beta.png" alt="CineV storyboard canvas showing four auto-generated scene cards for a school drama, with character reference and prompt panel open on the left." class="uag-image-1037" width="1024" height="652" title="storyboard-beta" loading="lazy" role="img"/><figcaption class="uagb-image-caption">Image: CineV Storyboard</figcaption></figure></div>
+<div class="wp-block-uagb-image uagb-block-d0946bb4 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none"><figure class="wp-block-uagb-image__figure"><img decoding="async" srcset="/insights/assets/media/ed249617dd-storyboard-beta.png ,/insights/assets/media/ed249617dd-storyboard-beta.png 780w, /insights/assets/media/ed249617dd-storyboard-beta.png 360w" sizes="auto, (max-width: 480px) 150px" src="/insights/assets/media/ed249617dd-storyboard-beta.png" alt="CineV storyboard canvas showing four auto-generated scene cards for a school drama, with character reference and prompt panel open on the left." class="uag-image-1037" width="1024" height="652" title="storyboard-beta" loading="lazy" role="img"/><figcaption class="uagb-image-caption">Image: CineV Storyboard</figcaption></figure></div>
 
 
 

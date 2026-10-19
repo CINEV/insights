@@ -27,11 +27,11 @@ npm run post:new -- translated-slug --title "Translated title" --lang en --autho
 위 값은 예시다. 실제 번역 제목·대상 언어·원문의 작성자와 일치하는 기존 작성자 ID/slug를 사용한다. 사용자가 지정한 slug가 없으면 내용을 나타내는 짧은 소문자 영문·숫자·하이픈 slug를 정한다. 경로 충돌 시 CLI를 우회하거나 기존 파일을 덮어쓰지 않는다.
 
 - 생성 위치는 `content/posts/<lang>/<slug>.md`다. 영어 주소는 `/insights/<slug>/`, 한국어·일본어 주소는 `/insights/<lang>/<slug>/`다.
-- 카테고리는 `migration/catalog.json`과 `migration/translations.json`의 `terms`에서 확인된 대상 언어의 동등 카테고리를 사용한다. 대응 항목이 없으면 생략하고 완료 응답에 알린다. 원문 언어의 ID나 slug를 그대로 복사하거나 카탈로그에 새 항목을 임의로 추가하지 않는다. 태그도 대상 언어의 기존 항목을 우선 사용하고, 대응 항목이 없다면 의미를 유지한 유효한 새 slug를 사용한다.
-- 원문에 `translationKey`가 있으면 그대로 쓴다. 없으면 기존에 사용되지 않는 `post-<source-slug>` 형태의 안정적인 키를 정해 원문과 번역본에 추가한다. 이미 존재하는 다른 실제 번역본을 확인했다면 그 그룹의 키를 재사용한다. 같은 키에는 언어별 한 파일만 허용하며 제목 변경만으로 키를 바꾸지 않는다. `migration/translations.json`의 `posts`를 수정할 필요는 없다.
+- 카테고리는 `src/config/catalog.json`과 `src/config/translations.json`의 `terms`에서 확인된 대상 언어의 동등 카테고리를 사용한다. 대응 항목이 없으면 생략하고 완료 응답에 알린다. 원문 언어의 ID나 slug를 그대로 복사하거나 카탈로그에 새 항목을 임의로 추가하지 않는다. 태그도 대상 언어의 기존 항목을 우선 사용하고, 대응 항목이 없다면 의미를 유지한 유효한 새 slug를 사용한다.
+- 원문에 `translationKey`가 있으면 그대로 쓴다. 없으면 기존에 사용되지 않는 `post-<source-slug>` 형태의 안정적인 키를 정해 원문과 번역본에 추가한다. 이미 존재하는 다른 실제 번역본을 확인했다면 그 그룹의 키를 재사용한다. 같은 키에는 언어별 한 파일만 허용하며 제목 변경만으로 키를 바꾸지 않는다. `src/config/translations.json`의 `posts`를 수정할 필요는 없다.
 - CLI가 만든 `rssGuid`는 번역본 고유값으로 유지한다. `date`는 기본적으로 번역 초안을 만든 날짜를 유지한다. 사용자가 날짜를 지정했다면 시간대가 포함된 ISO 값으로 반영한다. 원문의 `modified`·`readingMinutes`를 복사하지 않는다.
-- 원문의 `id`, `slug`, `wordpressId`, `snapshotFile`, `sourceUrl`, `format` 등 이관 전용 메타데이터를 새 파일에 복사하지 않는다. 특히 `snapshotFile`을 복사하면 원문 언어의 템플릿이 섞인다. 번역본은 새 Markdown 글 레이아웃을 사용하며 `.md` 본문 안의 필요한 HTML은 유지할 수 있다.
-- `image`, `socialImage`, 본문 이미지·영상은 기존 파일을 재사용한다. 기존 `/wp-content/...`·`/wp-includes/...` 자산 경로는 `/insights/` 접두사를 붙여 사용한다. 새 이미지 다운로드나 복제는 필요 없다. `rssEnclosure`가 있으면 같은 영상의 URL·길이·MIME을 유지한다.
+- 원문의 `id`, `slug`, `legacyId`, `templateFile`, `sourceUrl`, `format` 등 이관 전용 메타데이터를 새 파일에 복사하지 않는다. 특히 `templateFile`을 복사하면 원문 언어의 템플릿이 섞인다. 번역본은 새 Markdown 글 레이아웃을 사용하며 `.md` 본문 안의 필요한 HTML은 유지할 수 있다.
+- `image`, `socialImage`, 본문 이미지·영상은 기존 파일을 재사용한다. 기존 `/insights/assets/...` 자산 경로를 그대로 사용한다. 옛 `/wp-content/...`·`/wp-includes/...` 주소는 지원하지 않으므로 현재 콘텐츠에서 같은 자산의 `/insights/assets/...` 경로를 확인해서 사용한다. 새 이미지 다운로드나 복제는 필요 없다. `rssEnclosure`가 있으면 같은 영상의 URL·길이·MIME을 유지한다.
 - `noindex: true`는 번역본에도 유지한다. 원문의 발행 여부와 관계없이 새 번역본은 기본적으로 `draft: true`다.
 
 ## 제목·본문·SEO 번역

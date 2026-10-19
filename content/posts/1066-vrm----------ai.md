@@ -9,16 +9,15 @@ categories: [20]
 tags: []
 lang: "ja"
 author: 1
-sourceUrl: "https://cinev.com/insights/ja/vrm%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%a8%e3%81%af%ef%bc%9f%e7%84%a1%e6%96%99%e3%81%a7ai%e3%82%a2%e3%83%8b%e3%83%a1%e3%82%92%e4%bd%9c%e3%82%8b%e5%88%9d%e5%bf%83%e8%80%85%e3%82%ac%e3%82%a4/"
 excerpt: "VRMファイルをどこかで見つけた、あるいは「VRMを使えばいい」と言われた。でも、それが何なのかわからないし、アニメーションを作ったこともない。 大丈夫です。このガイドはゼロから始めます。 VRMファイルとは？ VRMファイルは3Dキャラクターファイルです。キャラクターの外見、体のプロポーション、動作の設定をひとつにまとめたコンテナだと考えてください。 このフォーマットはもともとバーチャルアバター（VTuber、VRChat、バーチャル会議）向けに作られましたが、アニメーション制作の出発点としても広く使われるようになりました。.vrmファイルがあれば、すぐに動かせるキャラクターが手元にある状態です。 VRMファイルはどこで入手できますか？ 自分のキャラクターがあるかどうかによって、2つの方法があります。 Option A: VRoid Studioで作る（無料） VRoid StudioはPixivが提供する無料のキャラクター制作アプリです。スライダーで顔・髪・服装・体型を選ぶだけで、絵を描くスキルは不要です。完成したら.vrmファイルとして書き出せます。 VRoid Studioのダウンロード: vroid.com/en/studio 書き出しは2クリックほどで完了します。Camera/Exporterを開き、Exportを選択して、デスクトップに保存してください。 Option B: 無料のVRMモデルをダウンロードする […]"
-format: "wordpress-html"
-wordpressId: 1066
-snapshotFile: "migration/snapshots/edf3ebb8f9f1.html"
-image: "/wp-content/uploads/2026/04/VRM-import-Guide-1024x537.png"
+format: "html"
+legacyId: 1066
+templateFile: "src/templates/edf3ebb8f9f1.html"
+image: "/insights/assets/media/5876d5b29e-VRM-import-Guide-1024x537.png"
 readingMinutes: 1
 seoTitle: "VRMファイルとは？無料でAIアニメを作る初心者ガイド : CineV"
 description: "VRMファイルを知らなくても大丈夫。このガイドではVRMの入手方法から、CineVで無料アニメーションを作るまでをゼロから解説します。"
-socialImage: "/insights/wp-content/uploads/2026/04/VRM-import-Guide.png"
+socialImage: "/insights/assets/media/c67aa741b2-VRM-import-Guide.png"
 rssGuid: "https://cinev.com/insights/?p=1066"
 translationKey: "wordpress-1048"
 ---
@@ -105,7 +104,7 @@ translationKey: "wordpress-1048"
 
 
 
-<figure class="wp-block-image"><img decoding="async" src="/wp-content/uploads/2026/03/register_my_character.png" alt="CineV character registration screen showing an original anime IP character being uploaded as VRM and previewed on a 3D stage"/></figure>
+<figure class="wp-block-image"><img decoding="async" src="/insights/assets/media/7baeac6dc3-register_my_character.png" alt="CineV character registration screen showing an original anime IP character being uploaded as VRM and previewed on a 3D stage"/></figure>
 
 
 
@@ -117,7 +116,7 @@ translationKey: "wordpress-1048"
 
 
 
-<figure class="wp-block-image"><img decoding="async" src="/wp-content/uploads/2026/04/upload_my_character.png" alt="Click Add Character, then select Upload VRM. CineV reads the VRM data and builds a preview of your character. This usually takes under a minute."/></figure>
+<figure class="wp-block-image"><img decoding="async" src="/insights/assets/media/1c3788f407-upload_my_character.png" alt="Click Add Character, then select Upload VRM. CineV reads the VRM data and builds a preview of your character. This usually takes under a minute."/></figure>
 
 
 
@@ -133,7 +132,7 @@ translationKey: "wordpress-1048"
 
 
 
-<figure class="wp-block-image"><img decoding="async" src="/wp-content/uploads/2026/03/chracter.png" alt="Character Swap is CineV signature feature. It lets you replace characters your own in scenes to ensure professional quality and visual consistency across all clips."/></figure>
+<figure class="wp-block-image"><img decoding="async" src="/insights/assets/media/7235f7f242-chracter.png" alt="Character Swap is CineV signature feature. It lets you replace characters your own in scenes to ensure professional quality and visual consistency across all clips."/></figure>
 
 
 

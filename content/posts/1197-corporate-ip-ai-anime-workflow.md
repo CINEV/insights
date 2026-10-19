@@ -9,16 +9,15 @@ categories: [20]
 tags: []
 lang: "ja"
 author: 1
-sourceUrl: "https://cinev.com/insights/ja/corporate-ip-ai-anime-workflow/"
 excerpt: "企業IPのAIアニメ化とは、キャラクター設定やブランドの世界観をもとに、短いアニメーション映像やパイロット映像へ展開する制作プロセスです。 単に画像を生成するだけではありません。キャラクターの一貫性、シーンの流れ、利用目的、権利範囲を整理しながら、企画段階で映像化の可能性を検証することが重要です。 企業IPをアニメ化する前に決めるべきこと AIで企業IPをアニメ化する前に、まず次の5つを整理します。 たとえば、日本市場を意識する場合は、アニメ調のキャラクター表現、短尺動画で伝わるシーン構成、SNSや提案資料で使いやすいフォーマットを先に決めておくと、制作判断がしやすくなります。 AIアニメ制作の基本ワークフロー 企業IPをAIでアニメ化する場合、制作は次の流れで進めると整理しやすくなります。 1. IPとキャラクター情報を整理する キャラクターの性格、外見、関係性、作品の背景をまとめます。ここが曖昧なままだと、シーンごとに表情や雰囲気が変わりやすくなります。 2. シーン案を作る 次に、キャラクターが登場する短いシーン案を作ります。広告用、作品紹介用、企業提案用など、利用目的によって必要なシーンは変わります。 3. キャラクターの一貫性を確認する AIアニメ制作では、キャラクターがシーンごとに別人のように見えないかを確認する必要があります。表情、服装、髪型、色、印象が保たれているかを見比べながら進めます。 4. 短いパイロット映像を作る 最初から長い映像を作るのではなく、短いパイロット映像で検証します。パイロット映像があると、社内確認、提案、広告テスト、パートナーとの協議に使いやすくなります。 5. […]"
-format: "wordpress-html"
-wordpressId: 1197
-snapshotFile: "migration/snapshots/fcdf8f4dadc2.html"
-image: "/wp-content/uploads/2026/06/image-1024x562.png"
+format: "html"
+legacyId: 1197
+templateFile: "src/templates/fcdf8f4dadc2.html"
+image: "/insights/assets/media/9b897e7945-image-1024x562.png"
 readingMinutes: 1
 seoTitle: "企業IPをAIでアニメ化するには？制作前に確認すべきワークフロー : CineV"
 description: "企業IPをAIでアニメ化する前に、企画整理、キャラクター設定、制作範囲、確認体制をどう設計するか。制作判断に必要な流れを解説します。"
-socialImage: "/insights/wp-content/uploads/2026/06/image-1024x562.png"
+socialImage: "/insights/assets/media/9b897e7945-image-1024x562.png"
 rssGuid: "https://cinev.com/insights/?p=1197"
 ---
 
@@ -38,7 +37,7 @@ rssGuid: "https://cinev.com/insights/?p=1197"
 
 
 
-<figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="546" src="/wp-content/uploads/2026/06/image-1-1024x546.png" alt="企業IPをAIアニメのパイロット映像へ展開する制作ワークフローのイメージ" class="wp-image-1201" style="width:818px;height:auto" srcset="/wp-content/uploads/2026/06/image-1-1024x546.png 1024w, /wp-content/uploads/2026/06/image-1-300x160.png 300w, /wp-content/uploads/2026/06/image-1-768x410.png 768w, /wp-content/uploads/2026/06/image-1-1536x819.png 1536w, /wp-content/uploads/2026/06/image-1.png 1717w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="546" src="/insights/assets/media/26619f2daf-image-1-1024x546.png" alt="企業IPをAIアニメのパイロット映像へ展開する制作ワークフローのイメージ" class="wp-image-1201" style="width:818px;height:auto" srcset="/insights/assets/media/26619f2daf-image-1-1024x546.png 1024w, /insights/assets/media/0497ce467c-image-1-300x160.png 300w, /insights/assets/media/c7de1d06f7-image-1-768x410.png 768w, /insights/assets/media/dd937af1c7-image-1-1536x819.png 1536w, /insights/assets/media/08d8291c64-image-1.png 1717w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -120,7 +119,7 @@ rssGuid: "https://cinev.com/insights/?p=1197"
 
 
 
-<figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="562" src="/wp-content/uploads/2026/06/image-1024x562.png" alt="キャラクター設定からパイロット映像までのAIアニメ制作ワークフロー" class="wp-image-1200" style="width:865px;height:auto" srcset="/wp-content/uploads/2026/06/image-1024x562.png 1024w, /wp-content/uploads/2026/06/image-300x165.png 300w, /wp-content/uploads/2026/06/image-768x421.png 768w, /wp-content/uploads/2026/06/image-1536x843.png 1536w, /wp-content/uploads/2026/06/image.png 1693w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="562" src="/insights/assets/media/9b897e7945-image-1024x562.png" alt="キャラクター設定からパイロット映像までのAIアニメ制作ワークフロー" class="wp-image-1200" style="width:865px;height:auto" srcset="/insights/assets/media/9b897e7945-image-1024x562.png 1024w, /insights/assets/media/c415ce2cf0-image-300x165.png 300w, /insights/assets/media/bfcc3f6212-image-768x421.png 768w, /insights/assets/media/2401013c76-image-1536x843.png 1536w, /insights/assets/media/118c38b03b-image.png 1693w" sizes="auto, (max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 

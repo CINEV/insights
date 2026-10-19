@@ -18,11 +18,11 @@ export function inSitemap(route: Route): boolean {
   return isIndexable(route) && canonicalPath(route) === route.path;
 }
 
-// WordPress-origin uploads are now served from the same public blog prefix.
+// Site assets share the public blog prefix.
 export function imageUrl(value: string): string {
   const url = new URL(value, site.origin);
-  if ([new URL(site.origin).hostname, 'blog.cinev.com', '43.200.218.52'].includes(url.hostname)) {
-    if (/^\/wp-(content|includes)\//.test(url.pathname)) url.pathname = site.base + url.pathname;
+  if (url.hostname === new URL(site.origin).hostname) {
+    if (/^\/(?:assets|images)\//.test(url.pathname)) url.pathname = site.base + url.pathname;
     url.protocol = 'https:';
     url.host = new URL(site.origin).host;
   }
@@ -88,7 +88,5 @@ export function seoHead(route: Route, fallback: { title: string; description: st
     }
   }
   head.push(`<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')}</script>`);
-  // Preview hosts never load Google. Only published pages on the canonical origin do.
-  if (!entry?.data.draft) head.push(`<script src="${site.base}/analytics.js" data-origin="${escape(site.origin)}" data-tag="${escape(site.analytics.googleTagId)}" defer></script>`);
   return head.join('\n');
 }

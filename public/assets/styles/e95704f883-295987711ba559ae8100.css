@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/insights/assets/fonts/274b89bbfe-4a2be2bc2243d807b3da.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/insights/assets/fonts/41c6fc5176-28879f5d3c945de5bf88.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/insights/assets/fonts/8df544916c-d0d8ba0faa04d071cfa3.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/insights/assets/fonts/bf39f75d13-d95f1d2677a1cd27febf.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/insights/assets/fonts/d2962ed082-e223aaf1c6d9ebcef7cd.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/insights/assets/fonts/3943d9c5c2-819a8cac7955b2557641.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/insights/assets/fonts/20d6d2ffda-6d3b7afc370baf7bef70.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/insights/assets/fonts/4c593473a4-9462951c13d2dde39d1f.woff2") format('woff2');
+}
